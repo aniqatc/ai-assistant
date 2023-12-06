@@ -1,5 +1,3 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-
 module.exports = {
 	content: ['./src/*.{html,js}'],
 	darkMode: 'class',
@@ -26,7 +24,16 @@ module.exports = {
 					'2xl': '1024px',
 				},
 			},
+			keyframes: {
+				slideInY: {
+					'0%': { transform: 'translateY(-100%)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' },
+				},
+			},
+			animation: {
+				'slide-in': 'slideInY 500ms ease-out both',
+			},
 		},
 	},
-	plugins: [],
+	plugins: [require('tailwindcss-animation-delay')],
 };

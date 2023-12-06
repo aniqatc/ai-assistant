@@ -24,8 +24,10 @@
 		<main class="container relative">
 			<nav class="absolute top-0 xs:right-[10%] right-[5%]">
 				<button
-					class="js-theme-btn w-11 h-11 group shadow-md rounded-b bg-indigo-700 text-violet-200 text-xl transition-all duration-300 ease-out hover:h-14 hover:bg-indigo-950 hover:text-white dark:bg-indigo-300 dark:text-indigo-700 dark:hover:bg-indigo-700 dark:hover:text-white">
-					<span class="group-hover:animate-pulse">
+					class="w-11 h-11 group shadow-md rounded-b bg-indigo-700 text-violet-200 text-xl transition-all duration-300 ease-out hover:h-14 hover:bg-indigo-950 hover:text-white dark:bg-indigo-300 dark:text-indigo-700 dark:hover:bg-indigo-700 dark:hover:text-white">
+					<span
+						class="group-hover:animate-pulse"
+						id="js-theme-btn">
 						<i class="fa-solid fa-moon dark:hidden block"></i>
 						<i class="fa-regular fa-sun hidden dark:block"></i>
 					</span>
@@ -153,27 +155,24 @@
 					<div
 						class="bg-white h-[300px] border border-neutral-200 rounded-sm px-3 py-2 space-y-1 overflow-y-scroll dark:bg-neutral-700 dark:border-neutral-500">
 						<div
-							class="bg-blue-100/75 text-neutral-600 px-3 py-2 flex dark:bg-blue-400/30 dark:text-slate-100">
+							class="instruction animate-slide-in animation-delay-500 bg-blue-100/75 text-neutral-600 px-3 py-2 flex dark:bg-blue-400/30 dark:text-slate-100">
 							<span
 								class="shrink-0 mr-2 rounded-full bg-indigo-700 text-indigo-50 w-6 h-6 flex items-center justify-center text-sm dark:bg-blue-800"
 								><i class="fa-regular fa-thumbs-up"></i
 							></span>
-							<p class="xs:text-base text-sm">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-								exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-							</p>
+							<p
+								class="xs:text-base text-sm"
+								id="js-instructions-dos"></p>
 						</div>
 						<div
-							class="bg-red-100/75 text-neutral-600 px-3 py-2 flex dark:bg-red-400/40 dark:text-slate-100">
+							class="instruction animate-slide-in animation-delay-750 bg-red-100/75 text-neutral-600 px-3 py-2 flex dark:bg-red-400/40 dark:text-slate-100">
 							<span
 								class="shrink-0 mr-2 rounded-full bg-red-700 text-red-50 w-6 h-6 flex items-center justify-center text-sm dark:bg-red-900"
 								><i class="fa-regular fa-thumbs-down"></i
 							></span>
-							<p class="xs:text-base text-sm">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore.
-							</p>
+							<p
+								class="xs:text-base text-sm"
+								id="js-instructions-donts"></p>
 						</div>
 					</div>
 					<div
