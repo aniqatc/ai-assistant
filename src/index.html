@@ -24,6 +24,7 @@
 		<main class="container relative">
 			<nav class="absolute top-0 xs:right-[10%] right-[5%]">
 				<button
+					aria-label="toggle dark theme"
 					class="w-11 h-11 group shadow-md rounded-b bg-indigo-700 text-violet-200 text-xl transition-all duration-300 ease-out hover:h-14 hover:bg-indigo-950 hover:text-white dark:bg-indigo-300 dark:text-indigo-700 dark:hover:bg-indigo-700 dark:hover:text-white">
 					<span
 						class="group-hover:animate-pulse"
@@ -131,19 +132,25 @@
 						<h2 class="sm:block hidden">Personal Workspace</h2>
 					</div>
 					<nav class="xs:space-x-2 space-x-1 text-neutral-500 dark:text-slate-300">
-						<button class="workspace-button group">
+						<button
+							aria-label="copy latest message to clipboard"
+							class="workspace-button group">
 							<span class="inline-block group-hover:animate-pulse"
 								><i class="fa-regular fa-clipboard"></i
 							></span>
 							<span>Copy</span>
 						</button>
-						<button class="workspace-button group">
+						<button
+							aria-label="share latest message"
+							class="workspace-button group">
 							<span class="inline-block group-hover:animate-pulse"
 								><i class="fa-regular fa-share-from-square"></i
 							></span>
 							<span>Share</span>
 						</button>
-						<button class="workspace-button group">
+						<button
+							aria-label="clear message history"
+							class="workspace-button group">
 							<span class="inline-block group-hover:animate-pulse"
 								><i class="fa-regular fa-trash-can"></i
 							></span>
@@ -175,18 +182,21 @@
 								id="js-instructions-donts"></p>
 						</div>
 					</div>
-					<div
+					<form
 						class="relative bg-white h-[100px] border border-neutral-200 rounded-sm space-y-2 dark:border-neutral-500">
 						<textarea
-							class="w-full h-full p-2 text-sm resize-none rounded-none focus:outline-violet-800/75 dark:bg-neutral-700"></textarea>
+							class="w-full h-full p-2 text-sm resize-none rounded-none focus:outline-violet-800/75 dark:bg-neutral-700"
+							required></textarea>
 						<button
+							aria-label="submit input to AI"
+							type="submit"
 							class="absolute group bottom-2 right-2 px-3 py-1 rounded-full bg-indigo-700 border border-indigo-300 text-indigo-100 transition-all ease-in duration-200 active:scale-95 hover:ring hover:ring-indigo-700/50 dark:border-indigo-600 dark:bg-indigo-800 dark:text-slate-200 dark:hover:ring-indigo-400/50">
 							<span>Submit</span>
 							<span class="group-hover:animate-pulse inline-block">
 								<i class="fa-regular fa-paper-plane"></i>
 							</span>
 						</button>
-					</div>
+					</form>
 				</div>
 				<span class="px-4 pb-2 block text-end text-xs text-green-600 dark:text-green-500">
 					Response Time: <span class="font-medium">4.43s</span>
