@@ -1,4 +1,4 @@
-import './styles.css';
+import '../styles.css';
 import Typewriter from 'typewriter-effect/dist/core';
 
 const root = document.documentElement;
@@ -30,7 +30,7 @@ function triggerTypewriter() {
 			delay: 15,
 			cursor: ' ●',
 		});
-	}, 1000);
+	}, 1050);
 
 	setTimeout(() => {
 		new Typewriter('#js-instructions-donts', {
@@ -39,7 +39,7 @@ function triggerTypewriter() {
 			delay: 15,
 			cursor: ' ●',
 		});
-	}, 750);
+	}, 550);
 }
 
 function triggerSlideInAnimation() {
