@@ -27,7 +27,7 @@
 					<i class="fa-solid fa-moon"></i>
 				</button>
 			</nav>
-			<section class="pt-24">
+			<section class="pt-24 mb-9">
 				<div class="text-center mb-4">
 					<h1 class="text-4xl font-semibold">
 						<span class="text-gradient"><i class="fa-solid fa-robot"></i></span>
@@ -51,7 +51,7 @@
 								checked />
 							<label
 								for="radio-explain"
-								class="option-label label-hover hover:border-violet-800 peer-checked:border-violet-800 peer-checked:ring peer-checked:ring-violet-700/50 peer-checked:text-violet-600 peer-checked:bg-violet-50">
+								class="option-label">
 								<span class="option-radio">
 									<i class="fa-solid fa-check"></i>
 								</span>
@@ -68,7 +68,7 @@
 								value="refine" />
 							<label
 								for="radio-refine"
-								class="option-label hover:border-violet-800 peer-checked:border-violet-800 peer-checked:ring peer-checked:ring-violet-700/50 peer-checked:text-violet-600 peer-checked:bg-violet-50">
+								class="option-label">
 								<span class="option-radio">
 									<i class="fa-solid fa-check"></i>
 								</span>
@@ -85,7 +85,7 @@
 								value="debug" />
 							<label
 								for="radio-debug"
-								class="option-label hover:border-violet-800 peer-checked:border-violet-800 peer-checked:ring peer-checked:ring-violet-700/50 peer-checked:text-violet-600 peer-checked:bg-violet-50">
+								class="option-label">
 								<span class="option-radio">
 									<i class="fa-solid fa-check"></i>
 								</span>
@@ -102,7 +102,7 @@
 								value="convert" />
 							<label
 								for="radio-convert"
-								class="option-label hover:border-violet-800 peer-checked:border-violet-800 peer-checked:ring peer-checked:ring-violet-700/50 peer-checked:text-violet-600 peer-checked:bg-violet-50">
+								class="option-label">
 								<span class="option-radio">
 									<i class="fa-solid fa-check"></i>
 								</span>
@@ -113,28 +113,29 @@
 					</div>
 				</fieldset>
 			</section>
-			<section>
-				<header>
-					<div>
+			<section
+				class="lg:w-11/12 mx-auto bg-stone-100 drop-shadow-[2px_2px_16px_rgba(0,0,0,0.15)] rounded-md border border-indigo-300">
+				<header class="px-3 py-2 flex justify-between items-center border-b border-indigo-300">
+					<div class="flex gap-2 text-indigo-800 font-semibold">
 						<span><i class="fa-regular fa-user"></i></span>
 						<h2>Personal Workspace</h2>
 					</div>
-					<nav>
-						<button>
+					<nav class="space-x-2 text-gray-500">
+						<button class="workspace-button">
 							<span><i class="fa-regular fa-clipboard"></i></span>
 							<span>Copy</span>
 						</button>
-						<button>
+						<button class="workspace-button">
 							<span><i class="fa-regular fa-share-from-square"></i></span>
 							<span>Share</span>
 						</button>
-						<button>
+						<button class="workspace-button">
 							<span><i class="fa-regular fa-trash-can"></i></span>
 							<span>Clear</span>
 						</button>
 					</nav>
 				</header>
-				<div>
+				<div class="p-3">
 					<!-- Chat response box -->
 					<div>
 						<div>
