@@ -819,7 +819,7 @@ body {
 
 :is(.dark body) {
   --tw-bg-opacity: 1;
-  background-color: rgb(39 39 42 / var(--tw-bg-opacity));
+  background-color: rgb(24 24 27 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(244 244 245 / var(--tw-text-opacity));
 }
@@ -915,7 +915,7 @@ body {
   color: rgb(196 181 253 / var(--tw-text-opacity));
 }
 
-@media (min-width: 475px) {
+@media (min-width: 465px) {
 
   .option-label {
     height: 100px;
@@ -966,9 +966,6 @@ body {
 }
 
 .option-input:checked ~ .option-label .option-radio {
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   --tw-bg-opacity: 1;
   background-color: rgb(167 139 250 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
@@ -980,6 +977,15 @@ body {
   background-color: rgb(196 181 253 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(49 46 129 / var(--tw-text-opacity));
+}
+
+@media (min-width: 465px) {
+
+  .option-input:checked ~ .option-label .option-radio {
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
 }
 
 .workspace-button {
@@ -1046,7 +1052,7 @@ body {
   color: rgb(238 242 255 / var(--tw-text-opacity));
 }
 
-@media (min-width: 475px) {
+@media (min-width: 465px) {
 
   .workspace-button {
     font-size: 1rem;
@@ -1085,12 +1091,6 @@ body {
 .active\:scale-95:active {
   --tw-scale-x: .95;
   --tw-scale-y: .95;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:scale-100 {
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1215,7 +1215,7 @@ body {
   --tw-ring-color: rgb(129 140 248 / 0.5);
 }
 
-@media (min-width: 475px) {
+@media (min-width: 465px) {
 
   .xs\:right-\[10\%\] {
     right: 10%;
@@ -1247,6 +1247,12 @@ body {
   .xs\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+
+  .group:hover .xs\:group-hover\:scale-100 {
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 }
 
