@@ -1,7 +1,15 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
 	content: ['./src/*.{html,js}'],
 	darkMode: 'class',
 	theme: {
+		screens: {
+			xs: '475px',
+			sm: '640px',
+			md: '768px',
+			lg: '1024px',
+		},
 		extend: {
 			fontFamily: {
 				sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
