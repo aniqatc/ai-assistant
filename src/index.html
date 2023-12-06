@@ -21,65 +21,95 @@
 		<title>AI Coding Assistant</title>
 	</head>
 	<body>
-		<main class="container mx-auto">
-			<nav>
-				<button>
+		<main class="container relative">
+			<nav class="absolute top-0 right-[10%]">
+				<button class="w-11 h-11 rounded-b bg-indigo-700 text-violet-200 text-xl">
 					<i class="fa-solid fa-moon"></i>
 				</button>
 			</nav>
-			<section>
-				<div>
-					<h1><i class="fa-solid fa-robot"></i> Your personal <span>AI coding assistant</span></h1>
+			<section class="pt-24">
+				<div class="text-center mb-4">
+					<h1 class="text-4xl font-semibold">
+						<span class="text-gradient"><i class="fa-solid fa-robot"></i></span>
+						Your personal
+						<span class="text-gradient">AI coding assistant</span>
+					</h1>
 				</div>
 				<fieldset>
-					<legend>
+					<legend class="text-gray-800 text-center w-[50ch]">
 						Select a task you’d like assistance with and follow the provided instructions for
 						optimal guidance and accuracy.
 					</legend>
-					<div>
-						<input
-							type="radio"
-							id="radio-explain"
-							name="options"
-							value="explain"
-							checked />
-						<label for="radio-explain">
-							<span><i class="fa-solid fa-comment-dots"></i></span>
-							<span>Explain</span>
-						</label>
-					</div>
-					<div>
-						<input
-							type="radio"
-							id="radio-refine"
-							name="options"
-							value="refine" />
-						<label for="radio-refine">
-							<span><i class="fa-solid fa-screwdriver-wrench"></i></span>
-							<span>Refine</span>
-						</label>
-					</div>
-					<div>
-						<input
-							type="radio"
-							id="radio-debug"
-							name="options"
-							value="debug" />
-						<label for="radio-debug">
-							<span><i class="fa-solid fa-bug-slash"></i></span>
-							<span>Debug</span>
-						</label>
-					</div>
-					<div>
-						<input
-							type="radio"
-							id="radio-convert"
-							name="options"
-							value="convert" />
-						<label for="radio-convert">
-							<span><i class="fa-solid fa-repeat"></i></span>
-							<span>Explain</span>
-						</label>
+					<div class="flex justify-center gap-4">
+						<div>
+							<input
+								class="appearance-none peer option-input"
+								type="radio"
+								id="radio-explain"
+								name="options"
+								value="explain"
+								checked />
+							<label
+								for="radio-explain"
+								class="option-label label-hover hover:border-violet-800 peer-checked:border-violet-800 peer-checked:ring peer-checked:ring-violet-700/50 peer-checked:text-violet-600 peer-checked:bg-violet-50">
+								<span class="option-radio">
+									<i class="fa-solid fa-check"></i>
+								</span>
+								<span class="text-4xl"><i class="fa-solid fa-comment-dots"></i></span>
+								<span>Explain</span>
+							</label>
+						</div>
+						<div>
+							<input
+								class="appearance-none peer option-input"
+								type="radio"
+								id="radio-refine"
+								name="options"
+								value="refine" />
+							<label
+								for="radio-refine"
+								class="option-label hover:border-violet-800 peer-checked:border-violet-800 peer-checked:ring peer-checked:ring-violet-700/50 peer-checked:text-violet-600 peer-checked:bg-violet-50">
+								<span class="option-radio">
+									<i class="fa-solid fa-check"></i>
+								</span>
+								<span class="text-4xl"><i class="fa-solid fa-screwdriver-wrench"></i></span>
+								<span>Refine</span>
+							</label>
+						</div>
+						<div>
+							<input
+								class="appearance-none peer option-input"
+								type="radio"
+								id="radio-debug"
+								name="options"
+								value="debug" />
+							<label
+								for="radio-debug"
+								class="option-label hover:border-violet-800 peer-checked:border-violet-800 peer-checked:ring peer-checked:ring-violet-700/50 peer-checked:text-violet-600 peer-checked:bg-violet-50">
+								<span class="option-radio">
+									<i class="fa-solid fa-check"></i>
+								</span>
+								<span class="text-4xl"><i class="fa-solid fa-bug-slash"></i></span>
+								<span>Debug</span>
+							</label>
+						</div>
+						<div>
+							<input
+								class="appearance-none peer option-input"
+								type="radio"
+								id="radio-convert"
+								name="options"
+								value="convert" />
+							<label
+								for="radio-convert"
+								class="option-label hover:border-violet-800 peer-checked:border-violet-800 peer-checked:ring peer-checked:ring-violet-700/50 peer-checked:text-violet-600 peer-checked:bg-violet-50">
+								<span class="option-radio">
+									<i class="fa-solid fa-check"></i>
+								</span>
+								<span class="text-4xl"><i class="fa-solid fa-repeat"></i></span>
+								<span>Explain</span>
+							</label>
+						</div>
 					</div>
 				</fieldset>
 			</section>
