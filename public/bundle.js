@@ -1,0 +1,1 @@
+(()=>{"use strict";const t=document.documentElement,e=document.querySelector(".js-theme-btn");!function(){const e=localStorage.getItem("theme");e&&t.classList.toggle("dark","dark"===e)}(),e.addEventListener("click",(()=>{t.classList.toggle("dark"),localStorage.setItem("theme",t.classList.contains("dark")?"dark":"light")}))})();
