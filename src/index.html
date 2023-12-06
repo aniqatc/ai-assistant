@@ -27,16 +27,16 @@
 					<i class="fa-solid fa-moon"></i>
 				</button>
 			</nav>
-			<section class="pt-24 mb-9">
+			<section class="md:pt-20 pt-8 mb-9">
 				<div class="text-center mb-4">
-					<h1 class="text-4xl font-semibold">
+					<h1 class="text-4xl font-semibold md:block flex flex-col">
 						<span class="text-gradient"><i class="fa-solid fa-robot"></i></span>
 						Your personal
 						<span class="text-gradient">AI coding assistant</span>
 					</h1>
 				</div>
-				<fieldset>
-					<legend class="text-gray-800 text-center w-[50ch]">
+				<fieldset class="mx-2">
+					<legend class="text-gray-800 text-center md:w-[50ch] w-[40ch]">
 						Select a task you’d like assistance with and follow the provided instructions for
 						optimal guidance and accuracy.
 					</legend>
@@ -51,8 +51,8 @@
 								checked />
 							<label
 								for="radio-explain"
-								class="option-label">
-								<span class="option-radio">
+								class="option-label group">
+								<span class="option-radio scale-0 group-hover:scale-100">
 									<i class="fa-solid fa-check"></i>
 								</span>
 								<span class="text-4xl"><i class="fa-solid fa-comment-dots"></i></span>
@@ -68,8 +68,8 @@
 								value="refine" />
 							<label
 								for="radio-refine"
-								class="option-label">
-								<span class="option-radio">
+								class="option-label group">
+								<span class="option-radio scale-0 group-hover:scale-100">
 									<i class="fa-solid fa-check"></i>
 								</span>
 								<span class="text-4xl"><i class="fa-solid fa-screwdriver-wrench"></i></span>
@@ -85,8 +85,8 @@
 								value="debug" />
 							<label
 								for="radio-debug"
-								class="option-label">
-								<span class="option-radio">
+								class="option-label group">
+								<span class="option-radio scale-0 group-hover:scale-100">
 									<i class="fa-solid fa-check"></i>
 								</span>
 								<span class="text-4xl"><i class="fa-solid fa-bug-slash"></i></span>
@@ -102,8 +102,8 @@
 								value="convert" />
 							<label
 								for="radio-convert"
-								class="option-label">
-								<span class="option-radio">
+								class="option-label group">
+								<span class="option-radio scale-0 group-hover:scale-100">
 									<i class="fa-solid fa-check"></i>
 								</span>
 								<span class="text-4xl"><i class="fa-solid fa-repeat"></i></span>
@@ -120,26 +120,34 @@
 						<span><i class="fa-regular fa-user"></i></span>
 						<h2>Personal Workspace</h2>
 					</div>
-					<nav class="space-x-2 text-gray-500">
-						<button class="workspace-button">
-							<span><i class="fa-regular fa-clipboard"></i></span>
+					<nav class="space-x-2 text-neutral-500">
+						<button class="workspace-button group">
+							<span class="inline-block group-hover:animate-pulse"
+								><i class="fa-regular fa-clipboard"></i
+							></span>
 							<span>Copy</span>
 						</button>
-						<button class="workspace-button">
-							<span><i class="fa-regular fa-share-from-square"></i></span>
+						<button class="workspace-button group">
+							<span class="inline-block group-hover:animate-pulse"
+								><i class="fa-regular fa-share-from-square"></i
+							></span>
 							<span>Share</span>
 						</button>
-						<button class="workspace-button">
-							<span><i class="fa-regular fa-trash-can"></i></span>
+						<button class="workspace-button group">
+							<span class="inline-block group-hover:animate-pulse"
+								><i class="fa-regular fa-trash-can"></i
+							></span>
 							<span>Clear</span>
 						</button>
 					</nav>
 				</header>
-				<div class="p-3">
-					<!-- Chat response box -->
-					<div>
-						<div>
-							<span><i class="fa-regular fa-thumbs-up"></i></span>
+				<div class="px-3 pt-3 p-2 space-y-1">
+					<div class="bg-white h-[300px] border border-neutral-200 rounded-sm px-3 py-2 space-y-1">
+						<div class="bg-blue-100/75 text-neutral-600 px-3 py-2 flex">
+							<span
+								class="shrink-0 mr-2 rounded-full bg-indigo-700 text-indigo-50 w-6 h-6 flex items-center justify-center text-sm"
+								><i class="fa-regular fa-thumbs-up"></i
+							></span>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -148,26 +156,34 @@
 								pariatur.
 							</p>
 						</div>
-						<div>
-							<span><i class="fa-regular fa-thumbs-up"></i></span>
+						<div class="bg-red-100/75 text-neutral-600 px-3 py-2 flex">
+							<span
+								class="shrink-0 mr-2 rounded-full bg-red-700 text-red-50 w-6 h-6 flex items-center justify-center text-sm"
+								><i class="fa-regular fa-thumbs-down"></i
+							></span>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 								incididunt ut labore.
 							</p>
 						</div>
 					</div>
-					<!-- Chat input box -->
-					<div>
-						<input type="textarea" />
-						<button>
+					<div class="relative bg-white h-[100px] border border-neutral-200 rounded-sm space-y-2">
+						<textarea
+							class="w-full p-2 text-sm resize-none focus:outline-violet-600/75"
+							rows="4"
+							cols="30"></textarea>
+						<button
+							class="absolute group bottom-3 right-5 px-3 py-1 rounded-full bg-indigo-700 border border-indigo-300 text-indigo-100 transition-all ease-in duration-200 active:scale-95 hover:ring hover:ring-indigo-700/50">
 							<span>Submit</span>
-							<span>
+							<span class="group-hover:animate-pulse inline-block">
 								<i class="fa-regular fa-paper-plane"></i>
 							</span>
 						</button>
 					</div>
 				</div>
-				<span> Response Time: 4.4s </span>
+				<span class="px-4 pb-2 block text-end text-xs text-green-700">
+					Response Time: <span class="font-medium">4.43s</span>
+				</span>
 			</section>
 		</main>
 	</body>
