@@ -490,10 +490,10 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.bg-slate-400 {
+.bg-cyan-950 {
   --tw-bg-opacity: 1;
-  background-color: rgba(148, 163, 184, 1);
-  background-color: rgba(148, 163, 184, var(--tw-bg-opacity));
+  background-color: rgba(8, 51, 68, 1);
+  background-color: rgba(8, 51, 68, var(--tw-bg-opacity));
 }
 .font-mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
