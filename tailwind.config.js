@@ -7,6 +7,7 @@ module.exports = {
 				sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
 				mono: ['Source Code Pro', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'monospace'],
 			},
+			colors: {},
 		},
 	},
 	plugins: [],
