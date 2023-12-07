@@ -1,9 +1,9 @@
 import 'prismjs';
 import 'prismjs/themes/prism-coy.css';
-import './styles/main.css';
 import './utils/theme';
-import './utils/typewriter';
-import './utils/options';
-import './utils/highlight';
+import './utils/defaultMessages';
+import './utils/radioButtons';
+import './utils/insertMessage';
 import './utils/test';
-import './styles/prism.css';
+import '../styles/main.css';
+import '../styles/prism.css';

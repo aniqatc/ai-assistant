@@ -1,8 +1,8 @@
+import typeDefaultMessages from './defaultMessages';
 import { triggerSlideInAnimation } from './messageAnimation';
-import typeDefaultMessages from './typewriter';
 
 const storedOptionType = localStorage.getItem('optionType');
-const radioButtons = document.querySelectorAll('input[type="radio"]');
+const radioButtons = document.querySelectorAll('input[name="options"]');
 
 radioButtons.forEach(radio => {
 	radio.addEventListener('click', event => {

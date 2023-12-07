@@ -1,55 +1,39 @@
-import { myTextTypewriter } from './highlight';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-json';
+import 'prismjs/components/prism-python';
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-sass';
 
-// 	cursor: ' ●',
-// temp
-const refine = ['Refine - instructions', 'Refine - avoid'];
-const debug = ['Debug instructions', 'Debug avoid'];
-const convert = ['Convert instructions', 'Convert avoid'];
-const explain = ['Explain instructions', 'Explain avoid'];
+const typingTimeouts = new Map();
 
-export default function typeDefaultMessages(option = 'explain') {
-	clearInstructions();
+function myCodeTypewriter(el, content, lang = 'txt') {
+	let i = 0;
 
-	let messageDos;
-	let messageDonts;
-
-	switch (option) {
-		case 'refine':
-			messageDos = refine[0];
-			messageDonts = refine[1];
-			break;
-		case 'debug':
-			messageDos = debug[0];
-			messageDonts = debug[1];
-			break;
-		case 'convert':
-			messageDos = convert[0];
-			messageDonts = convert[1];
-			break;
-		case 'explain':
-			messageDos = explain[0];
-			messageDonts = explain[1];
-			break;
-		default:
-			messageDos = "Default message for Do's";
-			messageDonts = "Default message for Don'ts";
-			break;
+	function typeChar() {
+		if (i < content.length) {
+			el.textContent += content.charAt(i);
+			i++;
+			setTimeout(typeChar, 10);
+		}
+		el.innerHTML = Prism.highlight(el.textContent, Prism.languages[lang]);
 	}
-
-	setTimeout(() => {
-		const messageYES = document.querySelector('#js-message--dos');
-		myTextTypewriter(messageYES, messageDos);
-	}, 700);
-
-	setTimeout(() => {
-		const messageNO = document.querySelector('#js-message--donts');
-		myTextTypewriter(messageNO, messageDonts);
-	}, 500);
+	typeChar();
 }
 
-function clearInstructions() {
-	const messageEl = document.querySelectorAll('.js-message p');
-	messageEl.forEach(el => {
-		el.textContent = '';
-	});
+function myTextTypewriter(el, content) {
+	let i = 0;
+	clearTimeout(typingTimeouts.get(el));
+
+	function typeChar() {
+		if (i < content.length) {
+			el.textContent += content.charAt(i);
+			i++;
+			typingTimeouts.set(el, setTimeout(typeChar, 50));
+		} else {
+			typingTimeouts.delete(el);
+		}
+	}
+	typeChar();
 }
+
+export { myCodeTypewriter, myTextTypewriter };

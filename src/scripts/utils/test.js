@@ -1,4 +1,4 @@
-import { insertMessage } from './highlight';
+import { insertMessage } from './insertMessage';
 
 const exampleHTML = `<div>
 	<input
