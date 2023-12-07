@@ -17,11 +17,14 @@ downloadButton.addEventListener('click', () => {
 });
 
 copyButton.addEventListener('click', () => {
-	const recentMessage = chatContainer.lastElementChild.textContent;
+	const codeBlocks = chatContainer.querySelectorAll('pre');
+	const recentCodeBlock = codeBlocks[codeBlocks.length - 1];
 
-	navigator.clipboard.writeText(recentMessage).then(() => {
-		displayTemporaryMessage(copyButton, 'Copied');
-	});
+	navigator.clipboard
+		.writeText(recentCodeBlock?.textContent || 'No code blocks detected')
+		.then(() => {
+			displayTemporaryMessage(copyButton, 'Copied');
+		});
 });
 
 function displayTemporaryMessage(el, message) {

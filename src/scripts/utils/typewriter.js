@@ -13,7 +13,7 @@ function myCodeTypewriter(el, content, lang = 'txt') {
 		if (i < content.length) {
 			el.textContent += content.charAt(i);
 			i++;
-			setTimeout(typeChar, 10);
+			setTimeout(typeChar, 30);
 		}
 		el.innerHTML = Prism.highlight(el.textContent, Prism.languages[lang]);
 	}

@@ -2,7 +2,6 @@ import { myCodeTypewriter, myTextTypewriter } from './typewriter';
 
 function insertMessage(elementType, content, lang) {
 	const chatContainer = document.querySelector('#js-chat');
-
 	const el = document.createElement(elementType);
 	chatContainer.appendChild(el);
 

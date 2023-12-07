@@ -130,7 +130,7 @@
 						<span><i class="fa-regular fa-user"></i></span>
 						<h2 class="sm:block hidden">Personal Workspace</h2>
 					</div>
-					<nav class="xs:space-x-2 space-x-1 text-neutral-500 dark:text-slate-300">
+					<nav class="xs:space-x-2 space-x-1 text-neutral-500 dark:text-slate-300 isolate z-10">
 						<button
 							id="js-copy-btn"
 							aria-label="copy latest message to clipboard"
@@ -189,7 +189,8 @@
 						class="relative bg-white h-[100px] border border-neutral-200 rounded-sm space-y-2 dark:border-neutral-500">
 						<textarea
 							class="w-full h-full p-2 text-sm resize-none rounded-none focus:outline-violet-800/75 dark:bg-neutral-700"
-							maxlength="4000"
+							maxlength="3000"
+							placeholder="Following the guidelines for the option you selected, enter your coding-related inquiries, code snippets, or specific questions here..."
 							required></textarea>
 						<button
 							aria-label="submit input to AI"

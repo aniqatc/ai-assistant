@@ -25,16 +25,3 @@ body {
 .workspace-button {
 	@apply py-1 px-3 xs:text-base text-sm border border-solid border-indigo-300 rounded-sm shadow transition-all ease-out duration-300 hover:border-violet-800 hover:ring hover:ring-indigo-700/50 hover:text-violet-600 active:scale-95 active:bg-indigo-700 active:text-violet-50 active:duration-200 dark:bg-zinc-800 dark:border-gray-600  dark:hover:border-violet-400 dark:hover:text-violet-300 dark:active:bg-indigo-700 dark:active:text-indigo-50;
 }
-
-.js-cursor {
-	animation: flash 500ms linear infinite forwards alternate;
-}
-
-@keyframes flash {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
