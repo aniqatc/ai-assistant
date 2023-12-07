@@ -1,5 +1,6 @@
-import Typewriter from 'typewriter-effect/dist/core';
+import { myTextTypewriter } from './highlight';
 
+// 	cursor: ' ●',
 // temp
 const refine = ['Refine - instructions', 'Refine - avoid'];
 const debug = ['Debug instructions', 'Debug avoid'];
@@ -36,22 +37,14 @@ export default function typeDefaultMessages(option = 'explain') {
 	}
 
 	setTimeout(() => {
-		new Typewriter('#js-message--dos', {
-			strings: messageDos,
-			autoStart: true,
-			delay: 15,
-			cursor: ' ●',
-		});
+		const messageYES = document.querySelector('#js-message--dos');
+		myTextTypewriter(messageYES, messageDos);
 	}, 700);
 
 	setTimeout(() => {
-		new Typewriter('#js-message--donts', {
-			strings: messageDonts,
-			autoStart: true,
-			delay: 15,
-			cursor: ' ●',
-		});
-	}, 350);
+		const messageNO = document.querySelector('#js-message--donts');
+		myTextTypewriter(messageNO, messageDonts);
+	}, 500);
 }
 
 function clearInstructions() {

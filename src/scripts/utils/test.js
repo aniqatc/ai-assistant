@@ -1,4 +1,4 @@
-import insertHighlightedElement from './highlight';
+import { insertMessage } from './highlight';
 
 const exampleHTML = `<div>
 	<input
@@ -58,7 +58,8 @@ else:
    print("Negative number")
 `;
 
-insertHighlightedElement('pre', exampleCSS, 'css');
-insertHighlightedElement('pre', exampleHTML, 'html');
-insertHighlightedElement('pre', exampleJS, 'js');
-insertHighlightedElement('pre', examplePython, 'python');
+insertMessage('pre', exampleCSS, 'css');
+insertMessage('div', 'Hello, testing some written text here...', null);
+insertMessage('pre', exampleHTML, 'html');
+insertMessage('pre', exampleJS, 'js');
+insertMessage('pre', examplePython, 'python');
