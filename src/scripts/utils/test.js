@@ -63,3 +63,4 @@ insertMessage('div', 'Hello, testing some written text here...', null);
 insertMessage('pre', exampleHTML, 'html');
 insertMessage('pre', exampleJS, 'js');
 insertMessage('pre', examplePython, 'python');
+insertMessage('div', 'Hello, testing some written text here...', null);

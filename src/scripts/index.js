@@ -5,5 +5,6 @@ import './utils/defaultMessages';
 import './utils/radioButtons';
 import './utils/insertMessage';
 import './utils/test';
+import './utils/toolbar';
 import '../styles/main.css';
 import '../styles/prism.css';
