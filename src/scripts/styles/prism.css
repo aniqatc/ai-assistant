@@ -1,0 +1,24 @@
+code[class*='language-'],
+pre[class*='language-'] {
+	word-break: break-word;
+	border-radius: 0px;
+	font-size: 12px;
+	font-family: 'Source Code Pro';
+}
+
+pre[class*='language-'] > code {
+	box-shadow: none;
+	border: none;
+	background-image: none;
+	background-color: #fcf7ff;
+	padding-top: 0.5rem;
+}
+
+pre[class*='language-']:before,
+pre[class*='language-']:after {
+	display: none;
+}
+
+.dark pre[class*='language-'] > code {
+	background: none;
+}

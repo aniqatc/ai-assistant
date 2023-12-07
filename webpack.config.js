@@ -14,7 +14,6 @@ module.exports = {
 		rules: [
 			{
 				test: /\.css$/i,
-				include: path.resolve(__dirname, 'src'),
 				use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
 			},
 		],
