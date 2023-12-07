@@ -1,19 +1,23 @@
-/* Prism syntax highlighting style overrides for 'coy' */
+/* Prism syntax highlighting style overrides */
 
+code,
+pre,
 code[class*='language-'],
 pre[class*='language-'] {
 	word-break: break-word;
 	border-radius: 0px;
 	font-size: 12px;
 	font-family: 'Source Code Pro', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'monospace';
+	padding: 0.5rem;
+	background-color: #fcf7ff;
+	overflow: auto;
 }
 
+pre > code,
 pre[class*='language-'] > code {
 	box-shadow: none;
 	border: none;
-	background-image: none;
-	background-color: #fcf7ff;
-	padding-top: 0.5rem;
+	background: none;
 }
 
 pre[class*='language-']:before,
@@ -30,6 +34,8 @@ pre[class*='language-']:after {
  * Ported for PrismJS by Simon Jespersen [https://github.com/simjes]
  */
 
+.dark code,
+.dark pre,
 .dark code[class*='language-'],
 .dark pre[class*='language-'] {
 	background: #27212e;
@@ -53,29 +59,29 @@ pre[class*='language-']:after {
 	hyphens: none;
 }
 
-.dark code[class*='language-']::-moz-selection,
-.dark code[class*='language-'] ::-moz-selection,
-.dark pre[class*='language-']::-moz-selection,
-.dark pre[class*='language-'] ::-moz-selection {
+.dark code::-moz-selection,
+.dark code ::-moz-selection,
+.dark pre::-moz-selection,
+.dark pre ::-moz-selection {
 	background: #eb64b927;
 	color: inherit;
 }
 
-.dark code[class*='language-']::selection,
-.dark code[class*='language-'] ::selection,
-.dark pre[class*='language-']::selection,
-.dark pre[class*='language-'] ::selection {
+.dark code::selection,
+.dark code ::selection,
+.dark pre::selection,
+.dark pre ::selection {
 	background: #eb64b927;
 	color: inherit;
 }
 
 /* Properties specific to code blocks */
-.dark pre[class*='language-'] {
+.dark pre {
 	overflow: auto; /* this is standard */
 }
 
 /* Properties specific to inline code */
-.dark :not(pre) > code[class*='language-'] {
+.dark :not(pre) > code {
 	padding: 0.2em 0.3em;
 	border-radius: 0.5rem;
 	white-space: normal; /* this is standard */
@@ -115,6 +121,7 @@ pre[class*='language-']:after {
 .dark .token.class-name,
 .dark .token.symbol {
 	color: #74dfc4;
+	background: none;
 }
 
 .dark .token.attr-name,
