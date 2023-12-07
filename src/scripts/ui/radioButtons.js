@@ -1,5 +1,6 @@
 import typeDefaultMessages from '../utils/defaultMessages';
 import { triggerSlideInAnimation } from '../utils/messageAnimation';
+import { autoScrollToBottom, checkScrollInterval } from '../utils/chatScroll';
 
 const storedOptionType = localStorage.getItem('optionType');
 const radioButtons = document.querySelectorAll('input[name="options"]');
@@ -11,6 +12,8 @@ radioButtons.forEach(radio => {
 
 		triggerSlideInAnimation('.js-message');
 		typeDefaultMessages(option);
+		checkScrollInterval();
+		autoScrollToBottom();
 	});
 });
 

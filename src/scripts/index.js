@@ -9,9 +9,11 @@ import { applySavedTheme } from './ui/theme';
 import { applySavedOption } from './ui/radioButtons';
 import './utils/defaultMessages';
 import './utils/insertMessage';
+import './utils/chatScroll';
 import './utils/test';
 import '../styles/main.css';
 import '../styles/prism.css';
 
+// Initialize
 applySavedTheme();
 applySavedOption();
