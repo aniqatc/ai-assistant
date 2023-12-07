@@ -5,15 +5,18 @@ import 'prismjs/components/prism-typescript';
 import 'prismjs/components/prism-sass';
 
 const typingTimeouts = new Map();
+const cursor = ' ●';
 
 function myCodeTypewriter(el, content, lang = 'txt') {
 	let i = 0;
 
 	function typeChar() {
 		if (i < content.length) {
-			el.textContent += content.charAt(i);
+			el.textContent = content.substring(0, i + 1) + cursor;
 			i++;
 			setTimeout(typeChar, 30);
+		} else {
+			el.textContent = content;
 		}
 		el.innerHTML = Prism.highlight(el.textContent, Prism.languages[lang]);
 	}
@@ -26,10 +29,11 @@ function myTextTypewriter(el, content) {
 
 	function typeChar() {
 		if (i < content.length) {
-			el.textContent += content.charAt(i);
+			el.textContent = content.substring(0, i + 1) + cursor;
 			i++;
 			typingTimeouts.set(el, setTimeout(typeChar, 50));
 		} else {
+			el.textContent = content;
 			typingTimeouts.delete(el);
 		}
 	}
