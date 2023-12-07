@@ -1318,16 +1318,15 @@ body {
 }
 
 /**
- * okaidia theme for JavaScript, CSS and HTML
- * Loosely based on Monokai textmate theme by http://www.monokai.nl/
- * @author ocodia
+ * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/tshedor/workshop-wp-theme (Example: http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics);
+ * @author Tim  Shedor
  */
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: #f8f8f2;
+	color: black;
 	background: none;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	font-size: 1em;
 	text-align: left;
@@ -1347,87 +1346,134 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
+	position: relative;
 	margin: .5em 0;
-	overflow: auto;
-	border-radius: 0.3em;
+	overflow: visible;
+	padding: 1px;
 }
 
+pre[class*="language-"] > code {
+	position: relative;
+	z-index: 1;
+	border-left: 10px solid #358ccb;
+	box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+	background-color: #fdfdfd;
+	background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-size: 3em 3em;
+	background-origin: content-box;
+	background-attachment: local;
+}
+
+code[class*="language-"] {
+	max-height: inherit;
+	height: inherit;
+	padding: 0 1em;
+	display: block;
+	overflow: auto;
+}
+
+/* Margin bottom to accommodate shadow */
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: #272822;
+	background-color: #fdfdfd;
+	box-sizing: border-box;
+	margin-bottom: 1em;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
+	position: relative;
+	padding: .2em;
+	border-radius: 0.3em;
+	color: #c92c2c;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	display: inline;
 	white-space: normal;
 }
 
+pre[class*="language-"]:before,
+pre[class*="language-"]:after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0.75em;
+	left: 0.18em;
+	width: 40%;
+	height: 20%;
+	max-height: 13em;
+	box-shadow: 0px 13px 8px #979797;
+	transform: rotate(-2deg);
+}
+
+pre[class*="language-"]:after {
+	right: 0.75em;
+	left: auto;
+	transform: rotate(2deg);
+}
+
 .token.comment,
+.token.block-comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #8292a2;
+	color: #7D8B99;
 }
 
 .token.punctuation {
-	color: #f8f8f2;
-}
-
-.token.namespace {
-	opacity: .7;
+	color: #5F6364;
 }
 
 .token.property,
 .token.tag,
+.token.boolean,
+.token.number,
+.token.function-name,
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #f92672;
-}
-
-.token.boolean,
-.token.number {
-	color: #ae81ff;
+	color: #c92c2c;
 }
 
 .token.selector,
 .token.attr-name,
 .token.string,
 .token.char,
+.token.function,
 .token.builtin,
 .token.inserted {
-	color: #a6e22e;
+	color: #2f9c0a;
 }
 
 .token.operator,
 .token.entity,
 .token.url,
-.language-css .token.string,
-.style .token.string,
 .token.variable {
-	color: #f8f8f2;
+	color: #a67f59;
+	background: rgba(255, 255, 255, 0.5);
 }
 
 .token.atrule,
 .token.attr-value,
-.token.function,
+.token.keyword,
 .token.class-name {
-	color: #e6db74;
-}
-
-.token.keyword {
-	color: #66d9ef;
+	color: #1990b8;
 }
 
 .token.regex,
 .token.important {
-	color: #fd971f;
+	color: #e90;
 }
 
-.token.important,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.token.important {
+	font-weight: normal;
+}
+
 .token.bold {
 	font-weight: bold;
 }
@@ -1439,12 +1485,54 @@ pre[class*="language-"] {
 	cursor: help;
 }
 
+.token.namespace {
+	opacity: .7;
+}
+
+@media screen and (max-width: 767px) {
+	pre[class*="language-"]:before,
+	pre[class*="language-"]:after {
+		bottom: 14px;
+		box-shadow: none;
+	}
+
+}
+
+/* Plugin styles: Line Numbers */
+pre[class*="language-"].line-numbers.line-numbers {
+	padding-left: 0;
+}
+
+pre[class*="language-"].line-numbers.line-numbers code {
+	padding-left: 3.8em;
+}
+
+pre[class*="language-"].line-numbers.line-numbers .line-numbers-rows {
+	left: 0;
+}
+
+/* Plugin styles: Line Highlight */
+pre[class*="language-"][data-line] {
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-left: 0;
+}
+pre[data-line] code {
+	position: relative;
+	padding-left: 4em;
+}
+pre .line-highlight {
+	margin-top: 0;
+}
+
+/* Prism syntax highlighting style overrides for 'coy' */
+
 code[class*='language-'],
 pre[class*='language-'] {
 	word-break: break-word;
 	border-radius: 0px;
 	font-size: 12px;
-	font-family: 'Source Code Pro';
+	font-family: 'Source Code Pro', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'monospace';
 }
 
 pre[class*='language-'] > code {
@@ -1460,7 +1548,140 @@ pre[class*='language-']:after {
 	display: none;
 }
 
-.dark pre[class*='language-'] > code {
-	background: none;
+/* Font, background colors and padding have been adjusted for https://code.aniqa.dev */
+
+/*
+ * Laserwave Theme originally by Jared Jones for Visual Studio Code
+ * https://github.com/Jaredk3nt/laserwave
+ *
+ * Ported for PrismJS by Simon Jespersen [https://github.com/simjes]
+ */
+
+.dark code[class*='language-'],
+.dark pre[class*='language-'] {
+	background: #27212e;
+	color: #ffffff;
+	font-family: 'Source Code Pro', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'monospace';
+	/* The following properties are standard, please leave them as they are */
+	font-size: 12px;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	line-height: 1.5;
+	-moz-tab-size: 2;
+	-o-tab-size: 2;
+	tab-size: 2;
+	/* The following properties are also standard */
+	-webkit-hyphens: none;
+	hyphens: none;
+}
+
+.dark code[class*='language-']::-moz-selection,
+.dark code[class*='language-'] ::-moz-selection,
+.dark pre[class*='language-']::-moz-selection,
+.dark pre[class*='language-'] ::-moz-selection {
+	background: #eb64b927;
+	color: inherit;
+}
+
+.dark code[class*='language-']::-moz-selection, .dark code[class*='language-'] ::-moz-selection, .dark pre[class*='language-']::-moz-selection, .dark pre[class*='language-'] ::-moz-selection {
+	background: #eb64b927;
+	color: inherit;
+}
+
+.dark code[class*='language-']::selection,
+.dark code[class*='language-'] ::selection,
+.dark pre[class*='language-']::selection,
+.dark pre[class*='language-'] ::selection {
+	background: #eb64b927;
+	color: inherit;
+}
+
+/* Properties specific to code blocks */
+.dark pre[class*='language-'] {
+	overflow: auto; /* this is standard */
+}
+
+/* Properties specific to inline code */
+.dark :not(pre) > code[class*='language-'] {
+	padding: 0.2em 0.3em;
+	border-radius: 0.5rem;
+	white-space: normal; /* this is standard */
+}
+
+.dark .token.comment,
+.dark .token.prolog,
+.dark .token.cdata {
+	color: #91889b;
+}
+
+.dark .token.punctuation {
+	color: #7b6995;
+}
+
+.dark .token.builtin,
+.dark .token.constant,
+..dark token.boolean {
+	color: #ffe261;
+}
+
+.dark .token.number {
+	color: #b381c5;
+}
+
+.dark .token.important,
+.dark .token.atrule,
+.dark .token.property,
+.dark .token.keyword {
+	color: #40b4c4;
+}
+
+.dark .token.doctype,
+.dark .token.operator,
+.dark .token.inserted,
+.dark .token.tag,
+.dark .token.class-name,
+.dark .token.symbol {
+	color: #74dfc4;
+}
+
+.dark .token.attr-name,
+.dark .token.function,
+.dark .token.deleted,
+.dark .token.selector {
+	/* color: #eb64b9; -- original theme color for 'laserwave' */
+	color: #ba8be5;
+}
+
+.dark .token.attr-value,
+.dark .token.regex,
+.dark .token.char,
+.dark .token.string {
+	color: #b4dce7;
+}
+
+.dark .token.entity,
+.dark .token.url,
+.dark .token.variable {
+	color: #ffffff;
+}
+
+/* The following rules are pretty similar across themes, but feel free to adjust them */
+.dark .token.bold {
+	font-weight: bold;
+}
+
+.dark .token.italic {
+	font-style: italic;
+}
+
+.dark .token.entity {
+	cursor: help;
+}
+
+.dark .token.namespace {
+	opacity: 0.7;
 }
 
