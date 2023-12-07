@@ -1,5 +1,5 @@
-import typeDefaultMessages from './defaultMessages';
-import { triggerSlideInAnimation } from './messageAnimation';
+import typeDefaultMessages from '../utils/defaultMessages';
+import { triggerSlideInAnimation } from '../utils/messageAnimation';
 
 const storedOptionType = localStorage.getItem('optionType');
 const radioButtons = document.querySelectorAll('input[name="options"]');
@@ -14,9 +14,12 @@ radioButtons.forEach(radio => {
 	});
 });
 
-if (storedOptionType) {
-	const storedEl = document.querySelector(`#radio-${storedOptionType}`);
-	storedEl.checked = true;
+function applySavedOption() {
+	if (storedOptionType) {
+		const storedEl = document.querySelector(`#radio-${storedOptionType}`);
+		storedEl.checked = true;
+		typeDefaultMessages(storedOptionType);
+	}
 }
 
-typeDefaultMessages(storedOptionType);
+export { applySavedOption };

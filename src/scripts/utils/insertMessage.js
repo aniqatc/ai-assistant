@@ -5,13 +5,12 @@ function insertMessage(elementType, content, lang) {
 	const el = document.createElement(elementType);
 	chatContainer.appendChild(el);
 
-	if (lang) {
-		myCodeTypewriter(el, content, lang);
-	} else {
-		myTextTypewriter(el, content);
-	}
-
+	lang ? myCodeTypewriter(el, content, lang) : myTextTypewriter(el, content);
 	el.classList.add('js-message', 'js-response', 'animate-slide-in', 'animation-delay-300', 'py-1');
+
+	setInterval(() => {
+		chatContainer.lastElementChild.scrollIntoView({ behavior: 'smooth' });
+	}, 1000);
 }
 
 export { insertMessage };

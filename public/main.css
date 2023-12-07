@@ -1543,13 +1543,14 @@ code,
 pre,
 code[class*='language-'],
 pre[class*='language-'] {
+	white-space: pre-wrap;
 	word-break: break-word;
 	border-radius: 0px;
 	font-size: 12px;
 	font-family: 'Source Code Pro', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'monospace';
 	padding: 0.5rem;
 	background-color: #fcf7ff;
-	overflow: auto;
+	overflow: hidden;
 }
 
 pre > code,
@@ -1587,7 +1588,7 @@ pre[class*='language-']:after {
 	font-size: 12px;
 	direction: ltr;
 	text-align: left;
-	white-space: pre;
+	white-space: pre-wrap;
 	word-spacing: normal;
 	word-break: normal;
 	line-height: 1.5;
@@ -1622,14 +1623,14 @@ pre[class*='language-']:after {
 
 /* Properties specific to code blocks */
 .dark pre {
-	overflow: auto; /* this is standard */
+	overflow: hidden;
 }
 
 /* Properties specific to inline code */
 .dark :not(pre) > code {
 	padding: 0.2em 0.3em;
 	border-radius: 0.5rem;
-	white-space: normal; /* this is standard */
+	white-space: pre-wrap; /* this is standard */
 }
 
 .dark .token.comment,
