@@ -159,43 +159,34 @@
 				</header>
 				<div class="px-3 pt-3 p-2 space-y-1">
 					<div
-						id="workspace-chat"
-						class="bg-white h-[300px] border border-neutral-200 rounded-sm px-3 py-2 space-y-1 overflow-y-scroll dark:bg-neutral-700 dark:border-neutral-500">
+						id="js-chat"
+						class="bg-white h-[300px] border border-neutral-600 rounded-sm px-3 py-2 space-y-1 overflow-y-scroll dark:bg-neutral-700 dark:border-neutral-500">
 						<div
-							class="instruction animate-slide-in animation-delay-1000 bg-blue-100/75 text-neutral-600 px-3 py-2 flex dark:bg-blue-400/30 dark:text-slate-100">
+							class="js-message animate-slide-in animation-delay-700 bg-blue-100/75 text-neutral-600 px-3 py-2 flex dark:bg-blue-400/30 dark:text-slate-100">
 							<span
 								class="shrink-0 mr-2 rounded-full bg-indigo-700 text-indigo-50 w-6 h-6 flex items-center justify-center text-sm dark:bg-blue-800"
 								><i class="fa-regular fa-thumbs-up"></i
 							></span>
 							<p
 								class="xs:text-base text-sm"
-								id="js-instructions-dos"></p>
+								id="js-message--dos"></p>
 						</div>
 						<div
-							class="instruction animate-slide-in animation-delay-800 bg-red-100/75 text-neutral-600 px-3 py-2 flex dark:bg-red-400/40 dark:text-slate-100">
+							class="js-message animate-slide-in animation-delay-500 bg-red-100/75 text-neutral-600 px-3 py-2 flex dark:bg-red-400/40 dark:text-slate-100">
 							<span
 								class="shrink-0 mr-2 rounded-full bg-red-700 text-red-50 w-6 h-6 flex items-center justify-center text-sm dark:bg-red-900"
 								><i class="fa-regular fa-thumbs-down"></i
 							></span>
 							<p
 								class="xs:text-base text-sm"
-								id="js-instructions-donts"></p>
+								id="js-message--donts"></p>
 						</div>
-						<div class="py-2 instruction animate-slide-in animation-delay-600">
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi ea vel delectus
-							reprehenderit quisquam quod magni iste:
-						</div>
-						<pre
-							class="instruction animate-slide-in animation-delay-400"
-							id="code"></pre>
-						<pre
-							class="instruction animate-slide-in animation-delay-200"
-							id="test"></pre>
 					</div>
 					<form
 						class="relative bg-white h-[100px] border border-neutral-200 rounded-sm space-y-2 dark:border-neutral-500">
 						<textarea
 							class="w-full h-full p-2 text-sm resize-none rounded-none focus:outline-violet-800/75 dark:bg-neutral-700"
+							maxlength="4000"
 							required></textarea>
 						<button
 							aria-label="submit input to AI"

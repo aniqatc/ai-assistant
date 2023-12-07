@@ -1,6 +1,9 @@
+import 'prismjs';
+import 'prismjs/themes/prism-coy.css';
 import './styles/main.css';
 import './utils/theme';
 import './utils/typewriter';
-import 'prismjs';
-import 'prismjs/themes/prism-coy.css';
+import './utils/options';
+import './utils/highlight';
+import './utils/test';
 import './styles/prism.css';
