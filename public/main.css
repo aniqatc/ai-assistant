@@ -894,13 +894,18 @@ a {
 
 a:hover {
   --tw-text-opacity: 1;
-  color: rgb(109 40 217 / var(--tw-text-opacity));
+  color: rgb(124 58 237 / var(--tw-text-opacity));
   text-decoration-line: none;
+}
+
+:is(.dark a) {
+  --tw-text-opacity: 1;
+  color: rgb(221 214 254 / var(--tw-text-opacity));
 }
 
 :is(.dark a:hover) {
   --tw-text-opacity: 1;
-  color: rgb(196 181 253 / var(--tw-text-opacity));
+  color: rgb(167 139 250 / var(--tw-text-opacity));
 }
 
 /* TEXT GRADIENT */
@@ -1129,29 +1134,30 @@ a:hover {
   }
 }
 
-/* DYNAMIC ELEMENTS -- applies to commands from JSON file */
+/* DYNAMIC ELEMENTS -- applies to elements pulled from JSON file */
 .js-message--command {
+  border-width: 1px;
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  font-family: Source Code Pro, ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  font-size: 14px;
   --tw-text-opacity: 1;
   color: rgb(49 46 129 / var(--tw-text-opacity));
 }
 :is(.dark .js-message--command) {
-  background-color: rgb(30 27 75 / 0.8);
+  --tw-border-opacity: 1;
+  border-color: rgb(75 85 99 / var(--tw-border-opacity));
+  background-color: rgb(3 7 18 / 0.2);
   --tw-text-opacity: 1;
   color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 
 .js-message--command p {
   margin-bottom: 0.25rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .js-message--command ul > :not([hidden]) ~ :not([hidden]) {
@@ -1160,19 +1166,17 @@ a:hover {
   margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
 
-.js-message--command ul {
-  font-size: 12px;
-}
-
-.js-message--command li {
-  padding-left: 0.75rem;
+.js-message--command li:not(:has(a)) {
+  font-family: Source Code Pro, ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .js-message--command span {
   display: block;
-  font-weight: 500;
+  padding-left: 0.5rem;
   --tw-text-opacity: 1;
-  color: rgb(225 29 72 / var(--tw-text-opacity));
+  color: rgb(190 18 60 / var(--tw-text-opacity));
 }
 
 :is(.dark .js-message--command span) {
@@ -1182,7 +1186,7 @@ a:hover {
 
 .js-message--command li span {
   display: inline;
-  padding-left: 0.5rem;
+  padding-left: 1rem;
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(124 58 237 / var(--tw-text-opacity));

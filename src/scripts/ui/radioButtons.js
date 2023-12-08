@@ -1,15 +1,18 @@
 import { typeDefaultMessages } from '../chat/defaultMessages';
 import { triggerSlideInAnimation } from '../chat/messageAnimation';
 import { autoScrollToBottom } from '../chat/chatScroll';
+import { printBottomToolbarMessage } from './bottomToolbar';
 
 const storedOptionType = localStorage.getItem('optionType');
 const radioFieldset = document.querySelector('#js-radio-fieldset');
 
 radioFieldset.addEventListener('change', event => {
 	const option = event.target.value;
+
 	triggerSlideInAnimation('.js-message');
 	typeDefaultMessages(option);
 	autoScrollToBottom();
+	printBottomToolbarMessage(`Switched to ${option} chat...`);
 
 	localStorage.setItem('optionType', option);
 });

@@ -8,7 +8,7 @@ body {
 }
 
 a {
-	@apply underline underline-offset-2 hover:text-violet-700 dark:hover:text-violet-300 hover:no-underline transition-all ease-in duration-150;
+	@apply underline underline-offset-2  hover:text-violet-600 dark:text-violet-200 dark:hover:text-violet-400 hover:no-underline transition-all ease-in duration-150;
 }
 
 /* TEXT GRADIENT */
@@ -34,27 +34,27 @@ a {
 	@apply py-1 px-3 xs:text-base text-sm border border-solid border-indigo-300 rounded-sm shadow transition-all ease-out duration-300 hover:border-violet-800 hover:ring hover:ring-indigo-700/50 hover:text-violet-600 active:scale-95 active:bg-indigo-700 active:text-violet-50 active:duration-200 dark:bg-zinc-800 dark:border-gray-600  dark:hover:border-violet-400 dark:hover:text-violet-300 dark:active:bg-indigo-700 dark:active:text-indigo-50;
 }
 
-/* DYNAMIC ELEMENTS -- applies to commands from JSON file */
+/* DYNAMIC ELEMENTS -- applies to elements pulled from JSON file */
 .js-message--command {
-	@apply font-mono text-sm bg-gray-100 text-indigo-900 px-3 py-2 dark:bg-indigo-950/80 dark:text-gray-100;
+	@apply text-[14px] bg-gray-100 text-indigo-900 px-3 py-2 dark:bg-gray-950/20 dark:text-gray-100 border dark:border-gray-600;
 }
 
 .js-message--command p {
-	@apply mb-1 font-semibold;
+	@apply mb-1 font-medium;
 }
 
 .js-message--command ul {
-	@apply space-y-1 text-[12px];
+	@apply space-y-1;
 }
 
-.js-message--command li {
-	@apply pl-3;
+.js-message--command li:not(:has(a)) {
+	@apply font-mono text-xs;
 }
 
 .js-message--command span {
-	@apply font-medium text-rose-600 dark:text-red-300 block;
+	@apply pl-2 block text-rose-700 dark:text-red-300;
 }
 
 .js-message--command li span {
-	@apply text-violet-600 dark:text-violet-300 pl-2 font-medium inline;
+	@apply pl-4 font-medium inline text-violet-600 dark:text-violet-300;
 }

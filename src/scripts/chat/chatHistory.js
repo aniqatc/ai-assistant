@@ -23,14 +23,12 @@ function saveChatHistory() {
 function getChatHistory() {
 	const storedMessages = JSON.parse(localStorage.getItem('chatHistory'));
 
-	if (storedMessages.length > 0) {
+	if (storedMessages && storedMessages.length > 0) {
 		printBottomToolbarMessage('Chat retrieved from last session...');
 
 		storedMessages.forEach(message => {
 			handleStoredMessage(message);
 		});
-	} else {
-		printBottomToolbarMessage('New chat created...');
 	}
 }
 

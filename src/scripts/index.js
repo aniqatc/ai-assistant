@@ -11,7 +11,7 @@ import { applySavedTheme } from './ui/theme';
 import { applyRadioOption } from './ui/radioButtons';
 import { getChatHistory } from './chat/chatHistory';
 import { typeDefaultMessages } from './chat/defaultMessages';
-import './ui/bottomToolbar';
+import { printBottomToolbarMessage } from './ui/bottomToolbar';
 import './ui/topToolbar';
 import './chat/insertMessage';
 import './chat/chatScroll';
@@ -21,5 +21,6 @@ import './chat/chatCommands';
 // Initialize
 applySavedTheme();
 typeDefaultMessages();
+printBottomToolbarMessage('New chat created...');
 getChatHistory();
 applyRadioOption();
