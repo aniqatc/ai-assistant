@@ -34,7 +34,7 @@ html {
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
      tab-size: 4; /* 3 */
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif; /* 4 */
+  font-family: Noto Sans, system-ui, -apple-system, BlinkMacSystemFont, sans-serif; /* 4 */
   font-feature-settings: normal; /* 5 */
   font-variation-settings: normal; /* 6 */
 }
@@ -869,13 +869,13 @@ video {
   animation-delay: 700ms;
 }
 
+/* GENERAL */
 body {
   --tw-bg-opacity: 1;
   background-color: rgb(237 233 254 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(2 6 23 / var(--tw-text-opacity));
 }
-
 :is(.dark body) {
   --tw-bg-opacity: 1;
   background-color: rgb(24 24 27 / var(--tw-bg-opacity));
@@ -903,6 +903,7 @@ a:hover {
   color: rgb(196 181 253 / var(--tw-text-opacity));
 }
 
+/* TEXT GRADIENT */
 .text-gradient {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
   --tw-gradient-from: #1e40af var(--tw-gradient-from-position);
@@ -915,7 +916,6 @@ a:hover {
           background-clip: text;
   color: transparent;
 }
-
 :is(.dark .text-gradient) {
   --tw-gradient-from: #3b82f6 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(59 130 246 / 0) var(--tw-gradient-to-position);
@@ -925,6 +925,7 @@ a:hover {
   --tw-gradient-to: #818cf8 var(--tw-gradient-to-position);
 }
 
+/* RADIO BUTTONS */
 .option-label {
   position: relative;
   display: flex;
@@ -953,12 +954,10 @@ a:hover {
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
-
 .option-label:hover {
   --tw-border-opacity: 1;
   border-color: rgb(91 33 182 / var(--tw-border-opacity));
 }
-
 .peer:checked ~ .option-label {
   --tw-border-opacity: 1;
   border-color: rgb(91 33 182 / var(--tw-border-opacity));
@@ -971,7 +970,6 @@ a:hover {
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-color: rgb(109 40 217 / 0.5);
 }
-
 :is(.dark .option-label) {
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -981,19 +979,16 @@ a:hover {
   --tw-text-opacity: 1;
   color: rgb(212 212 216 / var(--tw-text-opacity));
 }
-
 :is(.dark .option-label:hover) {
   --tw-border-opacity: 1;
   border-color: rgb(167 139 250 / var(--tw-border-opacity));
 }
-
 :is(.dark .peer:checked ~ .option-label) {
   --tw-bg-opacity: 1;
   background-color: rgb(30 27 75 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(196 181 253 / var(--tw-text-opacity));
 }
-
 @media (min-width: 465px) {
 
   .option-label {
@@ -1001,7 +996,6 @@ a:hover {
     width: 100px;
   }
 }
-
 @media (min-width: 640px) {
 
   .option-label {
@@ -1068,6 +1062,7 @@ a:hover {
   color: rgb(49 46 129 / var(--tw-text-opacity));
 }
 
+/* WORKSPACE BUTTONS */
 .workspace-button {
   border-radius: 0.125rem;
   border-width: 1px;
@@ -1088,7 +1083,6 @@ a:hover {
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
-
 .workspace-button:hover {
   --tw-border-opacity: 1;
   border-color: rgb(91 33 182 / var(--tw-border-opacity));
@@ -1099,7 +1093,6 @@ a:hover {
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-color: rgb(67 56 202 / 0.5);
 }
-
 .workspace-button:active {
   --tw-scale-x: .95;
   --tw-scale-y: .95;
@@ -1110,28 +1103,24 @@ a:hover {
   color: rgb(245 243 255 / var(--tw-text-opacity));
   transition-duration: 200ms;
 }
-
 :is(.dark .workspace-button) {
   --tw-border-opacity: 1;
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(39 39 42 / var(--tw-bg-opacity));
 }
-
 :is(.dark .workspace-button:hover) {
   --tw-border-opacity: 1;
   border-color: rgb(167 139 250 / var(--tw-border-opacity));
   --tw-text-opacity: 1;
   color: rgb(196 181 253 / var(--tw-text-opacity));
 }
-
 :is(.dark .workspace-button:active) {
   --tw-bg-opacity: 1;
   background-color: rgb(67 56 202 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(238 242 255 / var(--tw-text-opacity));
 }
-
 @media (min-width: 465px) {
 
   .workspace-button {
@@ -1140,7 +1129,7 @@ a:hover {
   }
 }
 
-/* dynamic elements */
+/* DYNAMIC ELEMENTS -- applies to commands from JSON file */
 .js-message--command {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -1160,17 +1149,23 @@ a:hover {
   color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 
-.js-message--command li span {
-  display: inline;
-  padding-left: 0.5rem;
-  font-weight: 500;
-  --tw-text-opacity: 1;
-  color: rgb(124 58 237 / var(--tw-text-opacity));
+.js-message--command p {
+  margin-bottom: 0.25rem;
+  font-weight: 600;
 }
 
-:is(.dark .js-message--command li span) {
-  --tw-text-opacity: 1;
-  color: rgb(196 181 253 / var(--tw-text-opacity));
+.js-message--command ul > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+}
+
+.js-message--command ul {
+  font-size: 12px;
+}
+
+.js-message--command li {
+  padding-left: 0.75rem;
 }
 
 .js-message--command span {
@@ -1185,23 +1180,17 @@ a:hover {
   color: rgb(252 165 165 / var(--tw-text-opacity));
 }
 
-.js-message--command li {
-  padding-left: 0.75rem;
+.js-message--command li span {
+  display: inline;
+  padding-left: 0.5rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(124 58 237 / var(--tw-text-opacity));
 }
 
-.js-message--command ul > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
-}
-
-.js-message--command ul {
-  font-size: 12px;
-}
-
-.js-message--command p {
-  margin-bottom: 0.25rem;
-  font-weight: 600;
+:is(.dark .js-message--command li span) {
+  --tw-text-opacity: 1;
+  color: rgb(196 181 253 / var(--tw-text-opacity));
 }
 
 .hover\:h-14:hover {
