@@ -40,7 +40,7 @@ a {
 }
 
 .js-message--command p {
-	@apply mb-1 font-medium;
+	@apply mb-1 font-medium dark:text-indigo-200;
 }
 
 .js-message--command ul {
@@ -57,4 +57,8 @@ a {
 
 .js-message--command li span {
 	@apply pl-4 font-medium inline text-violet-600 dark:text-violet-300;
+}
+
+.js-message--command pre span {
+	@apply inline p-0;
 }

@@ -1164,6 +1164,11 @@ a:hover {
   font-weight: 500;
 }
 
+:is(.dark .js-message--command p) {
+  --tw-text-opacity: 1;
+  color: rgb(199 210 254 / var(--tw-text-opacity));
+}
+
 .js-message--command ul > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1199,6 +1204,11 @@ a:hover {
 :is(.dark .js-message--command li span) {
   --tw-text-opacity: 1;
   color: rgb(196 181 253 / var(--tw-text-opacity));
+}
+
+.js-message--command pre span {
+  display: inline;
+  padding: 0px;
 }
 
 .hover\:h-14:hover {
