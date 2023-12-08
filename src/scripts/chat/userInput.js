@@ -18,11 +18,14 @@ const messageEl = document.querySelector('#js-toolbar-message');
 
 form.addEventListener('submit', event => {
 	event.preventDefault();
+	// print user message
 	insertMessage('div', userInput.value, null, 'user');
 
 	if (commandsArray.includes(userInput.value)) {
+		// handle any command related responses
 		commandHandler(userInput.value);
 	} else {
+		// handle ai response
 		randomMessage();
 	}
 

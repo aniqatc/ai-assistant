@@ -1,18 +1,12 @@
 import { insertMessage } from './insertMessage';
 import { insertCommandMessage } from './chatCommands';
 
+let msgType;
+
 function saveChatHistory() {
 	const printedMessages = document.querySelectorAll('.js-message--chat');
 	const messagesArray = Array.from(printedMessages).map(message => {
-		let msgType;
-		if (Object.values(message.classList).includes('js-message--user')) {
-			msgType = 'user';
-		} else if (Object.values(message.classList).includes('js-message--command')) {
-			msgType = 'command';
-		} else {
-			msgType = 'ai';
-		}
-
+		setMsgType(message);
 		return {
 			el: message.innerHTML,
 			elementType: message.tagName.toLowerCase(),
@@ -21,15 +15,14 @@ function saveChatHistory() {
 			msgType,
 		};
 	});
-
 	localStorage.setItem('chatHistory', JSON.stringify(messagesArray));
 }
 
 function getChatHistory() {
 	const storedMessages = localStorage.getItem('chatHistory');
-
 	if (storedMessages) {
 		const messagesArray = JSON.parse(storedMessages);
+
 		messagesArray.forEach(message => {
 			if (message.msgType === 'command') {
 				insertCommandMessage(message);
@@ -37,6 +30,18 @@ function getChatHistory() {
 				insertMessage(message.elementType, message.content, message.lang, message.msgType);
 			}
 		});
+	}
+}
+
+// Helpers
+
+function setMsgType(message) {
+	if (Object.values(message.classList).includes('js-message--user')) {
+		return (msgType = 'user');
+	} else if (Object.values(message.classList).includes('js-message--command')) {
+		return (msgType = 'command');
+	} else {
+		return (msgType = 'ai');
 	}
 }
 

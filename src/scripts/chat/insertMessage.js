@@ -4,6 +4,13 @@ import { userStyles } from './userInput';
 import { autoScrollToBottom } from './chatScroll';
 
 const chatContainer = document.querySelector('#js-chat');
+const aiStyles = [
+	'js-message--chat',
+	'js-message',
+	'animate-slide-in',
+	'animation-delay-300',
+	'py-1',
+];
 
 function insertMessage(elementType, content, lang, msgType = 'ai') {
 	const el = document.createElement(elementType);
@@ -19,14 +26,14 @@ function insertMessage(elementType, content, lang, msgType = 'ai') {
 		myTextTypewriter(el, content);
 	}
 
+	addMessageStyles(el, msgType);
+}
+
+// Helper
+
+function addMessageStyles(el, msgType) {
 	if (msgType === 'ai') {
-		el.classList.add(
-			'js-message--chat',
-			'js-message',
-			'animate-slide-in',
-			'animation-delay-300',
-			'py-1'
-		);
+		el.classList.add(...aiStyles);
 	} else if (msgType === 'user') {
 		el.classList.add(...userStyles);
 	} else if (msgType === 'command') {

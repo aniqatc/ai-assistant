@@ -6,7 +6,6 @@ const messageDontsEl = document.querySelector('#js-message--donts');
 
 function typeDefaultMessages(option = 'explain') {
 	clearInstructions();
-
 	myTextTypewriter(messageDosEl, defaultMessages[option].do);
 	myTextTypewriter(messageDontsEl, defaultMessages[option].dont);
 }

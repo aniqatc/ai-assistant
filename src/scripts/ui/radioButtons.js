@@ -19,8 +19,6 @@ function applyRadioOption() {
 		const storedEl = document.querySelector(`#js-radio-${storedOptionType}`);
 		storedEl.checked = true;
 		typeDefaultMessages(storedOptionType);
-	} else {
-		typeDefaultMessages('explain');
 	}
 }
 

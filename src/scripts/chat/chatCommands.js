@@ -13,7 +13,6 @@ function commandHandler(userInput) {
 	if (document.getElementById(`js-radio-${userInput}`)) {
 		document.getElementById(`js-radio-${userInput}`).click();
 	}
-
 	insertCommandMessage('', userInput);
 }
 
