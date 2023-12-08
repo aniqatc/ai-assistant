@@ -14,7 +14,11 @@ function clearScrollInterval() {
 function autoScrollToBottom() {
 	clearScrollInterval();
 	scrollingInterval = setInterval(() => {
-		chatContainer.lastElementChild.scrollIntoView({ behavior: 'smooth' });
+		chatContainer.lastElementChild.scrollIntoView({
+			behavior: 'smooth',
+			block: 'nearest',
+			inline: 'end',
+		});
 	}, 1000);
 }
 
