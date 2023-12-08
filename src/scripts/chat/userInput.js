@@ -23,7 +23,7 @@ form.addEventListener('submit', event => {
 	insertMessage('div', userInput.value, null, 'user');
 
 	// handle where to get response from...
-	let currentInputValue = userInput.value.toLowerCase();
+	let currentInputValue = userInput.value.toLowerCase().trim();
 	if (commandsArray.includes(currentInputValue)) {
 		// handle any command related responses
 		commandHandler(currentInputValue);
