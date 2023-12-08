@@ -1,4 +1,5 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -42,5 +43,6 @@ module.exports = {
 			},
 		}),
 		new MiniCssExtractPlugin(),
+		new Dotenv(),
 	],
 };

@@ -24,3 +24,6 @@ typeDefaultMessages();
 printBottomToolbarMessage('New chat created...');
 getChatHistory();
 applyRadioOption();
+
+// const apiKey = process.env.API_KEY;
+// console.log(apiKey);
