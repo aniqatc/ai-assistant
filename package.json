@@ -4,8 +4,8 @@
 	"description": "🤖 Your personal AI coding assistant",
 	"private": true,
 	"scripts": {
-		"build": "webpack --mode production",
-		"start": "webpack serve --open --mode development"
+		"build": "NODE_ENV=production webpack --mode production",
+		"start": "NODE_ENV=development webpack serve --open --mode development"
 	},
 	"repository": {
 		"type": "git",
@@ -27,6 +27,7 @@
 	"homepage": "https://code.aniqa.dev",
 	"devDependencies": {
 		"css-loader": "^6.8.1",
+		"dotenv-webpack": "^8.0.1",
 		"html-webpack-plugin": "^5.5.3",
 		"mini-css-extract-plugin": "^2.7.6",
 		"postcss": "^8.4.32",
