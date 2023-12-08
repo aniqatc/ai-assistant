@@ -6,8 +6,8 @@ const messageEl = document.querySelector('#js-toolbar-message');
 
 form.addEventListener('submit', event => {
 	event.preventDefault();
-	insertMessage('div', userInput.value, null, 'user');
-	setTimeout(randomMessage, 1000);
+	insertMessage('div', userInput.value, null, 'user', true);
+	randomMessage();
 
 	userInput.value = '';
 	messageEl.textContent = '';
@@ -21,7 +21,7 @@ function randomMessage() {
 		() => insertMessage('pre', exampleHTML, 'html'),
 		() => insertMessage('pre', exampleJS, 'js'),
 		() => insertMessage('pre', examplePython, 'python'),
-		() => insertMessage('div', 'Hello, testing some written text here...'),
+		() => insertMessage('div', 'Hello World :)..'),
 	];
 	messages[Math.floor(Math.random() * messages.length)]();
 }

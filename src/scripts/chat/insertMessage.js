@@ -10,6 +10,8 @@ function insertMessage(elementType, content, lang, msgType = 'ai') {
 	if (lang) {
 		el.setAttribute('data-lang', lang);
 		myCodeTypewriter(el, content, lang);
+	} else if (msgType === 'user') {
+		el.textContent = content; // user content should display immediately & skip typewriting
 	} else {
 		myTextTypewriter(el, content);
 	}
