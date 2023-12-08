@@ -1,4 +1,5 @@
 import { saveChatHistory, clearChatHistory } from '../chat/chatHistory';
+import { myTextTypewriter } from '../chat/typewriter';
 
 const copyButton = document.querySelector('#js-copy-btn');
 const saveButton = document.querySelector('#js-save-btn');
@@ -10,7 +11,8 @@ const chatInput = document.querySelector('textarea');
 function displayTemporaryMessage(el, buttonText, message) {
 	const originalText = el.innerHTML;
 	el.textContent = '✔︎ ' + buttonText;
-	messageEl.textContent = message;
+	myTextTypewriter(messageEl, message);
+
 	setTimeout(() => {
 		el.innerHTML = originalText;
 	}, 600);
@@ -21,11 +23,13 @@ clearButton.addEventListener('click', () => {
 	messages.forEach(el => el.remove());
 	clearChatHistory();
 	chatInput.value = '';
+
 	displayTemporaryMessage(clearButton, 'Cleared', 'Chat deleted from workspace...');
 });
 
 saveButton.addEventListener('click', () => {
 	saveChatHistory();
+
 	displayTemporaryMessage(saveButton, 'Saved', 'Chat saved to workspace...');
 });
 

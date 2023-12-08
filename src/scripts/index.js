@@ -11,7 +11,7 @@ import { getChatHistory } from './chat/chatHistory';
 import './chat/defaultMessages';
 import './chat/insertMessage';
 import './chat/chatScroll';
-import './chat/input';
+import './chat/userInput';
 import '../styles/main.css';
 import '../styles/prism.css';
 
