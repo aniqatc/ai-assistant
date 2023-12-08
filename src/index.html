@@ -42,7 +42,9 @@
 						<span class="text-gradient">AI coding assistant</span>
 					</h1>
 				</div>
-				<fieldset class="mx-2">
+				<fieldset
+					id="js-radio-fieldset"
+					class="mx-2">
 					<legend
 						class="text-gray-800 text-center md:w-[50ch] xs:w-[45ch] w-[35ch] xs:text-base text-sm dark:text-zinc-300">
 						Select a task you’d like assistance with and follow the provided instructions for
@@ -53,12 +55,12 @@
 							<input
 								class="appearance-none peer option-input"
 								type="radio"
-								id="radio-explain"
+								id="js-radio-explain"
 								name="options"
 								value="explain"
 								checked />
 							<label
-								for="radio-explain"
+								for="js-radio-explain"
 								class="option-label group">
 								<span class="option-radio scale-0 group-hover:scale-100">
 									<i class="fa-solid fa-check"></i>
@@ -71,11 +73,11 @@
 							<input
 								class="appearance-none peer option-input"
 								type="radio"
-								id="radio-refine"
+								id="js-radio-refine"
 								name="options"
 								value="refine" />
 							<label
-								for="radio-refine"
+								for="js-radio-refine"
 								class="option-label group">
 								<span class="option-radio scale-0 group-hover:scale-100">
 									<i class="fa-solid fa-check"></i>
@@ -90,11 +92,11 @@
 							<input
 								class="appearance-none peer option-input"
 								type="radio"
-								id="radio-debug"
+								id="js-radio-debug"
 								name="options"
 								value="debug" />
 							<label
-								for="radio-debug"
+								for="js-radio-debug"
 								class="option-label group">
 								<span class="option-radio scale-0 group-hover:scale-100">
 									<i class="fa-solid fa-check"></i>
@@ -107,11 +109,11 @@
 							<input
 								class="appearance-none peer option-input"
 								type="radio"
-								id="radio-convert"
+								id="js-radio-convert"
 								name="options"
 								value="convert" />
 							<label
-								for="radio-convert"
+								for="js-radio-convert"
 								class="option-label group">
 								<span class="option-radio scale-0 group-hover:scale-100">
 									<i class="fa-solid fa-check"></i>
@@ -142,13 +144,13 @@
 							<span>Copy</span>
 						</button>
 						<button
-							id="js-download-btn"
-							aria-label="download chat history"
+							id="js-save-btn"
+							aria-label="save chat history"
 							class="workspace-button group">
 							<span class="inline-block group-hover:animate-pulse"
-								><i class="fa-solid fa-download"></i
+								><i class="fa-solid fa-save"></i
 							></span>
-							<span>Download</span>
+							<span>Save</span>
 						</button>
 						<button
 							id="js-clear-btn"
@@ -193,7 +195,7 @@
 							id="js-user-input"
 							class="w-full h-full p-2 text-sm resize-none rounded-none focus:outline-violet-800/75 dark:bg-neutral-700"
 							maxlength="3000"
-							placeholder="Following the guidelines for the option you selected, enter your coding-related inquiries, code snippets, or specific questions here..."
+							placeholder="Enter your coding-related inquiries, code snippets, or specific questions here..."
 							required></textarea>
 						<button
 							id="js-user-submit"

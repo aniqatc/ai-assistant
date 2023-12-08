@@ -7,14 +7,7 @@ form.addEventListener('submit', event => {
 	event.preventDefault();
 	randomMessage();
 	userInput.value = '';
-	saveChatHistory();
 });
-
-function saveChatHistory() {
-	const printedMessages = document.querySelectorAll('.js-response');
-	localStorage.setItem('chatHistory', printedMessages);
-	console.log(printedMessages);
-}
 
 // temporary
 function randomMessage() {

@@ -3,23 +3,21 @@ import { triggerSlideInAnimation } from '../chat/messageAnimation';
 import { autoScrollToBottom, checkScrollInterval } from '../chat/chatScroll';
 
 const storedOptionType = localStorage.getItem('optionType');
-const radioButtons = document.querySelectorAll('input[name="options"]');
+const radioFieldset = document.querySelector('#js-radio-fieldset');
 
-radioButtons.forEach(radio => {
-	radio.addEventListener('click', event => {
-		const option = event.target.value;
-		localStorage.setItem('optionType', option);
+radioFieldset.addEventListener('change', event => {
+	const option = event.target.value;
+	triggerSlideInAnimation('.js-message');
+	typeDefaultMessages(option);
+	checkScrollInterval();
+	autoScrollToBottom();
 
-		triggerSlideInAnimation('.js-message');
-		typeDefaultMessages(option);
-		checkScrollInterval();
-		autoScrollToBottom();
-	});
+	localStorage.setItem('optionType', option);
 });
 
 function applyRadioOption() {
 	if (storedOptionType) {
-		const storedEl = document.querySelector(`#radio-${storedOptionType}`);
+		const storedEl = document.querySelector(`#js-radio-${storedOptionType}`);
 		storedEl.checked = true;
 		typeDefaultMessages(storedOptionType);
 	} else {

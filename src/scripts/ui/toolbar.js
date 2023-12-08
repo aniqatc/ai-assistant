@@ -1,19 +1,30 @@
+import { saveChatHistory, clearChatHistory } from '../chat/chatHistory';
+
 const copyButton = document.querySelector('#js-copy-btn');
-const downloadButton = document.querySelector('#js-download-btn');
+const saveButton = document.querySelector('#js-save-btn');
 const clearButton = document.querySelector('#js-clear-btn');
 const chatContainer = document.querySelector('#js-chat');
 const chatInput = document.querySelector('textarea');
 
+function displayTemporaryMessage(el, message) {
+	const originalText = el.innerHTML;
+	el.textContent = '✔︎ ' + message;
+	setTimeout(() => {
+		el.innerHTML = originalText;
+	}, 600);
+}
+
 clearButton.addEventListener('click', () => {
 	const messages = chatContainer.querySelectorAll('.js-response');
 	messages.forEach(el => el.remove());
+	clearChatHistory();
 	chatInput.value = '';
 	displayTemporaryMessage(clearButton, 'Cleared');
 });
 
-downloadButton.addEventListener('click', () => {
-	chatInput.value = 'Adding feature soon...';
-	displayTemporaryMessage(downloadButton, 'Coming Soon');
+saveButton.addEventListener('click', () => {
+	saveChatHistory();
+	displayTemporaryMessage(saveButton, 'Saved');
 });
 
 copyButton.addEventListener('click', () => {
@@ -26,11 +37,3 @@ copyButton.addEventListener('click', () => {
 			displayTemporaryMessage(copyButton, 'Copied');
 		});
 });
-
-function displayTemporaryMessage(el, message) {
-	const originalText = el.innerHTML;
-	el.textContent = '✔︎ ' + message;
-	setTimeout(() => {
-		el.innerHTML = originalText;
-	}, 600);
-}

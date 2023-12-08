@@ -7,6 +7,7 @@ import 'prismjs/components/prism-sass';
 import './ui/toolbar';
 import { applySavedTheme } from './ui/theme';
 import { applyRadioOption } from './ui/radioButtons';
+import { getChatHistory } from './chat/chatHistory';
 import './chat/defaultMessages';
 import './chat/insertMessage';
 import './chat/chatScroll';
@@ -17,3 +18,4 @@ import '../styles/prism.css';
 // Initialize
 applySavedTheme();
 applyRadioOption();
+getChatHistory();
