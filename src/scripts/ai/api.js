@@ -14,23 +14,31 @@ let context = `Please provide the entire response in a structured JSON format. E
 
 async function apiHandler(prompt) {
 	const startTime = Date.now();
-	printBottomToolbarMessage('Initiating request...');
-	prompt +=
-		' PLEASE remember to put ENTIRE response inside the JSON object - do not write anything outside the JSON object when you respond. Do not put the code block in the format of a JSON object - these are to be highlighted using prism.js syntax highlighting so please follow the guidelines I provided, thank you... ';
-	const apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${API_KEY}`;
+	try {
+		printBottomToolbarMessage('Initiating request...');
+		prompt +=
+			' PLEASE remember to put ENTIRE response inside the JSON object - do not write anything outside the JSON object when you respond. Do not put the code block in the format of a JSON object - these are to be highlighted using prism.js syntax highlighting so please follow the guidelines I provided, thank you... ';
+		const apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${API_KEY}`;
 
-	const response = await fetch(apiURL);
-	const data = await response.json();
-	const answer = JSON.parse(data.answer);
+		const response = await fetch(apiURL);
+		const data = await response.json();
+		const answer = JSON.parse(data.answer);
+		console.log(answer);
+		console.log(data);
 
-	for (let el in answer) {
-		if (answer[el].content.code) {
-			insertMessage(answer[el].element, answer[el].content.code, answer[el].content.language);
-		} else {
-			insertMessage(answer[el].element, answer[el].content, null);
+		for (let el in answer) {
+			if (answer[el].content.code) {
+				insertMessage(answer[el].element, answer[el].content.code, answer[el].content.language);
+			} else {
+				insertMessage(answer[el].element, answer[el].content, null);
+			}
 		}
+	} catch (error) {
+		console.log(error);
+		printBottomToolbarMessage(`Request error: ${error}...`);
+	} finally {
+		requestCompletionTime(startTime);
 	}
-	requestCompletionTime(startTime);
 }
 
 export { apiHandler };
