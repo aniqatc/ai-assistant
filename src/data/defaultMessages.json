@@ -1,7 +1,7 @@
 {
-	"refine": {
-		"do": "refine = instructions here...",
-		"dont": "refine = avoid"
+	"refactor": {
+		"do": "refactor = instructions here...",
+		"dont": "refactor = avoid"
 	},
 	"explain": {
 		"do": "explain = instructions here...",
