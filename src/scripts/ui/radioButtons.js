@@ -1,6 +1,6 @@
-import typeDefaultMessages from '../utils/defaultMessages';
-import { triggerSlideInAnimation } from '../utils/messageAnimation';
-import { autoScrollToBottom, checkScrollInterval } from '../utils/chatScroll';
+import typeDefaultMessages from '../chat/defaultMessages';
+import { triggerSlideInAnimation } from '../chat/messageAnimation';
+import { autoScrollToBottom, checkScrollInterval } from '../chat/chatScroll';
 
 const storedOptionType = localStorage.getItem('optionType');
 const radioButtons = document.querySelectorAll('input[name="options"]');
@@ -17,12 +17,14 @@ radioButtons.forEach(radio => {
 	});
 });
 
-function applySavedOption() {
+function applyRadioOption() {
 	if (storedOptionType) {
 		const storedEl = document.querySelector(`#radio-${storedOptionType}`);
 		storedEl.checked = true;
 		typeDefaultMessages(storedOptionType);
+	} else {
+		typeDefaultMessages('explain');
 	}
 }
 
-export { applySavedOption };
+export { applyRadioOption };
