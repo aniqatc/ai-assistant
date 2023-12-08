@@ -1,3 +1,5 @@
+import { printBottomToolbarMessage } from '../ui/bottomToolbar';
+
 const responseTime = document.querySelector('#js-response-time');
 const responseTimeLabel = document.querySelector('#js-response-time-label');
 
@@ -7,6 +9,7 @@ function requestCompletionTime(startTime) {
 	}
 
 	responseTime.textContent = `${(Date.now() - startTime) / 1000}s`;
+	printBottomToolbarMessage('Request completed...');
 }
 
 export { requestCompletionTime };
