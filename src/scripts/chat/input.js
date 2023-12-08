@@ -2,11 +2,14 @@ import { insertMessage } from './insertMessage';
 
 const userInput = document.querySelector('#js-user-input');
 const form = document.querySelector('#js-user-form');
+const messageEl = document.querySelector('#js-toolbar-message');
 
 form.addEventListener('submit', event => {
 	event.preventDefault();
 	randomMessage();
+
 	userInput.value = '';
+	messageEl.textContent = '';
 });
 
 // temporary
