@@ -5,6 +5,9 @@ const debug = ['Debug instructions', 'Debug avoid'];
 const convert = ['Convert instructions', 'Convert avoid'];
 const explain = ['Explain instructions', 'Explain avoid'];
 
+const messageDosEl = document.querySelector('#js-message--dos');
+const messageDontsEl = document.querySelector('#js-message--donts');
+
 export default function typeDefaultMessages(option = 'explain') {
 	clearInstructions();
 
@@ -34,15 +37,12 @@ export default function typeDefaultMessages(option = 'explain') {
 			break;
 	}
 
-	const messageDosEl = document.querySelector('#js-message--dos');
 	myTextTypewriter(messageDosEl, messageDos);
-
-	const messageDontsEl = document.querySelector('#js-message--donts');
 	myTextTypewriter(messageDontsEl, messageDonts);
 }
 
 function clearInstructions() {
-	const messageEl = document.querySelectorAll('.js-message p');
+	const messageEl = [messageDosEl, messageDontsEl];
 	messageEl.forEach(el => {
 		el.textContent = '';
 	});

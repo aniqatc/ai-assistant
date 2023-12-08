@@ -2,7 +2,6 @@ const chatContainer = document.querySelector('#js-chat');
 
 let scrollingInterval;
 let lastScrollTop = chatContainer.scrollTop;
-
 chatContainer.addEventListener('scroll', autoScrollCancel);
 
 function clearScrollInterval() {
@@ -30,4 +29,4 @@ function autoScrollCancel() {
 	lastScrollTop = currentScrollTop;
 }
 
-export { autoScrollToBottom, clearScrollInterval };
+export { autoScrollToBottom };

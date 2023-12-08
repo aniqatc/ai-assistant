@@ -167,23 +167,23 @@
 						id="js-chat"
 						class="bg-white h-[300px] border border-neutral-600 rounded-sm px-3 py-2 space-y-1 overflow-y-scroll break-words dark:bg-neutral-700 dark:border-neutral-500">
 						<div
-							class="js-message animate-slide-in animation-delay-700 bg-blue-100/75 text-neutral-600 px-3 py-2 flex dark:bg-blue-400/30 dark:text-slate-100">
+							class="js-message animate-slide-in animation-delay-700 bg-blue-100/75 text-neutral-600 px-3 py-2 flex items-center dark:bg-blue-400/30 dark:text-slate-100">
 							<span
 								class="shrink-0 mr-2 rounded-full bg-indigo-700 text-indigo-50 w-6 h-6 flex items-center justify-center text-sm dark:bg-blue-800"
 								><i class="fa-regular fa-thumbs-up"></i
 							></span>
 							<p
-								class="xs:text-base text-sm"
+								class="text-sm"
 								id="js-message--dos"></p>
 						</div>
 						<div
-							class="js-message animate-slide-in animation-delay-500 bg-red-100/75 text-neutral-600 px-3 py-2 flex dark:bg-red-400/40 dark:text-slate-100">
+							class="js-message animate-slide-in animation-delay-500 bg-red-100/75 text-neutral-600 px-3 py-2 flex items-center dark:bg-red-400/40 dark:text-slate-100">
 							<span
 								class="shrink-0 mr-2 rounded-full bg-red-700 text-red-50 w-6 h-6 flex items-center justify-center text-sm dark:bg-red-900"
 								><i class="fa-regular fa-thumbs-down"></i
 							></span>
 							<p
-								class="xs:text-base text-sm"
+								class="text-sm"
 								id="js-message--donts"></p>
 						</div>
 					</div>
@@ -194,7 +194,7 @@
 							id="js-user-input"
 							class="w-full h-full p-2 text-sm resize-none rounded-none focus:outline-violet-800/75 dark:bg-neutral-700"
 							maxlength="3000"
-							placeholder="Enter your coding-related inquiries, code snippets, or specific questions here..."
+							placeholder="Type 'help' or enter your coding-related inquiries, code snippets, or specific questions here"
 							required></textarea>
 						<button
 							id="js-user-submit"

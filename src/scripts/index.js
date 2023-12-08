@@ -1,3 +1,4 @@
+import '../styles/main.css';
 import 'prismjs';
 import 'prismjs/themes/prism-coy.css';
 import 'prismjs/components/prism-json';
@@ -12,7 +13,7 @@ import './chat/defaultMessages';
 import './chat/insertMessage';
 import './chat/chatScroll';
 import './chat/userInput';
-import '../styles/main.css';
+import './chat/chatCommands';
 import '../styles/prism.css';
 
 // Initialize

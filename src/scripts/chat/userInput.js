@@ -1,4 +1,16 @@
 import { insertMessage } from './insertMessage';
+import { commandsArray, commandHandler } from '../chat/chatCommands';
+
+export const userStyles = [
+	'js-message--chat',
+	'js-message',
+	'js-message--user',
+	'animate-slide-in',
+	'animation-delay-300',
+	'py-1',
+	'text-slate-500',
+	'dark:text-slate-300',
+];
 
 const userInput = document.querySelector('#js-user-input');
 const form = document.querySelector('#js-user-form');
@@ -6,8 +18,13 @@ const messageEl = document.querySelector('#js-toolbar-message');
 
 form.addEventListener('submit', event => {
 	event.preventDefault();
-	insertMessage('div', userInput.value, null, 'user', true);
-	randomMessage();
+	insertMessage('div', userInput.value, null, 'user');
+
+	if (commandsArray.includes(userInput.value)) {
+		commandHandler(userInput.value);
+	} else {
+		randomMessage();
+	}
 
 	userInput.value = '';
 	messageEl.textContent = '';
@@ -22,6 +39,7 @@ function randomMessage() {
 		() => insertMessage('pre', exampleJS, 'js'),
 		() => insertMessage('pre', examplePython, 'python'),
 		() => insertMessage('div', 'Hello World :)..'),
+		() => insertMessage('div', 'This is a command', null, 'command'),
 	];
 	messages[Math.floor(Math.random() * messages.length)]();
 }
