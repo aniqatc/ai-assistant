@@ -876,6 +876,9 @@ video {
 .overflow-y-scroll {
   overflow-y: scroll;
 }
+.whitespace-nowrap {
+  white-space: nowrap;
+}
 .rounded-full {
   border-radius: 9999px;
 }
@@ -1023,6 +1026,10 @@ video {
 .text-red-50 {
   --tw-text-opacity: 1;
   color: rgb(254 242 242 / var(--tw-text-opacity));
+}
+.text-slate-500 {
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
 }
 .text-violet-200 {
   --tw-text-opacity: 1;

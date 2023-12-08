@@ -1,12 +1,19 @@
 import { insertMessage } from './insertMessage';
 
 function saveChatHistory() {
-	const printedMessages = document.querySelectorAll('.js-response');
+	const printedMessages = document.querySelectorAll('.js-message--chat');
 	const messagesArray = Array.from(printedMessages).map(message => {
+		let msgType;
+
+		Object.values(message.classList).includes('js-message--user')
+			? (msgType = 'user')
+			: (msgType = 'ai');
+
 		return {
 			elementType: message.tagName.toLowerCase(),
 			lang: message.getAttribute('data-lang') || null,
 			content: message.textContent,
+			msgType,
 		};
 	});
 
@@ -15,10 +22,11 @@ function saveChatHistory() {
 
 function getChatHistory() {
 	const storedMessages = localStorage.getItem('chatHistory');
+
 	if (storedMessages) {
 		const messagesArray = JSON.parse(storedMessages);
 		messagesArray.forEach(message => {
-			insertMessage(message.elementType, message.content, message.lang);
+			insertMessage(message.elementType, message.content, message.lang, message.msgType);
 		});
 	}
 }

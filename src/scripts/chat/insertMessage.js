@@ -3,7 +3,7 @@ import { autoScrollToBottom } from './chatScroll';
 
 const chatContainer = document.querySelector('#js-chat');
 
-function insertMessage(elementType, content, lang) {
+function insertMessage(elementType, content, lang, msgType = 'ai') {
 	const el = document.createElement(elementType);
 	chatContainer.appendChild(el);
 
@@ -14,7 +14,26 @@ function insertMessage(elementType, content, lang) {
 		myTextTypewriter(el, content);
 	}
 
-	el.classList.add('js-message', 'js-response', 'animate-slide-in', 'animation-delay-300', 'py-1');
+	if (msgType === 'ai') {
+		el.classList.add(
+			'js-message--chat',
+			'js-message',
+			'animate-slide-in',
+			'animation-delay-300',
+			'py-1'
+		);
+	} else {
+		el.classList.add(
+			'js-message--chat',
+			'js-message',
+			'js-message--user',
+			'animate-slide-in',
+			'animation-delay-300',
+			'py-1',
+			'text-slate-500',
+			'dark:text-slate-300'
+		);
+	}
 
 	autoScrollToBottom();
 }

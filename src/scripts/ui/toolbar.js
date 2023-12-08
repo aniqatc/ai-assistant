@@ -17,16 +17,16 @@ function displayTemporaryMessage(el, buttonText, message) {
 }
 
 clearButton.addEventListener('click', () => {
-	const messages = chatContainer.querySelectorAll('.js-response');
+	const messages = chatContainer.querySelectorAll('.js-message--chat');
 	messages.forEach(el => el.remove());
 	clearChatHistory();
 	chatInput.value = '';
-	displayTemporaryMessage(clearButton, 'Cleared', 'Chat deleted from browser and workspace...');
+	displayTemporaryMessage(clearButton, 'Cleared', 'Chat deleted from workspace...');
 });
 
 saveButton.addEventListener('click', () => {
 	saveChatHistory();
-	displayTemporaryMessage(saveButton, 'Saved', 'Chat saved to browser and workspace...');
+	displayTemporaryMessage(saveButton, 'Saved', 'Chat saved to workspace...');
 });
 
 copyButton.addEventListener('click', () => {
@@ -36,6 +36,6 @@ copyButton.addEventListener('click', () => {
 	navigator.clipboard
 		.writeText(recentCodeBlock?.textContent || 'No code blocks detected')
 		.then(() => {
-			displayTemporaryMessage(copyButton, 'Copied', 'Copied recent code snippet to clipboard...');
+			displayTemporaryMessage(copyButton, 'Copied', 'Copied latest code snippet...');
 		});
 });

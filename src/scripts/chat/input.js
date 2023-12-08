@@ -6,7 +6,8 @@ const messageEl = document.querySelector('#js-toolbar-message');
 
 form.addEventListener('submit', event => {
 	event.preventDefault();
-	randomMessage();
+	insertMessage('div', userInput.value, null, 'user');
+	setTimeout(randomMessage, 1000);
 
 	userInput.value = '';
 	messageEl.textContent = '';
