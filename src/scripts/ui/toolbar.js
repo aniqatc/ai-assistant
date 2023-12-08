@@ -21,20 +21,12 @@ clearButton.addEventListener('click', () => {
 	messages.forEach(el => el.remove());
 	clearChatHistory();
 	chatInput.value = '';
-	displayTemporaryMessage(
-		clearButton,
-		'Cleared',
-		'Chat history deleted from browser storage and workspace...'
-	);
+	displayTemporaryMessage(clearButton, 'Cleared', 'Chat deleted from browser and workspace...');
 });
 
 saveButton.addEventListener('click', () => {
 	saveChatHistory();
-	displayTemporaryMessage(
-		saveButton,
-		'Saved',
-		'Chat history saved to browser storage and workspace...'
-	);
+	displayTemporaryMessage(saveButton, 'Saved', 'Chat saved to browser and workspace...');
 });
 
 copyButton.addEventListener('click', () => {
@@ -44,10 +36,6 @@ copyButton.addEventListener('click', () => {
 	navigator.clipboard
 		.writeText(recentCodeBlock?.textContent || 'No code blocks detected')
 		.then(() => {
-			displayTemporaryMessage(
-				copyButton,
-				'Copied',
-				'Successfully copied most recent code block to clipboard...'
-			);
+			displayTemporaryMessage(copyButton, 'Copied', 'Copied recent code snippet to clipboard...');
 		});
 });

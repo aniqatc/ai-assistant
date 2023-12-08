@@ -5,13 +5,14 @@ let lastScrollTop = chatContainer.scrollTop;
 
 chatContainer.addEventListener('scroll', autoScrollCancel);
 
-function checkScrollInterval() {
+function clearScrollInterval() {
 	if (scrollingInterval) {
 		clearInterval(scrollingInterval);
 	}
 }
 
 function autoScrollToBottom() {
+	clearScrollInterval();
 	scrollingInterval = setInterval(() => {
 		chatContainer.lastElementChild.scrollIntoView({ behavior: 'smooth' });
 	}, 1000);
@@ -25,4 +26,4 @@ function autoScrollCancel() {
 	lastScrollTop = currentScrollTop;
 }
 
-export { autoScrollToBottom, checkScrollInterval };
+export { autoScrollToBottom, clearScrollInterval };

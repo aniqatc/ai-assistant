@@ -1,11 +1,9 @@
 import { myCodeTypewriter, myTextTypewriter } from './typewriter';
-import { autoScrollToBottom, checkScrollInterval } from './chatScroll';
+import { autoScrollToBottom } from './chatScroll';
 
 const chatContainer = document.querySelector('#js-chat');
 
 function insertMessage(elementType, content, lang) {
-	checkScrollInterval();
-
 	const el = document.createElement(elementType);
 	chatContainer.appendChild(el);
 
