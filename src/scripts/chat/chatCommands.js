@@ -15,7 +15,12 @@ function commandHandler(userInput) {
 	if (document.getElementById(`js-radio-${userInput}`)) {
 		document.getElementById(`js-radio-${userInput}`).click();
 	}
-	if (userInput === 'save' || userInput === 'clear' || userInput === 'copy') {
+	if (
+		userInput === 'save' ||
+		userInput === 'clear' ||
+		userInput === 'copy' ||
+		userInput === 'theme'
+	) {
 		document.querySelector(`#js-${userInput}-btn`).click();
 	}
 }

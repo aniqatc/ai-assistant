@@ -1,3 +1,5 @@
+import { printBottomToolbarMessage } from './bottomToolbar';
+
 const root = document.documentElement;
 const themeButton = document.querySelector('#js-theme-btn');
 
@@ -10,6 +12,7 @@ function applySavedTheme() {
 
 themeButton.addEventListener('click', () => {
 	root.classList.toggle('dark');
+	printBottomToolbarMessage('Switched theme mode...');
 	localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
 });
 
