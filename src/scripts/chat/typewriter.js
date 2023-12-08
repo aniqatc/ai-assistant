@@ -3,7 +3,7 @@ import Prism from 'prismjs';
 // Note **
 // typingTimeouts: prevents overlapping typewriting on the same element
 // specific to myTextTypewriter as several elements involving text can trigger multiple timeouts -- this prevents it
-// ******
+//
 
 const typingTimeouts = new Map();
 const cursor = ' ●';

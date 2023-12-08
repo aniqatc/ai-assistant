@@ -1,0 +1,18 @@
+{
+	"refine": {
+		"do": "refine = instructions here...",
+		"dont": "refine = avoid"
+	},
+	"explain": {
+		"do": "explain = instructions here...",
+		"dont": "explain = avoid"
+	},
+	"debug": {
+		"do": "debug = instructions here...",
+		"dont": "debug = avoid"
+	},
+	"convert": {
+		"do": "convert = instructions here...",
+		"dont": "convert = avoid"
+	}
+}

@@ -1,4 +1,4 @@
-import typeDefaultMessages from '../chat/defaultMessages';
+import { typeDefaultMessages } from '../chat/defaultMessages';
 import { triggerSlideInAnimation } from '../chat/messageAnimation';
 import { autoScrollToBottom } from '../chat/chatScroll';
 
