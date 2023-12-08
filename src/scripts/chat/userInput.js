@@ -1,6 +1,6 @@
 import { insertMessage } from './insertMessage';
 import { commandsArray, commandHandler } from '../chat/chatCommands';
-import { randomMessage } from './dummy';
+import { apiHandler } from '../ai/api';
 
 export const userStyles = [
 	'js-message--chat',
@@ -16,22 +16,21 @@ export const userStyles = [
 const userInput = document.querySelector('#js-user-input');
 const form = document.querySelector('#js-user-form');
 const messageEl = document.querySelector('#js-toolbar-message');
+let prompt;
 
 form.addEventListener('submit', event => {
 	event.preventDefault();
-	// print user message
 	insertMessage('div', userInput.value, null, 'user');
 
-	// handle where to get response from...
 	let currentInputValue = userInput.value.toLowerCase().trim();
 	if (commandsArray.includes(currentInputValue)) {
-		// handle any command related responses
 		commandHandler(currentInputValue);
 	} else {
-		// handle ai response
-		randomMessage();
+		apiHandler(userInput.value);
 	}
 
 	userInput.value = '';
 	messageEl.textContent = '';
 });
+
+export { prompt };

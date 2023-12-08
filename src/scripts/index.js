@@ -17,13 +17,11 @@ import './chat/insertMessage';
 import './chat/chatScroll';
 import './chat/userInput';
 import './chat/chatCommands';
+import './ai/api';
 
 // Initialize
 applySavedTheme();
 typeDefaultMessages();
 printBottomToolbarMessage('New chat created...');
-getChatHistory();
 applyRadioOption();
-
-// const apiKey = process.env.API_KEY;
-// console.log(apiKey);
+getChatHistory();

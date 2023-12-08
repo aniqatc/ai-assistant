@@ -1,0 +1,12 @@
+const responseTime = document.querySelector('#js-response-time');
+const responseTimeLabel = document.querySelector('#js-response-time-label');
+
+function requestCompletionTime(startTime) {
+	if (Date.now() - startTime > 10000) {
+		responseTimeLabel.classList.add('text-red-600', 'dark:text-red-500');
+	}
+
+	responseTime.textContent = `${(Date.now() - startTime) / 1000}s`;
+}
+
+export { requestCompletionTime };
