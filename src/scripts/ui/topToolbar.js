@@ -1,17 +1,16 @@
 import { saveChatHistory, clearChatHistory } from '../chat/chatHistory';
-import { myTextTypewriter } from '../chat/typewriter';
+import { printBottomToolbarMessage } from './bottomToolbar';
 
 const copyButton = document.querySelector('#js-copy-btn');
 const saveButton = document.querySelector('#js-save-btn');
 const clearButton = document.querySelector('#js-clear-btn');
-const messageEl = document.querySelector('#js-toolbar-message');
 const chatContainer = document.querySelector('#js-chat');
 const chatInput = document.querySelector('textarea');
 
 function displayTemporaryMessage(el, buttonText, message) {
 	const originalText = el.innerHTML;
 	el.textContent = '✔︎ ' + buttonText;
-	myTextTypewriter(messageEl, message);
+	printBottomToolbarMessage(message);
 
 	setTimeout(() => {
 		el.innerHTML = originalText;

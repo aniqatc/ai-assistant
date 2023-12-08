@@ -1,5 +1,6 @@
 import { insertMessage } from './insertMessage';
 import { insertCommandMessage } from './chatCommands';
+import { printBottomToolbarMessage } from '../ui/bottomToolbar';
 
 let msgType;
 
@@ -15,25 +16,31 @@ function saveChatHistory() {
 			msgType,
 		};
 	});
+
 	localStorage.setItem('chatHistory', JSON.stringify(messagesArray));
 }
 
 function getChatHistory() {
-	const storedMessages = localStorage.getItem('chatHistory');
-	if (storedMessages) {
-		const messagesArray = JSON.parse(storedMessages);
+	const storedMessages = JSON.parse(localStorage.getItem('chatHistory'));
 
-		messagesArray.forEach(message => {
-			if (message.msgType === 'command') {
-				insertCommandMessage(message);
-			} else {
-				insertMessage(message.elementType, message.content, message.lang, message.msgType);
-			}
+	if (storedMessages.length > 0) {
+		printBottomToolbarMessage('Chat retrieved from last session...');
+
+		storedMessages.forEach(message => {
+			handleStoredMessage(message);
 		});
+	} else {
+		printBottomToolbarMessage('New chat created...');
 	}
 }
 
 // Helpers
+
+function handleStoredMessage(message) {
+	message.msgType === 'command'
+		? insertCommandMessage(message)
+		: insertMessage(message.elementType, message.content, message.lang, message.msgType);
+}
 
 function setMsgType(message) {
 	if (Object.values(message.classList).includes('js-message--user')) {
@@ -46,7 +53,7 @@ function setMsgType(message) {
 }
 
 function clearChatHistory() {
-	localStorage.setItem('chatHistory', '');
+	localStorage.setItem('chatHistory', '[]');
 }
 
 export { saveChatHistory, getChatHistory, clearChatHistory };
