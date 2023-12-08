@@ -10,6 +10,6 @@
 	"explain": "Entered code explanation chat...",
 	"convert": "Entered code conversion chat...",
 	"save": "Saved chat to workspace...",
-	"clear": "New chat...",
+	"clear": "",
 	"copy": "Copied the last printed code block..."
 }

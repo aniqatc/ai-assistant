@@ -10,13 +10,14 @@ const commandStyles = [
 ];
 
 function commandHandler(userInput) {
+	insertCommandMessage('', userInput);
+
 	if (document.getElementById(`js-radio-${userInput}`)) {
 		document.getElementById(`js-radio-${userInput}`).click();
 	}
 	if (userInput === 'save' || userInput === 'clear' || userInput === 'copy') {
 		document.querySelector(`#js-${userInput}-btn`).click();
 	}
-	insertCommandMessage('', userInput);
 }
 
 function insertCommandMessage(message, userInput) {
