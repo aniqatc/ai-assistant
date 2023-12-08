@@ -10,7 +10,7 @@ import { applySavedOption } from './ui/radioButtons';
 import './utils/defaultMessages';
 import './utils/insertMessage';
 import './utils/chatScroll';
-import './utils/test';
+import './utils/input';
 import '../styles/main.css';
 import '../styles/prism.css';
 

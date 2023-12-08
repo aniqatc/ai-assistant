@@ -10,7 +10,7 @@ function myCodeTypewriter(el, content, lang = 'txt') {
 		if (i < content.length) {
 			el.textContent = content.substring(0, i + 1) + cursor;
 			i++;
-			setTimeout(typeChar, 30);
+			setTimeout(typeChar, 25);
 		} else {
 			el.textContent = content;
 		}

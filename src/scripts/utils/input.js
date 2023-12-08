@@ -1,5 +1,27 @@
 import { insertMessage } from './insertMessage';
 
+const userInput = document.querySelector('#js-user-input');
+const form = document.querySelector('#js-user-form');
+
+form.addEventListener('submit', event => {
+	event.preventDefault();
+	randomMessage();
+	userInput.value = '';
+});
+
+// temporary
+function randomMessage() {
+	const messages = [
+		() => insertMessage('pre', exampleCSS, 'css'),
+		() => insertMessage('div', 'Hello, testing some written text here...'),
+		() => insertMessage('pre', exampleHTML, 'html'),
+		() => insertMessage('pre', exampleJS, 'js'),
+		() => insertMessage('pre', examplePython, 'python'),
+		() => insertMessage('div', 'Hello, testing some written text here...'),
+	];
+	messages[Math.floor(Math.random() * messages.length)]();
+}
+
 const exampleHTML = `<div>
 	<input
 		class="appearance-none peer option-input"
@@ -57,10 +79,3 @@ if num >= 0:
 else:
    print("Negative number")
 `;
-
-insertMessage('pre', exampleCSS, 'css');
-insertMessage('div', 'Hello, testing some written text here...', null);
-insertMessage('pre', exampleHTML, 'html');
-insertMessage('pre', exampleJS, 'js');
-insertMessage('pre', examplePython, 'python');
-insertMessage('div', 'Hello, testing some written text here...', null);
