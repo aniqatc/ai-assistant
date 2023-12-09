@@ -18,7 +18,7 @@ a {
 
 /* RADIO BUTTONS */
 .option-label {
-	@apply sm:h-28 sm:w-28 xs:h-[100px] xs:w-[100px] h-[85px] w-[85px] relative cursor-pointer border-2 border-solid border-violet-400 text-slate-700 bg-neutral-50 rounded-md shadow-lg flex flex-col items-center justify-center transition-all ease-out duration-200 p-2 gap-1 hover:border-violet-800 peer-checked:border-violet-800 peer-checked:ring peer-checked:ring-violet-700/50 peer-checked:text-violet-600 peer-checked:bg-violet-50 dark:bg-neutral-900 dark:text-zinc-300 dark:border dark:border-violet-800 dark:hover:border-violet-400 dark:peer-checked:bg-indigo-950 dark:peer-checked:text-violet-300;
+	@apply sm:h-28 sm:w-28 xs:h-[100px] xs:w-[100px] h-[85px] min-[370px]:w-[85px] w-[100%] relative cursor-pointer border-2 border-solid border-violet-400 text-slate-700 bg-neutral-50 rounded-md shadow-lg flex flex-col items-center justify-center transition-all ease-out duration-200 p-2 gap-1 hover:border-violet-800 peer-checked:border-violet-800 peer-checked:ring peer-checked:ring-violet-700/50 peer-checked:text-violet-600 peer-checked:bg-violet-50 dark:bg-neutral-900 dark:text-zinc-300 dark:border dark:border-violet-800 dark:hover:border-violet-400 dark:peer-checked:bg-indigo-950 dark:peer-checked:text-violet-300;
 }
 
 .option-radio {

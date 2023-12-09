@@ -43,13 +43,15 @@
 				</div>
 				<fieldset
 					id="js-radio-fieldset"
-					class="mx-2">
+					class="sm:mx-2 mx-1">
 					<legend
-						class="text-gray-800 text-center md:w-[50ch] xs:w-[45ch] w-[35ch] xs:text-base text-sm dark:text-zinc-300">
-						Select a task you’d like assistance with and follow the provided instructions for
-						optimal guidance and accuracy.
+						class="text-gray-800 text-center md:w-[75ch] sm:w-[60ch] xs:w-[50ch] max-w-100 xs:text-base text-sm dark:text-zinc-300">
+						Welcome to our AI coding assistance tool! We've streamlined the process with predefined
+						options like explain, refactor, debug, and convert to help you quickly get the support
+						you need. Simply drop in your code, and our AI will tailor its response to your chosen
+						task.
 					</legend>
-					<div class="flex justify-center xs:gap-4 gap-2">
+					<div class="flex min-[370px]:flex-row flex-col justify-center xs:gap-4 gap-2">
 						<div>
 							<input
 								class="appearance-none peer option-input"
@@ -129,10 +131,10 @@
 				<header
 					class="px-3 py-2 flex justify-between items-center border-b border-indigo-300 dark:border-slate-600">
 					<div class="flex gap-2 text-indigo-800 font-semibold dark:text-indigo-300">
-						<span><i class="fa-regular fa-user"></i></span>
+						<span class="min-[360px]:block hidden"><i class="fa-regular fa-user"></i></span>
 						<h2 class="sm:block hidden">Personal Workspace</h2>
 					</div>
-					<nav class="space-x-1 text-neutral-500 dark:text-slate-300 isolate z-10">
+					<nav class="space-x-1 text-neutral-500 dark:text-slate-300 isolate z-10 flex flex-nowrap">
 						<button
 							id="js-copy-btn"
 							aria-label="copy latest message to clipboard"
