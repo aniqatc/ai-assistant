@@ -48,8 +48,9 @@ copyButton.addEventListener('click', () => {
 });
 
 helpButton.addEventListener('click', () => {
+	commandHandler('disclaimer');
 	commandHandler('help');
-	displayTemporaryMessage(helpButton, '', 'Printed built-in commands...');
+	displayTemporaryMessage(helpButton, '', 'Printed disclaimer & commands...');
 });
 
 downloadButton.addEventListener('click', () => {

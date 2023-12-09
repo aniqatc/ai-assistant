@@ -1157,6 +1157,7 @@ a:hover {
 }
 
 .js-message--command p {
+  margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-weight: 500;
 }
@@ -1172,15 +1173,21 @@ a:hover {
   margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
 
+.js-message--command li {
+  padding-left: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 .js-message--command li:not(:has(a)) {
   font-size: 0.75rem;
   line-height: 1rem;
 }
 
 .js-message--command span {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
   display: block;
-  font-size: 0.75rem;
-  line-height: 1rem;
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(190 18 60 / var(--tw-text-opacity));
@@ -1193,7 +1200,6 @@ a:hover {
 
 .js-message--command li span {
   display: inline;
-  padding-left: 1rem;
   --tw-text-opacity: 1;
   color: rgb(124 58 237 / var(--tw-text-opacity));
 }

@@ -40,11 +40,15 @@ a {
 }
 
 .js-message--command p {
-	@apply mb-1 font-medium dark:text-indigo-100;
+	@apply my-1 font-medium dark:text-indigo-100;
 }
 
 .js-message--command ul {
 	@apply space-y-1;
+}
+
+.js-message--command li {
+	@apply pl-4 text-xs;
 }
 
 .js-message--command li:not(:has(a)) {
@@ -52,11 +56,11 @@ a {
 }
 
 .js-message--command span {
-	@apply block text-rose-700 dark:text-red-300 text-xs font-medium;
+	@apply block text-rose-700 dark:text-red-300 font-medium my-1;
 }
 
 .js-message--command li span {
-	@apply pl-4 inline text-violet-600 dark:text-violet-300;
+	@apply inline text-violet-600 dark:text-violet-300;
 }
 
 .js-message--command pre span {
