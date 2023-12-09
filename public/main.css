@@ -1166,7 +1166,7 @@ a:hover {
 
 :is(.dark .js-message--command p) {
   --tw-text-opacity: 1;
-  color: rgb(199 210 254 / var(--tw-text-opacity));
+  color: rgb(224 231 255 / var(--tw-text-opacity));
 }
 
 .js-message--command ul > :not([hidden]) ~ :not([hidden]) {
@@ -1176,14 +1176,15 @@ a:hover {
 }
 
 .js-message--command li:not(:has(a)) {
-  font-family: Source Code Pro, ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
   font-size: 0.75rem;
   line-height: 1rem;
 }
 
 .js-message--command span {
   display: block;
-  padding-left: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(190 18 60 / var(--tw-text-opacity));
 }
@@ -1196,7 +1197,6 @@ a:hover {
 .js-message--command li span {
   display: inline;
   padding-left: 1rem;
-  font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(124 58 237 / var(--tw-text-opacity));
 }

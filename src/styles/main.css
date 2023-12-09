@@ -40,7 +40,7 @@ a {
 }
 
 .js-message--command p {
-	@apply mb-1 font-medium dark:text-indigo-200;
+	@apply mb-1 font-medium dark:text-indigo-100;
 }
 
 .js-message--command ul {
@@ -48,15 +48,15 @@ a {
 }
 
 .js-message--command li:not(:has(a)) {
-	@apply font-mono text-xs;
+	@apply text-xs;
 }
 
 .js-message--command span {
-	@apply pl-2 block text-rose-700 dark:text-red-300;
+	@apply block text-rose-700 dark:text-red-300 text-xs font-medium;
 }
 
 .js-message--command li span {
-	@apply pl-4 font-medium inline text-violet-600 dark:text-violet-300;
+	@apply pl-4 inline text-violet-600 dark:text-violet-300;
 }
 
 .js-message--command pre span {
