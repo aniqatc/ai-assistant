@@ -19,7 +19,8 @@ function commandHandler(userInput) {
 		userInput === 'save' ||
 		userInput === 'clear' ||
 		userInput === 'copy' ||
-		userInput === 'theme'
+		userInput === 'theme' ||
+		userInput === 'download'
 	) {
 		document.querySelector(`#js-${userInput}-btn`).click();
 	}

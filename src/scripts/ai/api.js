@@ -3,7 +3,7 @@ import { insertMessage } from '../chat/insertMessage';
 import { printBottomToolbarMessage } from '../ui/bottomToolbar';
 
 const API_KEY = process.env.API_KEY;
-let context = `Please provide responses in the following structured JSON format and do not provide ANY text outside of the JSON format:
+let context = `Please provide responses in the following structured JSON format & do not provide ANY text outside of the JSON format:
 {
     "1": {
         "element": "div",
@@ -15,12 +15,7 @@ let context = `Please provide responses in the following structured JSON format 
             "code": "Your code snippet here",
             "language": "Specify programming language or null"
         }
-    },
-    "3": {
-        "element": "div",
-        "content": "Your next message here."
-    },
-    ...
+    }
 }`;
 
 async function apiHandler(userInput) {
@@ -54,16 +49,16 @@ async function apiHandler(userInput) {
 
 function getPrompt(option, userInput) {
 	if (option === 'explain') {
-		return `Guidelines: Provide a clear explanation for my coding question. Question: ${userInput}`;
+		return `Guidelines: Provide a clear explanation for my coding question. ${userInput}`;
 	}
 	if (option === 'refactor') {
-		return `Guidelines: Provide me with ways to improve my code snippet. Question: ${userInput}`;
+		return `Guidelines: Provide me with ways to improve my code snippet. ${userInput}`;
 	}
 	if (option === 'debug') {
-		return `Guidelines: There is an issue with my code, help me identify the issue. Question: ${userInput}`;
+		return `Guidelines: There is an issue with my code, help me identify the issue. ${userInput}`;
 	}
 	if (option === 'convert') {
-		return `Guidelines: Convert the provided code into the specified language. Question: ${userInput}`;
+		return `Guidelines: Convert the provided code into the specified language. ${userInput}`;
 	}
 }
 
