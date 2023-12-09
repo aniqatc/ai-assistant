@@ -1,11 +1,13 @@
 import { saveChatHistory, clearChatHistory } from '../chat/chatHistory';
 import { printBottomToolbarMessage } from './bottomToolbar';
 import { commandHandler } from '../chat/chatCommands';
+import { downloadChatHistory } from '../chat/downloadChat';
 
 const copyButton = document.querySelector('#js-copy-btn');
 const saveButton = document.querySelector('#js-save-btn');
 const clearButton = document.querySelector('#js-clear-btn');
 const helpButton = document.querySelector('#js-help-btn');
+const downloadButton = document.querySelector('#js-download-btn');
 const chatContainer = document.querySelector('#js-chat');
 const chatInput = document.querySelector('textarea');
 
@@ -48,4 +50,9 @@ copyButton.addEventListener('click', () => {
 helpButton.addEventListener('click', () => {
 	commandHandler('help');
 	displayTemporaryMessage(helpButton, '', 'Printed built-in commands...');
+});
+
+downloadButton.addEventListener('click', () => {
+	downloadChatHistory();
+	displayTemporaryMessage(downloadButton, '', 'Downloaded current chat...');
 });

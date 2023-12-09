@@ -1080,10 +1080,8 @@ a:hover {
   border-color: rgb(165 180 252 / var(--tw-border-opacity));
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -1129,13 +1127,6 @@ a:hover {
   background-color: rgb(67 56 202 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(238 242 255 / var(--tw-text-opacity));
-}
-@media (min-width: 465px) {
-
-  .workspace-button {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
 }
 
 /* DYNAMIC ELEMENTS -- applies to elements pulled from JSON file */
@@ -1398,12 +1389,6 @@ a:hover {
 
   .xs\:gap-4 {
     gap: 1rem;
-  }
-
-  .xs\:space-x-2 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(0.5rem * var(--tw-space-x-reverse));
-    margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .xs\:text-4xl {
@@ -1802,7 +1787,7 @@ pre[class*='language-']:after {
 .dark .token.deleted,
 .dark .token.selector {
 	/* color: #eb64b9; -- original theme color for 'laserwave' */
-	color: #ba8be5;
+	color: #cfafec;
 }
 
 .dark .token.attr-value,

@@ -16,7 +16,6 @@ export const userStyles = [
 const userInput = document.querySelector('#js-user-input');
 const form = document.querySelector('#js-user-form');
 const messageEl = document.querySelector('#js-toolbar-message');
-let prompt;
 
 form.addEventListener('submit', event => {
 	event.preventDefault();
@@ -32,5 +31,3 @@ form.addEventListener('submit', event => {
 	userInput.value = '';
 	messageEl.textContent = '';
 });
-
-export { prompt };

@@ -132,7 +132,7 @@
 						<span><i class="fa-regular fa-user"></i></span>
 						<h2 class="sm:block hidden">Personal Workspace</h2>
 					</div>
-					<nav class="xs:space-x-2 space-x-1 text-neutral-500 dark:text-slate-300 isolate z-10">
+					<nav class="space-x-1 text-neutral-500 dark:text-slate-300 isolate z-10">
 						<button
 							id="js-copy-btn"
 							aria-label="copy latest message to clipboard"
@@ -161,6 +161,14 @@
 							<span>Clear</span>
 						</button>
 						<button
+							id="js-download-btn"
+							aria-label="download current chat"
+							class="workspace-button group">
+							<span class="inline-block group-hover:animate-pulse"
+								><i class="fa-solid fa-download"></i
+							></span>
+						</button>
+						<button
 							id="js-help-btn"
 							aria-label="get built-in command information"
 							class="workspace-button group">
@@ -174,6 +182,14 @@
 					<div
 						id="js-chat"
 						class="bg-white h-[300px] border border-neutral-600 rounded-sm px-3 py-2 space-y-1 overflow-y-scroll break-words dark:bg-neutral-700 dark:border-neutral-500">
+						<div class="print-copy-credit hidden">
+							Chat generated from
+							<a
+								href="https://code.aniqa.dev"
+								target="_blank"
+								>code.aniqa.dev</a
+							>
+						</div>
 						<div
 							class="js-message animate-slide-in animation-delay-700 bg-blue-100/75 text-neutral-600 px-3 py-2 flex items-center dark:bg-blue-400/30 dark:text-slate-100">
 							<span

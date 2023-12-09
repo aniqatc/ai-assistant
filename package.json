@@ -26,6 +26,7 @@
 	"license": "MIT",
 	"homepage": "https://code.aniqa.dev",
 	"devDependencies": {
+		"copy-webpack-plugin": "^11.0.0",
 		"css-loader": "^6.8.1",
 		"dotenv-webpack": "^8.0.1",
 		"html-webpack-plugin": "^5.5.3",

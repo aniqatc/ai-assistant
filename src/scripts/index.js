@@ -14,11 +14,8 @@ import { getChatHistory } from './chat/chatHistory';
 import { typeDefaultMessages } from './chat/defaultMessages';
 import { printBottomToolbarMessage } from './ui/bottomToolbar';
 import './ui/topToolbar';
-import './chat/insertMessage';
 import './chat/chatScroll';
 import './chat/userInput';
-import './chat/chatCommands';
-import './ai/api';
 
 // Initialize
 applySavedTheme();

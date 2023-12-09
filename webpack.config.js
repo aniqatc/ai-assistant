@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -53,5 +54,8 @@ module.exports = {
 						'process.env.API_KEY': JSON.stringify(process.env.API_KEY),
 					}),
 			  ]),
+		new CopyPlugin({
+			patterns: [{ from: 'src/styles/download.css', to: 'download.css' }],
+		}),
 	],
 };

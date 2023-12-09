@@ -135,7 +135,7 @@ pre[class*='language-']:after {
 .dark .token.deleted,
 .dark .token.selector {
 	/* color: #eb64b9; -- original theme color for 'laserwave' */
-	color: #ba8be5;
+	color: #cfafec;
 }
 
 .dark .token.attr-value,

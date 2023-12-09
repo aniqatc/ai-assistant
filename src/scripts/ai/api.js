@@ -37,7 +37,7 @@ async function apiHandler(userInput) {
 		const response = await fetch(apiURL);
 		const data = await response.json();
 		const answer = JSON.parse(data.answer);
-		console.log(data);
+
 		for (let el in answer) {
 			if (answer[el].content.code) {
 				insertMessage(answer[el].element, answer[el].content.code, answer[el].content.language);

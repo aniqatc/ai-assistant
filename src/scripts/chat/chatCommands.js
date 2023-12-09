@@ -33,4 +33,4 @@ function insertCommandMessage(message, userInput) {
 	chatContainer.appendChild(div);
 }
 
-export { commandsArray, commandHandler, commandStyles, insertCommandMessage };
+export { commandsArray, commandStyles, commandHandler, insertCommandMessage };

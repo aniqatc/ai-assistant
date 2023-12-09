@@ -32,6 +32,10 @@ function getChatHistory() {
 	}
 }
 
+function clearChatHistory() {
+	localStorage.setItem('chatHistory', '[]');
+}
+
 // Helpers
 
 function handleStoredMessage(message) {
@@ -48,10 +52,6 @@ function setMsgType(message) {
 	} else {
 		return (msgType = 'ai');
 	}
-}
-
-function clearChatHistory() {
-	localStorage.setItem('chatHistory', '[]');
 }
 
 export { saveChatHistory, getChatHistory, clearChatHistory };
