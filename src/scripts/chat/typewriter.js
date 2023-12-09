@@ -19,7 +19,9 @@ function myCodeTypewriter(el, content, lang = 'txt') {
 		} else {
 			el.textContent = content;
 		}
-		el.innerHTML = Prism.highlight(el.textContent, Prism.languages[lang]);
+		el.innerHTML = Prism.languages[lang]
+			? Prism.highlight(el.textContent, Prism.languages[lang])
+			: Prism.highlight(el.textContent, Prism.languages.javascript);
 	}
 	typeChar();
 }

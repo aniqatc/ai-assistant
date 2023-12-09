@@ -3,29 +3,41 @@ import { insertMessage } from '../chat/insertMessage';
 import { printBottomToolbarMessage } from '../ui/bottomToolbar';
 
 const API_KEY = process.env.API_KEY;
-
-let context = `Please provide the entire response in a structured JSON format. Each response sentence should be an object with keys '1', '2', '3' and so on, each containing a sub-object. You can provide as many keys as necessary to provide your response. The sub-objects should have two keys: 'element' to indicate the HTML element type ('div' for regular text, 'pre' for code blocks), and 'content' for the actual text or code snippets that are provided for each message. If any inline code or code snippet is provided, include a nested 'language' key within 'content' to specify the programming language, or set it to "null" explicitly if no code is provided. Here is an example to follow:
-    {
+let context = `Please provide responses in the following structured JSON format and do not provide ANY text outside of the JSON format:
+{
+    "1": {
+        "element": "div",
+        "content": "Your first message here."
+    },
+    "2": {
         "element": "pre",
         "content": {
-            "code": "console.log("Hello")",
-            "language": "javaScript"
+            "code": "Your code snippet here",
+            "language": "Specify programming language or null"
         }
-    }. `;
+    },
+    "3": {
+        "element": "div",
+        "content": "Your next message here."
+    },
+    ...
+}`;
 
-async function apiHandler(prompt) {
+async function apiHandler(userInput) {
 	const startTime = Date.now();
 	try {
 		printBottomToolbarMessage('Initiating request...');
-		let fullPrompt = `PLEASE remember to put ENTIRE response inside the JSON object - do not write anything outside the JSON object when you respond. Do not put the code block in the format of a JSON object - these are to be highlighted using prism.js syntax highlighting so please follow the guidelines I provided, thank you... Answer this: ${prompt}`;
-		const apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(
-			fullPrompt
-		)}&context=${context}&key=${API_KEY}`;
+		const selectedRadio = document.querySelector('input[name="options"]:checked');
+
+		const apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${getPrompt(
+			selectedRadio.value,
+			userInput
+		)}&context=${encodeURIComponent(context)}&key=${API_KEY}`;
 
 		const response = await fetch(apiURL);
 		const data = await response.json();
 		const answer = JSON.parse(data.answer);
-
+		console.log(data);
 		for (let el in answer) {
 			if (answer[el].content.code) {
 				insertMessage(answer[el].element, answer[el].content.code, answer[el].content.language);
@@ -37,6 +49,21 @@ async function apiHandler(prompt) {
 		printBottomToolbarMessage(`Request error: ${error}...`);
 	} finally {
 		requestCompletionTime(startTime);
+	}
+}
+
+function getPrompt(option, userInput) {
+	if (option === 'explain') {
+		return `Guidelines: Provide a clear explanation for my coding question. Question: ${userInput}`;
+	}
+	if (option === 'refactor') {
+		return `Guidelines: Provide me with ways to improve my code snippet. Question: ${userInput}`;
+	}
+	if (option === 'debug') {
+		return `Guidelines: There is an issue with my code, help me identify the issue. Question: ${userInput}`;
+	}
+	if (option === 'convert') {
+		return `Guidelines: Convert the provided code into the specified language. Question: ${userInput}`;
 	}
 }
 
