@@ -17,10 +17,9 @@ async function apiHandler(prompt) {
 	const startTime = Date.now();
 	try {
 		printBottomToolbarMessage('Initiating request...');
-		prompt +=
-			' PLEASE remember to put ENTIRE response inside the JSON object - do not write anything outside the JSON object when you respond. Do not put the code block in the format of a JSON object - these are to be highlighted using prism.js syntax highlighting so please follow the guidelines I provided, thank you... ';
+		let fullPrompt = `PLEASE remember to put ENTIRE response inside the JSON object - do not write anything outside the JSON object when you respond. Do not put the code block in the format of a JSON object - these are to be highlighted using prism.js syntax highlighting so please follow the guidelines I provided, thank you... Answer this: ${prompt}`;
 		const apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(
-			prompt
+			fullPrompt
 		)}&context=${context}&key=${API_KEY}`;
 
 		const response = await fetch(apiURL);

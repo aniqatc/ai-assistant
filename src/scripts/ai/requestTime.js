@@ -5,8 +5,10 @@ const responseTimeLabel = document.querySelector('#js-response-time-label');
 
 function requestCompletionTime(startTime) {
 	if (Date.now() - startTime > 10000) {
+		responseTimeLabel.classList.remove('text-green-600', 'dark:text-green-500');
 		responseTimeLabel.classList.add('text-red-600', 'dark:text-red-500');
 	} else {
+		responseTimeLabel.classList.remove('text-red-600', 'dark:text-red-500');
 		responseTimeLabel.classList.add('text-green-600', 'dark:text-green-500');
 	}
 
