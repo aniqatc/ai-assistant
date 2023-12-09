@@ -38,10 +38,10 @@ module.exports = {
 				'og:description':
 					'Streamline your coding workflow with AI-generated assistance in refactoring, debugging, and language conversion, all within a user-friendly interface for an efficient coding experience.',
 				'og:url': 'https://code.aniqa.dev',
-				'og:image': '',
+				'og:image': 'https://code.aniqa.dev/public/screenshot.png',
 				'twitter:title': 'Your AI coding assistant',
 				'twitter:card': 'summary_large_image',
-				'twitter:image': '',
+				'twitter:image': 'https://code.aniqa.dev/public/screenshot.png',
 				'twitter:image:alt': "Screen capture of website's user interface",
 				'twitter:site': '@aniqatc',
 			},
@@ -55,7 +55,10 @@ module.exports = {
 					}),
 			  ]),
 		new CopyPlugin({
-			patterns: [{ from: 'src/styles/download.css', to: 'download.css' }],
+			patterns: [
+				{ from: 'src/styles/download.css', to: 'download.css' },
+				{ from: 'src/assets/screenshot.png', to: 'screenshot.png' },
+			],
 		}),
 	],
 };

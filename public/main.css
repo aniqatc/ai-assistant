@@ -1184,9 +1184,9 @@ a:hover {
   line-height: 1rem;
 }
 
-.js-message--command li:not(:has(a)) {
-  font-size: 0.75rem;
-  line-height: 1rem;
+.js-message--command a {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .js-message--command span {
@@ -1463,8 +1463,8 @@ a:hover {
     display: block;
   }
 
-  .md\:w-\[75ch\] {
-    width: 75ch;
+  .md\:w-\[70ch\] {
+    width: 70ch;
   }
 
   .md\:pt-20 {

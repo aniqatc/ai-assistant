@@ -51,8 +51,8 @@ a {
 	@apply pl-4 text-xs;
 }
 
-.js-message--command li:not(:has(a)) {
-	@apply text-xs;
+.js-message--command a {
+	@apply text-sm;
 }
 
 .js-message--command span {
