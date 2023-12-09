@@ -1,18 +1,18 @@
 {
 	"refactor": {
-		"do": "refactor = instructions here...",
-		"dont": "refactor = avoid"
+		"do": "Explain any specific code improvement that you are looking for, such as, performance, readability, etc. Otherwise, drop your code snippet for a general assessment.",
+		"dont": "Avoid sending code that isn't related to the issue. Refrain from submitting length code. Type 'Disclaimer' to the chat for limitations."
 	},
 	"explain": {
-		"do": "explain = instructions here...",
-		"dont": "explain = avoid"
+		"do": "Ask a coding-related questions for an explanation or provide a code snippet to get a concise explanation.",
+		"dont": "Overly general questions get overly general responses so be concise but specific!"
 	},
 	"debug": {
-		"do": "debug = instructions here...",
-		"dont": "debug = avoid"
+		"do": "Briefly explain the problem, provide any error messages and state the language.",
+		"dont": "Avoid sending code that isn't related to the issue. Refrain from submitting length code. Type 'Disclaimer' to the chat for limitations."
 	},
 	"convert": {
-		"do": "convert = instructions here...",
-		"dont": "convert = avoid"
+		"do": "Clearly state the language you would like your code snippet converted into. Provide context if necessary to how the code operates.",
+		"dont": "Refrain from submitting overly complex and lengthy code snippets. Run the code through the 'Debug' option before submitting to ensure that the snippet doesn't convert with any pre-existing bugs."
 	}
 }
