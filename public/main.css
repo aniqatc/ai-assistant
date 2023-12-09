@@ -1167,6 +1167,11 @@ a:hover {
   color: rgb(224 231 255 / var(--tw-text-opacity));
 }
 
+.js-message--command ul {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
 .js-message--command ul > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));

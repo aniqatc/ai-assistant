@@ -44,7 +44,7 @@ a {
 }
 
 .js-message--command ul {
-	@apply space-y-1;
+	@apply space-y-1 my-1;
 }
 
 .js-message--command li {
