@@ -1,5 +1,5 @@
 {
-	"help": "<p>Type the following prompts for more information or guidance:</p><ul><span>General commands:</span><li><span>creator</span>: learn more about the creator</li><li><span>repo</span>: get the github repository link</li><li><span>features</span>: see a full list of features</li><li><span>updates</span>: see future updates and improvements coming soon</li><li><span>example</span>: see an example of a prompt and response</li><li><span>theme</span>: switch theme mode</li><li><span>copy</span>: copy the last ai-generated code block in the chat</li><li><span>save</span>: save the chat to workspace</li><li><span>clear</span>: clear the chat from workspace</li><span>Switch chat type:</span><li><span>explain</span>: switch to the code explanations chat</li><li><span>refactor</span>: switch to the code refactoring chat</li><li><span>debug</span>: switch to the code debugging chat</li><li><span>convert</span>: switch to the code conversion chat</li></ul>",
+	"help": "<p>Type the following prompts for more information or guidance:</p><ul><span>General commands:</span><li><span>creator</span>: learn more about the creator</li><li><span>repo</span>: get the github repository link</li><li><span>features</span>: see a full list of features</li><li><span>updates</span>: see future updates and improvements coming soon</li><li><span>example</span>: see an example of a prompt and response</li><li><span>theme</span>: switch theme mode</li><li><span>ai</span>: print the ai model being utilized</li><li><span>copy</span>: copy the last ai-generated code block in the chat</li><li><span>save</span>: save the chat to workspace</li><li><span>clear</span>: clear the chat from workspace</li><span>Switch chat type:</span><li><span>explain</span>: switch to the code explanations chat</li><li><span>refactor</span>: switch to the code refactoring chat</li><li><span>debug</span>: switch to the code debugging chat</li><li><span>convert</span>: switch to the code conversion chat</li></ul>",
 	"creator": "<p>Follow my other work:</p><ul><li><a target=\"_blank\" href=\"https://aniqa.dev\">aniqa.dev</a></li><li><a target=\"_blank\" href=\"https://github.com/aniqatc\">github.com/aniqatc</a></li><li><a target=\"_blank\" href=\"https://twitter.com/aniqatc\">twitter.com/aniqatc</a></li></ul>",
 	"repo": "<a target=\"_blank\" href=\"https://github.com/aniqatc/ai-assistant\">github.com/aniqatc/ai-assistant</a>",
 	"features": "** features list coming soon...",
@@ -12,5 +12,6 @@
 	"save": "Saved chat to workspace...",
 	"clear": "",
 	"copy": "Copied the last printed code block...",
-	"theme": "Switched theme mode..."
+	"theme": "Switched theme mode...",
+	"ai": "<p>gpt-3.5-turbo model</p>"
 }
