@@ -17,7 +17,7 @@ function insertMessage(elementType, content, lang, msgType = 'ai') {
 	chatContainer.appendChild(el);
 	autoScrollToBottom();
 
-	if (lang) {
+	if (lang && lang !== undefined) {
 		el.setAttribute('data-lang', lang);
 		myCodeTypewriter(el, content, lang);
 	} else if (msgType === 'user') {
