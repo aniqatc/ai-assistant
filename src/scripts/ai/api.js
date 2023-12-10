@@ -1,5 +1,6 @@
 import { requestCompletionTime } from './requestTime';
 import { printBottomToolbarMessage } from '../ui/bottomToolbar';
+import { generateRequestURL, displayAIResponse } from './apiHelpers';
 
 const aiStyles = [
 	'js-message--chat',
