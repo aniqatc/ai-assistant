@@ -67,7 +67,7 @@ module.exports = {
 			short_name: 'AI Chat',
 			description:
 				'Get assistance for coding-related tasks through a simple, easy-to-use and feature-rich chat application.',
-			theme_color: '#4338C9',
+			theme_color: '#18181B',
 			background_color: '#B3B3E0',
 			display: 'standalone',
 			start_url: '/',
