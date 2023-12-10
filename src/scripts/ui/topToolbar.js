@@ -1,6 +1,6 @@
 import { saveChatHistory, clearChatHistory } from '../chat/chatHistory';
 import { printBottomToolbarMessage } from './bottomToolbar';
-import { commandHandler } from '../chat/chatCommands';
+import { processCommand } from '../chat/chatCommands';
 import { downloadChatHistory } from '../chat/downloadChat';
 
 const copyButton = document.querySelector('#js-copy-btn');
@@ -53,6 +53,6 @@ downloadButton.addEventListener('click', () => {
 });
 
 helpButton.addEventListener('click', () => {
-	commandHandler('disclaimer');
-	commandHandler('help');
+	processCommand('disclaimer');
+	processCommand('help');
 });

@@ -10,7 +10,7 @@ const commandStyles = [
 	'animation-delay-300',
 ];
 
-function commandHandler(userInput) {
+function processCommand(userInput) {
 	insertCommandMessage('', userInput);
 
 	if (document.getElementById(`js-radio-${userInput}`)) {
@@ -37,4 +37,4 @@ function insertCommandMessage(message, userInput) {
 	autoScrollToBottom();
 }
 
-export { commandsArray, commandStyles, commandHandler, insertCommandMessage };
+export { commandsArray, commandStyles, processCommand, insertCommandMessage };

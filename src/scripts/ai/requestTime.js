@@ -1,18 +1,20 @@
 import { printBottomToolbarMessage } from '../ui/bottomToolbar';
 
-const responseTime = document.querySelector('#js-response-time');
-const responseTimeLabel = document.querySelector('#js-response-time-label');
-const greenText = ['text-green-600', 'dark:text-green-500'];
-const redText = ['text-red-600', 'dark:text-red-500'];
+const resTime = document.querySelector('#js-response-time');
+const resTimeLabel = document.querySelector('#js-response-time-label');
+const resLabelStyles = {
+	green: ['text-green-600', 'dark:text-green-500'],
+	red: ['text-red-600', 'dark:text-red-500'],
+};
 
 function requestCompletionTime(startTime) {
 	const timeDifference = Date.now() - startTime;
-	const isLongResponseTime = timeDifference > 5000;
+	const isLongResTime = timeDifference > 5000;
 
-	responseTimeLabel.classList.remove(...(isLongResponseTime ? greenText : redText));
-	responseTimeLabel.classList.add(...(isLongResponseTime ? redText : greenText));
+	resTimeLabel.classList.remove(...(isLongResTime ? resLabelStyles[green] : resLabelStyles[red]));
+	resTimeLabel.classList.add(...(isLongResTime ? resLabelStyles[red] : resLabelStyles[green]));
 
-	responseTime.textContent = `${timeDifference / 1000}s`;
+	resTime.textContent = `${timeDifference / 1000}s`;
 	printBottomToolbarMessage('Request completed...');
 }
 

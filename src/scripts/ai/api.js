@@ -1,5 +1,4 @@
 import { requestCompletionTime } from './requestTime';
-import { insertMessage } from '../chat/insertMessage';
 import { printBottomToolbarMessage } from '../ui/bottomToolbar';
 
 const aiStyles = [
@@ -10,68 +9,20 @@ const aiStyles = [
 	'py-1',
 ];
 
-const API_KEY = process.env.API_KEY;
-let context = `Please provide responses in the following structured JSON format & do not provide ANY text outside of the JSON format:
-{
-    "1": {
-        "element": "div",
-        "content": "Your first message here."
-    },
-    "2": {
-        "element": "pre",
-        "content": {
-            "code": "Your code snippet here",
-            "language": "Specify programming language or null"
-        }
-    }
-}`;
-
-async function apiHandler(userInput) {
+async function processAPIResponse(userInput) {
 	const startTime = Date.now();
+	printBottomToolbarMessage('Initiating request...');
+
 	try {
-		printBottomToolbarMessage('Initiating request...');
-		const selectedRadio = document.querySelector('input[name="options"]:checked');
-
-		const apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${getPrompt(
-			selectedRadio.value,
-			userInput
-		)}&context=${encodeURIComponent(context)}&key=${API_KEY}`;
-
-		const response = await fetch(apiURL);
+		const response = await fetch(generateRequestURL(userInput));
 		const data = await response.json();
 		const answer = JSON.parse(data.answer);
-
-		for (let el in answer) {
-			if (answer[el].content.code) {
-				insertMessage(answer[el].element, answer[el].content.code, answer[el].content.language);
-			} else {
-				insertMessage(answer[el].element, answer[el].content, null);
-			}
-		}
+		displayAIResponse(answer);
 	} catch (error) {
-		printBottomToolbarMessage(`Request error: ${error}...`);
+		printBottomToolbarMessage(`Request error: ${error.message}...`);
 	} finally {
 		requestCompletionTime(startTime);
 	}
 }
 
-function getPrompt(option, userInput) {
-	if (option === 'explain') {
-		return encodeURIComponent(
-			`Guidelines: Provide an explanation of what my code does line-by-line. ${userInput}`
-		);
-	}
-	if (option === 'refactor') {
-		return encodeURIComponent(`Guidelines: Tell me how to improve my code snippet. ${userInput}`);
-	}
-	if (option === 'debug') {
-		return encodeURIComponent(`Guidelines: Help me identify the issue with my code. ${userInput}`);
-	}
-	if (option === 'convert') {
-		return encodeURIComponent(
-			`Guidelines: Convert the code into the specified language. ${userInput}`
-		);
-	}
-}
-
-export { apiHandler, aiStyles };
+export { processAPIResponse, aiStyles };

@@ -1,6 +1,6 @@
 import { insertMessage } from './insertMessage';
-import { commandsArray, commandHandler } from '../chat/chatCommands';
-import { apiHandler } from '../ai/api';
+import { commandsArray, processCommand } from '../chat/chatCommands';
+import { processAPIResponse } from '../ai/api';
 
 export const userStyles = [
 	'js-message--chat',
@@ -23,9 +23,9 @@ form.addEventListener('submit', event => {
 
 	let currentInputValue = userInput.value.toLowerCase().trim();
 	if (commandsArray.includes(currentInputValue)) {
-		commandHandler(currentInputValue);
+		processCommand(currentInputValue);
 	} else {
-		apiHandler(userInput.value);
+		processAPIResponse(userInput.value);
 	}
 
 	userInput.value = '';
