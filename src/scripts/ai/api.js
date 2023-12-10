@@ -2,6 +2,14 @@ import { requestCompletionTime } from './requestTime';
 import { insertMessage } from '../chat/insertMessage';
 import { printBottomToolbarMessage } from '../ui/bottomToolbar';
 
+const aiStyles = [
+	'js-message--chat',
+	'js-message',
+	'animate-slide-in',
+	'animation-delay-300',
+	'py-1',
+];
+
 const API_KEY = process.env.API_KEY;
 let context = `Please provide responses in the following structured JSON format & do not provide ANY text outside of the JSON format:
 {
@@ -49,17 +57,21 @@ async function apiHandler(userInput) {
 
 function getPrompt(option, userInput) {
 	if (option === 'explain') {
-		return `Guidelines: Provide a clear explanation for my coding question. ${userInput}`;
+		return encodeURIComponent(
+			`Guidelines: Provide an explanation of what my code does line-by-line. ${userInput}`
+		);
 	}
 	if (option === 'refactor') {
-		return `Guidelines: Provide me with ways to improve my code snippet. ${userInput}`;
+		return encodeURIComponent(`Guidelines: Tell me how to improve my code snippet. ${userInput}`);
 	}
 	if (option === 'debug') {
-		return `Guidelines: There is an issue with my code, help me identify the issue. ${userInput}`;
+		return encodeURIComponent(`Guidelines: Help me identify the issue with my code. ${userInput}`);
 	}
 	if (option === 'convert') {
-		return `Guidelines: Convert the provided code into the specified language. ${userInput}`;
+		return encodeURIComponent(
+			`Guidelines: Convert the code into the specified language. ${userInput}`
+		);
 	}
 }
 
-export { apiHandler };
+export { apiHandler, aiStyles };

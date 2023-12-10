@@ -2,15 +2,9 @@ import { myCodeTypewriter, myTextTypewriter } from './typewriter';
 import { commandStyles } from './chatCommands';
 import { userStyles } from './userInput';
 import { autoScrollToBottom } from './chatScroll';
+import { aiStyles } from '../ai/api';
 
 const chatContainer = document.querySelector('#js-chat');
-const aiStyles = [
-	'js-message--chat',
-	'js-message',
-	'animate-slide-in',
-	'animation-delay-300',
-	'py-1',
-];
 
 function insertMessage(elementType, content, lang, msgType = 'ai') {
 	const el = document.createElement(elementType);
