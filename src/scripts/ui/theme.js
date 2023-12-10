@@ -12,8 +12,8 @@ function applySavedTheme() {
 
 themeButton.addEventListener('click', () => {
 	root.classList.toggle('dark');
-	printBottomToolbarMessage('Switched theme mode...');
 	localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+	printBottomToolbarMessage('Switched theme mode...');
 });
 
 export { applySavedTheme };

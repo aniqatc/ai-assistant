@@ -8,7 +8,8 @@ import Prism from 'prismjs';
 const typingTimeouts = new Map();
 const cursor = ' ●';
 
-function myCodeTypewriter(el, content, lang = 'txt') {
+function myCodeTypewriter(el, content, lang) {
+	const langDefault = Prism.languages.javascript;
 	let i = 0;
 
 	function typeChar() {
@@ -19,9 +20,7 @@ function myCodeTypewriter(el, content, lang = 'txt') {
 		} else {
 			el.textContent = content;
 		}
-		el.innerHTML = Prism.languages[lang]
-			? Prism.highlight(el.textContent, Prism.languages[lang])
-			: Prism.highlight(el.textContent, Prism.languages.javascript);
+		el.innerHTML = Prism.highlight(el.textContent, Prism.languages[lang] || langDefault);
 	}
 	typeChar();
 }
