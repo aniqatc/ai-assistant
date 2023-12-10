@@ -4,6 +4,7 @@ const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -13,6 +14,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, 'public'),
 		filename: 'bundle.js',
+		publicPath: '/',
 		clean: true,
 	},
 	module: {
@@ -58,6 +60,25 @@ module.exports = {
 			patterns: [
 				{ from: 'src/styles/download.css', to: 'download.css' },
 				{ from: 'src/assets/screenshot.png', to: 'screenshot.png' },
+			],
+		}),
+		new WebpackPwaManifest({
+			name: 'AI Code Chat',
+			short_name: 'AI Chat',
+			description:
+				'Get assistance for coding-related tasks through a simple, easy-to-use and feature-rich chat application.',
+			theme_color: '#4338C9',
+			background_color: '#B3B3E0',
+			display: 'standalone',
+			start_url: '/',
+			crossorigin: 'use-credentials',
+			icons: [
+				{
+					src: path.resolve(__dirname, 'src/assets/favicon.png'),
+					sizes: [96, 128, 192, 256, 384, 512],
+					destination: path.join('icons'),
+					filename: 'icon-[size].png',
+				},
 			],
 		}),
 	],

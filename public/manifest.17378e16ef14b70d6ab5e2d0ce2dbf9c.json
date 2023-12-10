@@ -1,0 +1,42 @@
+{
+  "icons": [
+    {
+      "src": "/icons/icon_512x512.2c1cf6add8304b1bfe60b11472e932b5.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon_384x384.f964024a6e0de603a4c750017de1476f.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon_256x256.b32bb2437138d9683543579d9ffb61a6.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon_192x192.c4fe20e1cfc83ae044b1253a2257b0db.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon_128x128.e49b3f36e19830b4fe9e1899b72954ae.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon_96x96.0325342c0b404e7d9c7214624136d5e7.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "AI Code Chat",
+  "short_name": "AI Chat",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "/",
+  "description": "Get assistance for coding-related tasks through a simple, easy-to-use and feature-rich chat application.",
+  "theme_color": "#4338C9",
+  "background_color": "#B3B3E0"
+}
