@@ -24,12 +24,13 @@
 
 All source code can be found in the `/src` directory and the `/public` directory contains all production-ready code, bundled and optimized using Webpack.
 
-**Webpack Configurations**
+**Webpack Configuration**
 - Handles the CSS and PostCSS (for Tailwind) for bundling
 - Handles bundling all modularized JavaScript code
 - Handles configuring HTML with meta tags and icons
 - Handles retrieval of API key from hidden `.env` file
 - Handles `manifest.json` file required for a Progressive Web Application
+- Handles minifying all CSS and JavaScript files
 
 **Styles** in `/styles`
 - `main.css` holds all additional Tailwind styling - used for repeating styles and to handle elements that are dynamically added
