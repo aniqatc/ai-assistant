@@ -41,9 +41,7 @@ pre[class*='language-']:after {
  */
 
 .dark code,
-.dark pre,
-.dark code[class*='language-'],
-.dark pre[class*='language-'] {
+.dark pre {
 	background: #27212e;
 	color: #ffffff;
 	font-family: 'Source Code Pro', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'monospace';
@@ -105,7 +103,7 @@ pre[class*='language-']:after {
 
 .dark .token.builtin,
 .dark .token.constant,
-..dark token.boolean {
+.dark .token.boolean {
 	color: #ffe261;
 }
 

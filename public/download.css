@@ -3,7 +3,6 @@ body {
 	background: #ede9fe;
 	color: #333;
 	font-size: 12px;
-	border: 1px solid #ba8be5;
 	margin: 0.75rem;
 }
 
@@ -157,7 +156,7 @@ pre {
 
 .token.builtin,
 .token.constant,
-. token.boolean {
+.token.boolean {
 	color: #ffe261;
 }
 
