@@ -5,11 +5,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-	mode: 'development',
+	mode: 'production',
 	entry: './src/scripts/index.js',
 	output: {
 		path: path.resolve(__dirname, 'public'),
@@ -82,4 +84,8 @@ module.exports = {
 			],
 		}),
 	],
+	optimization: {
+		minimize: true,
+		minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
+	},
 };
