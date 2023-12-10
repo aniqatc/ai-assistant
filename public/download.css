@@ -216,3 +216,11 @@ pre {
 .token.namespace {
 	opacity: 0.7;
 }
+
+@media print {
+	body,
+	body * {
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+}

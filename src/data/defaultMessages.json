@@ -1,7 +1,7 @@
 {
 	"refactor": {
 		"do": "Explain any specific code improvement that you are looking for, such as, performance, readability, etc. Otherwise, drop your code snippet for a general assessment.",
-		"dont": "Avoid sending code that isn't related to the issue. Refrain from submitting lengthy code. Type 'Disclaimer' to the chat for limitations."
+		"dont": "Avoid sending code that isn't related to the issue. Type 'Disclaimer' to the chat for additional limitations."
 	},
 	"explain": {
 		"do": "Ask a coding-related questions for an explanation or provide a code snippet to get a concise explanation.",
@@ -9,10 +9,10 @@
 	},
 	"debug": {
 		"do": "Briefly explain the problem, provide any error messages. Otherwise, drop your code snippet for a general assessment.",
-		"dont": "Avoid sending code that isn't related to the issue. Refrain from submitting lengthy code. Type 'Disclaimer' to the chat for limitations."
+		"dont": "Avoid sending code that isn't related to the issue. Type 'Disclaimer' to the chat for additional limitations."
 	},
 	"convert": {
-		"do": "Clearly state the language you would like your code snippet converted into. Provide context if necessary to how the code operates.",
-		"dont": "Refrain from submitting overly complex and lengthy code snippets. Run the code through the 'Debug' option before submitting to ensure that the snippet doesn't convert with any pre-existing bugs."
+		"do": "Clearly state the language you would like your code snippet converted into. Provide context if necessary to understand how the code operates.",
+		"dont": "Refrain from submitting overly lengthy code snippets. Run the code through the 'Debug' option before submitting to ensure that the snippet doesn't convert with any pre-existing bugs."
 	}
 }
