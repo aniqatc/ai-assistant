@@ -47,13 +47,12 @@ copyButton.addEventListener('click', () => {
 		});
 });
 
-helpButton.addEventListener('click', () => {
-	commandHandler('disclaimer');
-	commandHandler('help');
-	displayTemporaryMessage(helpButton, '', 'Printed disclaimer & commands...');
-});
-
 downloadButton.addEventListener('click', () => {
 	downloadChatHistory();
 	displayTemporaryMessage(downloadButton, '', 'Downloaded current chat...');
+});
+
+helpButton.addEventListener('click', () => {
+	commandHandler('disclaimer');
+	commandHandler('help');
 });

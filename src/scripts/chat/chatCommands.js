@@ -1,4 +1,5 @@
 import chatCommands from '../../data/chatCommands.json';
+import { autoScrollToBottom } from './chatScroll';
 
 const commandsArray = Object.keys(chatCommands);
 const commandStyles = [
@@ -32,6 +33,8 @@ function insertCommandMessage(message, userInput) {
 	div.innerHTML = message.el || chatCommands[userInput];
 	div.classList.add(...commandStyles);
 	chatContainer.appendChild(div);
+
+	autoScrollToBottom();
 }
 
 export { commandsArray, commandStyles, commandHandler, insertCommandMessage };
