@@ -65,8 +65,8 @@ module.exports = {
 			],
 		}),
 		new WebpackPwaManifest({
-			name: 'AI Code Chat',
-			short_name: 'AI Chat',
+			name: 'AI Code Assistance Chat',
+			short_name: 'AI Coding Chat',
 			description:
 				'Get assistance for coding-related tasks through a simple, easy-to-use and feature-rich chat application.',
 			theme_color: '#18181B',

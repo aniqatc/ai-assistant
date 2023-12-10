@@ -2,12 +2,11 @@ import { insertMessage } from './insertMessage';
 import { insertCommandMessage } from './chatCommands';
 import { printBottomToolbarMessage } from '../ui/bottomToolbar';
 
-let msgType;
-
 function saveChatHistory() {
 	const printedMessages = document.querySelectorAll('.js-message--chat');
 	const messagesArray = Array.from(printedMessages).map(message => {
-		setMsgType(message);
+		const msgType = getMsgType(message);
+
 		return {
 			el: message.innerHTML,
 			elementType: message.tagName.toLowerCase(),
@@ -37,21 +36,22 @@ function clearChatHistory() {
 }
 
 // Helpers
-
-function handleStoredMessage(message) {
-	message.msgType === 'command'
-		? insertCommandMessage(message)
-		: insertMessage(message.elementType, message.content, message.lang, message.msgType);
-}
-
-function setMsgType(message) {
+function getMsgType(message) {
 	if (Object.values(message.classList).includes('js-message--user')) {
-		return (msgType = 'user');
+		return 'user';
 	} else if (Object.values(message.classList).includes('js-message--command')) {
-		return (msgType = 'command');
+		return 'command';
 	} else {
-		return (msgType = 'ai');
+		return 'ai';
 	}
 }
 
-export { saveChatHistory, getChatHistory, clearChatHistory };
+// Based on type (commands inserted without typewriting effect)
+function handleStoredMessage(message) {
+	const { elementType, content, lang, msgType } = message;
+	msgType === 'command'
+		? insertCommandMessage(message)
+		: insertMessage(elementType, content, lang, msgType);
+}
+
+export { getChatHistory, saveChatHistory, clearChatHistory };

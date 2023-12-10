@@ -1,8 +1,8 @@
 const chatContainer = document.querySelector('#js-chat');
+chatContainer.addEventListener('scroll', autoScrollCancel);
 
 let scrollingInterval;
-let lastScrollTop = chatContainer.scrollTop;
-chatContainer.addEventListener('scroll', autoScrollCancel);
+let previousScrollTop = chatContainer.scrollTop;
 
 function clearScrollInterval() {
 	if (scrollingInterval) {
@@ -23,10 +23,12 @@ function autoScrollToBottom() {
 
 function autoScrollCancel() {
 	let currentScrollTop = chatContainer.scrollTop;
-	if (currentScrollTop < lastScrollTop) {
-		clearInterval(scrollingInterval);
+	// scrolling up causes scrollTop value to decrease
+	// (scrollTop represents how much the element is being scrolled vertically)
+	if (currentScrollTop < previousScrollTop) {
+		clearScrollInterval();
 	}
-	lastScrollTop = currentScrollTop;
+	previousScrollTop = currentScrollTop; // new scroll value
 }
 
 export { autoScrollToBottom };

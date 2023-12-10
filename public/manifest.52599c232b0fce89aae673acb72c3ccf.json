@@ -31,8 +31,8 @@
       "type": "image/png"
     }
   ],
-  "name": "AI Code Chat",
-  "short_name": "AI Chat",
+  "name": "AI Code Assistance Chat",
+  "short_name": "AI Coding Chat",
   "orientation": "portrait",
   "display": "standalone",
   "start_url": "/",

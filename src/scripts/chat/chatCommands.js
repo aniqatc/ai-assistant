@@ -1,7 +1,7 @@
 import chatCommands from '../../data/chatCommands.json';
 import { autoScrollToBottom } from './chatScroll';
 
-const commandsArray = Object.keys(chatCommands);
+const commandsList = Object.keys(chatCommands);
 const commandStyles = [
 	'js-message',
 	'js-message--chat',
@@ -13,16 +13,10 @@ const commandStyles = [
 function processCommand(userInput) {
 	insertCommandMessage('', userInput);
 
-	if (document.getElementById(`js-radio-${userInput}`)) {
-		document.getElementById(`js-radio-${userInput}`).click();
+	if (document.querySelector(`#js-radio-${userInput}`)) {
+		document.querySelector(`#js-radio-${userInput}`).click();
 	}
-	if (
-		userInput === 'save' ||
-		userInput === 'clear' ||
-		userInput === 'copy' ||
-		userInput === 'theme' ||
-		userInput === 'download'
-	) {
+	if (document.querySelector(`#js-${userInput}-btn`) && userInput !== 'help') {
 		document.querySelector(`#js-${userInput}-btn`).click();
 	}
 }
@@ -30,11 +24,13 @@ function processCommand(userInput) {
 function insertCommandMessage(message, userInput) {
 	const chatContainer = document.querySelector('#js-chat');
 	const div = document.createElement('div');
+
+	// if saved obj (message) from localStorage, otherwise, use userInput:
 	div.innerHTML = message.el || chatCommands[userInput];
-	div.classList.add(...commandStyles);
 	chatContainer.appendChild(div);
+	div.classList.add(...commandStyles);
 
 	autoScrollToBottom();
 }
 
-export { commandsArray, commandStyles, processCommand, insertCommandMessage };
+export { commandsList, commandStyles, processCommand, insertCommandMessage };

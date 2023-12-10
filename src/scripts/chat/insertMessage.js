@@ -1,7 +1,7 @@
 import { myCodeTypewriter, myTextTypewriter } from '../ui/typewriter';
+import { autoScrollToBottom } from './chatScroll';
 import { commandStyles } from './chatCommands';
 import { userStyles } from './userInput';
-import { autoScrollToBottom } from './chatScroll';
 import { aiStyles } from '../ai/api';
 
 const chatContainer = document.querySelector('#js-chat');
@@ -9,22 +9,20 @@ const chatContainer = document.querySelector('#js-chat');
 function insertMessage(elementType, content, lang, msgType = 'ai') {
 	const el = document.createElement(elementType);
 	chatContainer.appendChild(el);
-	autoScrollToBottom();
 
 	if (lang && lang !== 'undefined') {
-		el.setAttribute('data-lang', lang);
+		el.setAttribute('data-lang', lang); // to be used for storage
 		myCodeTypewriter(el, content, lang);
 	} else if (msgType === 'user') {
-		el.textContent = content;
+		el.textContent = content; // no typewriting effect for user inputs
 	} else {
 		myTextTypewriter(el, content);
 	}
-
 	addMessageStyles(el, msgType);
+	autoScrollToBottom();
 }
 
 // Helper
-
 function addMessageStyles(el, msgType) {
 	if (msgType === 'ai') {
 		el.classList.add(...aiStyles);
