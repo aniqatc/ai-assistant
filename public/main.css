@@ -1431,6 +1431,10 @@ a:hover {
     font-size: 1rem;
     line-height: 1.5rem;
   }
+
+  .xs\:leading-tight {
+    line-height: 1.25;
+  }
 }
 
 @media (min-width: 640px) {
