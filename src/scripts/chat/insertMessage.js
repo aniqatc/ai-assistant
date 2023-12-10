@@ -1,4 +1,4 @@
-import { myCodeTypewriter, myTextTypewriter } from './typewriter';
+import { myCodeTypewriter, myTextTypewriter } from '../ui/typewriter';
 import { commandStyles } from './chatCommands';
 import { userStyles } from './userInput';
 import { autoScrollToBottom } from './chatScroll';

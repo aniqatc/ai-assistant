@@ -8,7 +8,7 @@
 		"dont": "Overly general questions get overly general responses so be concise but specific!"
 	},
 	"debug": {
-		"do": "Briefly explain the problem, provide any error messages and state the language.",
+		"do": "Briefly explain the problem, provide any error messages. Otherwise, drop your code snippet for a general assessment.",
 		"dont": "Avoid sending code that isn't related to the issue. Refrain from submitting lengthy code. Type 'Disclaimer' to the chat for limitations."
 	},
 	"convert": {

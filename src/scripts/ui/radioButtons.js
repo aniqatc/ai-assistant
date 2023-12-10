@@ -1,5 +1,5 @@
 import { typeDefaultMessages } from '../chat/defaultMessages';
-import { triggerSlideInAnimation } from '../chat/messageAnimation';
+import { triggerSlideInAnimation } from './messageAnimation';
 import { autoScrollToBottom } from '../chat/chatScroll';
 import { printBottomToolbarMessage } from './bottomToolbar';
 

@@ -1,4 +1,4 @@
-import { myTextTypewriter } from './typewriter';
+import { myTextTypewriter } from '../ui/typewriter';
 import defaultMessages from '../../data/defaultMessages.json';
 
 const messageDosEl = document.querySelector('#js-message--dos');

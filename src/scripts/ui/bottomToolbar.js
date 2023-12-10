@@ -1,4 +1,4 @@
-import { myTextTypewriter } from '../chat/typewriter';
+import { myTextTypewriter } from './typewriter';
 
 function printBottomToolbarMessage(message) {
 	const bottomBarEl = document.querySelector('#js-toolbar-message');
