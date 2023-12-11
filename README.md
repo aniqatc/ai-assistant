@@ -28,7 +28,7 @@ All source code can be found in the `/src` directory and the `/public` directory
 - Handles the CSS and PostCSS loaders (for Tailwind) 
 - Handles bundling all modularized JavaScript code
 - Handles configuring HTML with meta tags and icons
-- Handles retrieval of API key from hidden `.env` file
+- Handles retrieval of API key from hidden `.env` file using different plugins for prod vs. dev environment
 - Handles `manifest.json` file required for a Progressive Web Application
 - Handles minifying all CSS and JavaScript files
 
@@ -85,3 +85,13 @@ All source code can be found in the `/src` directory and the `/public` directory
 - Handling Complex Issues: For more intricate coding-related queries, I recommend dividing the code into smaller segments and interacting with the chat step-by-step. Alternatively, it might be better to use ChatGPT directly for more extensive assistance.
 - Adherence to Guidelines: For the most optimal experience, please ensure that you follow the specific guidelines provided for each assistance option.
 - Limited testing: I've only tested the chat with popular languages (JavaScript, CSS/SASS, Typescript, Python, Java, Lua) and some random ones like COBOL and it worked as expected *(so far)*.
+
+## Available Scripts
+
+#### `npm run build`
+
+- Build in production mode + sets `NODE_ENV` variable to `production`
+
+#### `npm run start`
+
+- Starts the development server + sets `NODE_ENV` variable to `development`
