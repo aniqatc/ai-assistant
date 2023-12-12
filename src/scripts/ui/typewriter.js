@@ -1,4 +1,4 @@
-import Prism from 'prismjs';
+import Prism from "prismjs";
 
 // Note **
 // typingTimeouts: prevents overlapping typewriting on the same element
@@ -6,40 +6,43 @@ import Prism from 'prismjs';
 //
 
 const typingTimeouts = new Map();
-const cursor = ' ●';
+const cursor = " ●";
 
 function myCodeTypewriter(el, content, lang) {
-	const langDefault = Prism.languages.javascript;
-	let i = 0;
+  const langDefault = Prism.languages.javascript;
+  let i = 0;
 
-	function typeChar() {
-		if (i < content.length) {
-			el.textContent = content.substring(0, i + 1) + cursor;
-			i++;
-			setTimeout(typeChar, 25);
-		} else {
-			el.textContent = content;
-		}
-		el.innerHTML = Prism.highlight(el.textContent, Prism.languages[lang] || langDefault);
-	}
-	typeChar();
+  function typeChar() {
+    if (i < content.length) {
+      el.textContent = content.substring(0, i + 1) + cursor;
+      i++;
+      setTimeout(typeChar, 25);
+    } else {
+      el.textContent = content;
+    }
+    el.innerHTML = Prism.highlight(
+      el.textContent,
+      Prism.languages[lang] || langDefault,
+    );
+  }
+  typeChar();
 }
 
 function myTextTypewriter(el, content) {
-	let i = 0;
-	clearTimeout(typingTimeouts.get(el));
+  let i = 0;
+  clearTimeout(typingTimeouts.get(el));
 
-	function typeChar() {
-		if (i < content.length) {
-			el.textContent = content.substring(0, i + 1) + cursor;
-			i++;
-			typingTimeouts.set(el, setTimeout(typeChar, 35));
-		} else {
-			el.textContent = content;
-			typingTimeouts.delete(el);
-		}
-	}
-	typeChar();
+  function typeChar() {
+    if (i < content.length) {
+      el.textContent = content.substring(0, i + 1) + cursor;
+      i++;
+      typingTimeouts.set(el, setTimeout(typeChar, 35));
+    } else {
+      el.textContent = content;
+      typingTimeouts.delete(el);
+    }
+  }
+  typeChar();
 }
 
 export { myCodeTypewriter, myTextTypewriter };

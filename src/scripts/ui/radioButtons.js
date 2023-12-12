@@ -1,29 +1,29 @@
-import { triggerSlideInAnimation } from './messageAnimation';
-import { autoScrollToBottom } from '../chat/chatScroll';
-import { typeDefaultMessages } from '../chat/defaultMessages';
-import { printBottomToolbarMessage } from './bottomToolbar';
+import { triggerSlideInAnimation } from "./messageAnimation";
+import { autoScrollToBottom } from "../chat/chatScroll";
+import { typeDefaultMessages } from "../chat/defaultMessages";
+import { printBottomToolbarMessage } from "./bottomToolbar";
 
-const storedOptionType = localStorage.getItem('optionType');
-const radioFieldset = document.querySelector('#js-radio-fieldset');
+const storedOptionType = localStorage.getItem("optionType");
+const radioFieldset = document.querySelector("#js-radio-fieldset");
 
-radioFieldset.addEventListener('change', event => {
-	const option = event.target.value;
+radioFieldset.addEventListener("change", (event) => {
+  const option = event.target.value;
 
-	triggerSlideInAnimation('.js-message'); // targets all chat elements
-	typeDefaultMessages(option); // prints option-specific info
-	autoScrollToBottom();
-	printBottomToolbarMessage(`Switched to ${option} chat...`);
+  triggerSlideInAnimation(".js-message"); // targets all chat elements
+  typeDefaultMessages(option); // prints option-specific info
+  autoScrollToBottom();
+  printBottomToolbarMessage(`Switched to ${option} chat...`);
 
-	localStorage.setItem('optionType', option);
+  localStorage.setItem("optionType", option);
 });
 
 function applyRadioOption() {
-	if (storedOptionType) {
-		const storedEl = document.querySelector(`#js-radio-${storedOptionType}`);
-		storedEl.checked = true;
+  if (storedOptionType) {
+    const storedEl = document.querySelector(`#js-radio-${storedOptionType}`);
+    storedEl.checked = true;
 
-		typeDefaultMessages(storedOptionType);
-	}
+    typeDefaultMessages(storedOptionType);
+  }
 }
 
 export { applyRadioOption };
