@@ -1,175 +1,177 @@
 body {
-	font-family: 'Noto Sans', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif';
-	background: #ede9fe;
-	color: #333;
-	font-size: 12px;
-	margin: 0.75rem auto;
-	max-width: 950px;
+  font-family: "Noto Sans", "system-ui", "-apple-system", "BlinkMacSystemFont",
+    "sans-serif";
+  background: #ede9fe;
+  color: #333;
+  font-size: 12px;
+  margin: 0.75rem auto;
+  max-width: 950px;
 }
 
 a {
-	text-decoration: underline;
-	text-decoration-thickness: 2px;
-	transition: all 0.15s ease-in;
-	color: #a763bf;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  transition: all 0.15s ease-in;
+  color: #a763bf;
 }
 
 a:hover {
-	text-decoration: none;
-	color: #7c3aed;
+  text-decoration: none;
+  color: #7c3aed;
 }
 
 .print-copy-credit .hidden {
-	display: block;
+  display: block;
 }
 
 .print-copy-credit {
-	text-align: center;
-	color: #1e1b4b;
-	font-weight: 500;
-	font-size: 16px;
-	margin-top: 0.75rem;
+  text-align: center;
+  color: #1e1b4b;
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 0.75rem;
 }
 
 .js-message--chat {
-	margin: 0.75rem;
+  margin: 0.75rem;
 }
 
 .js-message--user {
-	color: #666666;
-	margin-left: 0.75rem;
+  color: #666666;
+  margin-left: 0.75rem;
 }
 
 #js-message--dos {
-	background-color: rgba(191, 219, 254, 0.75);
-	color: #4b5563;
-	padding-left: 0.75rem;
-	padding-right: 0.75rem;
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
+  background-color: rgba(191, 219, 254, 0.75);
+  color: #4b5563;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 #js-message--donts {
-	background-color: rgba(255, 185, 185, 0.75);
-	color: #910d1a;
-	padding-left: 0.75rem;
-	padding-right: 0.75rem;
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
+  background-color: rgba(255, 185, 185, 0.75);
+  color: #910d1a;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .js-message--command {
-	font-size: 12px;
-	background-color: rgb(86 91 104 / 5%);
-	border: 1px solid #bfbfbf;
-	padding-left: 0.75rem;
-	padding-right: 0.75rem;
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
+  font-size: 12px;
+  background-color: rgb(86 91 104 / 5%);
+  border: 1px solid #bfbfbf;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .js-message--command p {
-	margin-bottom: 0.25rem;
-	margin-top: 0;
-	font-weight: 500;
+  margin-bottom: 0.25rem;
+  margin-top: 0;
+  font-weight: 500;
 }
 
 .js-message--command ul {
-	margin: 0.25rem 0;
-	padding: 0;
-	list-style-type: none;
+  margin: 0.25rem 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 .js-message--command li {
-	margin-left: 1rem;
-	margin-top: 0.2rem;
+  margin-left: 1rem;
+  margin-top: 0.2rem;
 }
 
 .js-message--command li:not(:has(a)) {
-	font-size: 0.75rem;
+  font-size: 0.75rem;
 }
 
 .js-message--command span {
-	display: block;
-	color: #851b67;
-	font-size: 0.75rem;
-	font-weight: 500;
-	margin-top: 0.2rem;
+  display: block;
+  color: #851b67;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 0.2rem;
 }
 
 .js-message--command li span {
-	display: inline;
-	color: #451b85;
+  display: inline;
+  color: #451b85;
 }
 
 .js-message--command pre span {
-	display: inline;
-	padding: 0;
+  display: inline;
+  padding: 0;
 }
 
 /* Syntax highlighting -- see prism.js for all styles */
 code,
 pre,
-code[class*='language-'],
-pre[class*='language-'] {
-	white-space: pre-wrap;
-	word-break: break-word;
-	border-radius: 0px;
-	font-size: 12px;
-	font-family: 'Source Code Pro', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'monospace';
-	padding: 0.5rem;
-	overflow: hidden;
-	background: #27212e;
-	color: #ffffff;
-	font-size: 12px;
-	direction: ltr;
-	text-align: left;
-	line-height: 1.5;
-	tab-size: 2;
-	hyphens: none;
+code[class*="language-"],
+pre[class*="language-"] {
+  white-space: pre-wrap;
+  word-break: break-word;
+  border-radius: 0px;
+  font-size: 12px;
+  font-family: "Source Code Pro", "ui-monospace", "SFMono-Regular", "Menlo",
+    "Monaco", "monospace";
+  padding: 0.5rem;
+  overflow: hidden;
+  background: #27212e;
+  color: #ffffff;
+  font-size: 12px;
+  direction: ltr;
+  text-align: left;
+  line-height: 1.5;
+  tab-size: 2;
+  hyphens: none;
 }
 
 pre > code,
-pre[class*='language-'] > code {
-	box-shadow: none;
-	border: none;
-	background: none;
+pre[class*="language-"] > code {
+  box-shadow: none;
+  border: none;
+  background: none;
 }
 
-pre[class*='language-']:before,
-pre[class*='language-']:after {
-	display: none;
+pre[class*="language-"]:before,
+pre[class*="language-"]:after {
+  display: none;
 }
 
 pre {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .token.comment,
 .token.prolog,
 .token.cdata {
-	color: #91889b;
+  color: #91889b;
 }
 
 .token.punctuation {
-	color: #7b6995;
+  color: #7b6995;
 }
 
 .token.builtin,
 .token.constant,
 .token.boolean {
-	color: #ffe261;
+  color: #ffe261;
 }
 
 .token.number {
-	color: #b381c5;
+  color: #b381c5;
 }
 
 .token.important,
 .token.atrule,
 .token.property,
 .token.keyword {
-	color: #40b4c4;
+  color: #40b4c4;
 }
 
 .token.doctype,
@@ -178,50 +180,50 @@ pre {
 .token.tag,
 .token.class-name,
 .token.symbol {
-	color: #74dfc4;
-	background: none;
+  color: #74dfc4;
+  background: none;
 }
 
 .token.attr-name,
 .token.function,
 .token.deleted,
 .token.selector {
-	color: #cfafec;
+  color: #cfafec;
 }
 
 .token.attr-value,
 .token.regex,
 .token.char,
 .token.string {
-	color: #b4dce7;
+  color: #b4dce7;
 }
 
 .token.entity,
 .token.url,
 .token.variable {
-	color: #ffffff;
+  color: #ffffff;
 }
 
 .token.bold {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .token.italic {
-	font-style: italic;
+  font-style: italic;
 }
 
 .token.entity {
-	cursor: help;
+  cursor: help;
 }
 
 .token.namespace {
-	opacity: 0.7;
+  opacity: 0.7;
 }
 
 @media print {
-	body,
-	body * {
-		-webkit-print-color-adjust: exact;
-		print-color-adjust: exact;
-	}
+  body,
+  body * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 }
