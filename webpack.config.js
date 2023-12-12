@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const WebpackPwaManifest = require("webpack-pwa-manifest");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 const isDevelopment = process.env.NODE_ENV !== "production";
 
@@ -85,6 +86,6 @@ module.exports = {
   ],
   optimization: {
     minimize: true,
-    minimizer: [new CssMinimizerPlugin()],
+    minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
   },
 };

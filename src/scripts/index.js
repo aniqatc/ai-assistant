@@ -9,6 +9,7 @@ import "prismjs/components/prism-sass";
 import "prismjs/components/prism-scss";
 import "prismjs/components/prism-java";
 import "prismjs/components/prism-lua";
+import "prismjs/components/prism-mongodb";
 import { applySavedTheme } from "./ui/theme";
 import { applyRadioOption } from "./ui/radioButtons";
 import { getChatHistory } from "./chat/chatHistory";
