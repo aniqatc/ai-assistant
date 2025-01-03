@@ -51,7 +51,9 @@ function handleStoredMessage(message) {
   const { elementType, content, lang, msgType } = message;
   msgType === "command"
     ? insertCommandMessage(message)
-    : insertMessage(elementType, content, lang, msgType);
+    : lang
+      ? insertMessage(elementType, content, lang, msgType)
+      : insertMessage(elementType, content, null, "user");
 }
 
 export { getChatHistory, saveChatHistory, clearChatHistory };
