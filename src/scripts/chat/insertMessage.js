@@ -1,3 +1,4 @@
+import Prism from "prismjs";
 import { myCodeTypewriter, myTextTypewriter } from "../ui/typewriter";
 import { autoScrollToBottom } from "./chatScroll";
 import { commandStyles } from "./chatCommands";
@@ -6,16 +7,28 @@ import { aiStyles } from "../ai/api";
 
 const chatContainer = document.querySelector("#js-chat");
 
-function insertMessage(elementType, content, lang, msgType = "ai") {
+// options.instant: skip the typewriter (used for messages restored from saved history)
+function insertMessage(
+  elementType,
+  content,
+  lang,
+  msgType = "ai",
+  { instant = false } = {},
+) {
   const el = document.createElement(elementType);
   chatContainer.appendChild(el);
 
   if (lang && lang !== "undefined") {
     el.setAttribute("data-lang", lang); // to be used for storage
     chatContainer.insertBefore(createCodeHead(lang), el);
-    myCodeTypewriter(el, content, lang);
-  } else if (msgType === "user") {
-    el.textContent = content; // no typewriting effect for user inputs
+    instant
+      ? (el.innerHTML = Prism.highlight(
+          content,
+          Prism.languages[lang] || Prism.languages.javascript,
+        ))
+      : myCodeTypewriter(el, content, lang);
+  } else if (msgType === "user" || instant) {
+    el.textContent = content; // no typewriting effect for user inputs or saved messages
   } else {
     myTextTypewriter(el, content);
   }
