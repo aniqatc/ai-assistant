@@ -4,6 +4,7 @@ import { generateRequestURL, displayAIResponse } from "./apiHelpers";
 
 const aiStyles = [
   "js-message--chat",
+  "js-message--ai",
   "js-message",
   "animate-slide-in",
   "animation-delay-300",

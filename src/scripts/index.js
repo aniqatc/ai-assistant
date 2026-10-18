@@ -18,6 +18,7 @@ import { printBottomToolbarMessage } from "./ui/bottomToolbar";
 import "./ui/topToolbar";
 import "./chat/chatScroll";
 import "./chat/userInput";
+import "./chat/chatActions";
 
 // Initialize
 applySavedTheme();

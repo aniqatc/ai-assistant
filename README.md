@@ -1,9 +1,10 @@
 # AI Code Assistant
 
-A coding chat that explains, refactors, debugs or converts a snippet in one click, with syntax-highlighted answers you can copy, save or download.
+A coding chat that explains, refactors, debugs or converts a snippet in one click, with highlighted answers you can copy, save or download.
 
 **[Live site](https://code.aniqa.dev)**
 
+<!-- TODO: Replace both screenshots with the refreshed design once it's deployed (light and dark, ideally one with the help list open). These show the old layout. -->
 <table>
   <tr>
     <td width="50%"><a href="https://code.aniqa.dev"><img src="src/assets/screenshot-light.png" alt="The assistant in light mode, with the explain, refactor, debug and convert options above the chat" width="100%"></a></td>
@@ -16,47 +17,50 @@ A coding chat that explains, refactors, debugs or converts a snippet in one clic
 - HTML, JavaScript and Tailwind CSS, bundled with Webpack
 - ChatGPT 3.5 through the SheCodes AI API
 - Prism.js for syntax highlighting, with a tweaked [Laserwave](https://github.com/Jaredk3nt/laserwave) theme
-- PWA manifest so it installs like an app
+- Font Awesome icons, Noto Sans and Source Code Pro
+- PWA manifest, so it can be installed like an app
 
 ## Features
 
-- Pick a mode (explain, refactor, debug or convert) and paste code without writing a prompt
-- Answers arrive as text and highlighted code blocks with a typewriter effect
-- Built-in chat commands (type `help`) let you use the whole site from the keyboard: copy, save, clear, download, switch themes and more
-- A toolbar to copy the latest code snippet, save or clear the chat, download it as a styled HTML file, or list the commands
-- The bottom bar shows the last action and how long the answer took, green under 5 seconds and red over
-- Light and dark themes for the page and the code
+- Pick a mode (explain, refactor, debug or convert) and paste code with no prompt; each mode shows its own tips
+- Answers type out as text and highlighted code, and every code block has its own Copy button
+- Copy the latest snippet, save the chat for next time, download it as a styled HTML file or clear it
+- Type `help` for a grouped list of built-in commands, then type one or tap it
+- The status bar shows the last action and response time, green under 5 seconds and red over
+- Light and dark themes; your theme, mode and saved chat are remembered in the browser
 
 ## Design
 
-- Responsive with Tailwind's breakpoints, down to screens under 370px
-- Messages slide in and toolbar buttons respond with small transitions
-- The downloaded chat has its own stylesheet, so it reads well on screen and in print
+- The October 2026 refresh kept the layout, fonts and indigo/violet palette, and added mode descriptions, chat bubbles and a character counter
+- The avoid tip is amber, not red, so it doesn't read like an error
+- On phones the modes form a 2×2 grid, the tips stack and the toolbar goes icon-only
+- The downloaded chat has its own stylesheet for screen and print
 
 ## Accessibility
 
-- Every icon-only toolbar button has a screen reader label
-- The chat can be driven entirely by typed commands
+- Modes are labeled radio buttons with a visible focus ring
+- Toolbar buttons have screen reader labels for when they're icon-only
+- Buttons are at least 44px tall for touch
 
 ## Project structure
 
-- `src/scripts/ai/`: building the request, calling the API and timing the response
-- `src/scripts/chat/`: user input, chat commands, message rendering, saving and downloading history
-- `src/scripts/ui/`: theme, toolbars, mode buttons, typewriter and message animations
-- `src/data/`: the chat commands and each mode's guidance message, as JSON
+- `src/scripts/ai/`: the request, API call and response timer
+- `src/scripts/chat/`: input, commands, rendering, chat clicks, history and downloads
+- `src/scripts/ui/`: theme, toolbars, mode buttons, typewriter and animations
+- `src/data/`: commands and each mode's tips, as JSON
 - `src/styles/`: Tailwind extras, the Prism theme and the download stylesheet
 - `public/`: the Webpack build
 
 ## Key concepts
 
-- **Going past the brief.** This started as a SheCodes course project where we were only given the API. The modes, commands, toolbars, history and downloads are my own additions.
-- **Structured answers.** Each request asks the model to reply in a fixed JSON shape of text and code blocks, so the app can render code with Prism instead of parsing free text.
-- **Prompt context per mode.** Every mode adds its own instruction to your snippet, which is why you can paste code with no explanation.
-- **Keys at build time.** Webpack injects the API key from `.env` in development and from the host's environment in production, so it never sits in the repo.
+- **Going past the brief.** This started as a SheCodes course project with only the API provided; the modes, commands, toolbars, history and downloads are my additions.
+- **Structured answers.** Each mode adds its own instruction to your snippet and asks for a fixed JSON shape of text and code blocks, so code renders with Prism instead of being parsed out of free text.
+- **One listener for dynamic elements.** A single click handler on the chat covers every Copy and command button, including ones restored from history.
+- **Keys at build time.** Webpack injects the API key from `.env` locally and from the host's environment in production, so it stays out of the repo.
 
 ## Setup
 
-Requires Node 18+ and a SheCodes AI API key.
+Requires Node and a SheCodes AI API key.
 
 | Variable | Where to get it |
 | --- | --- |
@@ -70,7 +74,7 @@ echo "API_KEY=your_key" > .env
 npm start
 ```
 
-Each request allows 1,000 characters, and 300 go to the mode's context, so the input box is capped at 700.
+Requests allow 1,000 characters and 300 go to the mode's context, so input is capped at 700. Icons come from a Font Awesome Kit, which only loads on domains allowed in its settings.
 
 ## Scripts
 
@@ -81,6 +85,11 @@ Each request allows 1,000 characters, and 300 go to the mode's context, so the i
 
 ## Changelog
 
+### October 2026
+
+- Refreshed the design and made the layout work on phones
+- Added per-block Copy buttons, a character counter and tappable commands
+
 ### January 2025
 
 - Saved messages load instantly instead of replaying the typewriter effect
@@ -88,3 +97,7 @@ Each request allows 1,000 characters, and 300 go to the mode's context, so the i
 ### December 2023
 
 - Initial release
+
+## License
+
+MIT

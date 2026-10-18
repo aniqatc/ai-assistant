@@ -3,8 +3,8 @@ import { printBottomToolbarMessage } from "../ui/bottomToolbar";
 const resTime = document.querySelector("#js-response-time");
 const resTimeLabel = document.querySelector("#js-response-time-label");
 const resLabelStyles = {
-  red: ["text-red-600", "dark:text-red-500"],
-  green: ["text-green-600", "dark:text-green-500"],
+  red: ["text-red-700", "dark:text-red-400"],
+  green: ["text-green-700", "dark:text-green-400"],
 };
 
 function requestCompletionTime(startTime) {

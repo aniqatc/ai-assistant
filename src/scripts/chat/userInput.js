@@ -16,6 +16,11 @@ const userStyles = [
 const messageEl = document.querySelector("#js-toolbar-message");
 const userInput = document.querySelector("#js-user-input");
 const textarea = document.querySelector("#js-user-form");
+const charCount = document.querySelector("#js-char-count");
+
+userInput.addEventListener("input", () => {
+  charCount.textContent = userInput.value.length;
+});
 
 textarea.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -27,6 +32,7 @@ textarea.addEventListener("submit", (event) => {
     : processAPIResponse(currentInputValue);
 
   userInput.value = "";
+  userInput.dispatchEvent(new Event("input")); // resets the character counter
   messageEl.textContent = "";
 });
 
