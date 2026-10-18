@@ -50,10 +50,13 @@ helpButton.addEventListener("click", () => {
 });
 
 clearButton.addEventListener("click", () => {
-  const messages = chatContainer.querySelectorAll(".js-message--chat");
+  const messages = chatContainer.querySelectorAll(
+    ".js-message--chat, .code-head",
+  );
   messages.forEach((el) => el.remove()); // removes from DOM
   clearChatHistory(); // removes from localStorage
   chatInput.value = ""; // clears input
+  chatInput.dispatchEvent(new Event("input")); // resets the character counter
 
   displayTemporaryMessage(
     clearButton,

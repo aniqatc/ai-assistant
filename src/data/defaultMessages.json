@@ -1,18 +1,22 @@
 {
 	"refactor": {
 		"do": "Explain any specific code improvement that you are looking for, such as, performance, readability, etc. Otherwise, drop your code snippet for a general assessment.",
-		"dont": "Avoid sending code that isn't related to the issue. Type 'Disclaimer' to the chat for additional limitations."
+		"dont": "Avoid sending code that isn't related to the issue. Type 'Disclaimer' to the chat for additional limitations.",
+		"placeholder": "Paste code and say what you’d like improved…"
 	},
 	"explain": {
 		"do": "Ask a coding-related questions for an explanation or provide a code snippet to get a concise explanation.",
-		"dont": "Overly general questions get overly general responses so be concise but specific!"
+		"dont": "Overly general questions get overly general responses so be concise but specific!",
+		"placeholder": "Ask a coding question or paste a snippet to explain…"
 	},
 	"debug": {
 		"do": "Briefly explain the problem, provide any error messages. Otherwise, drop your code snippet for a general assessment.",
-		"dont": "Avoid sending code that isn't related to the issue. Type 'Disclaimer' to the chat for additional limitations."
+		"dont": "Avoid sending code that isn't related to the issue. Type 'Disclaimer' to the chat for additional limitations.",
+		"placeholder": "Paste your code and the error you’re seeing…"
 	},
 	"convert": {
 		"do": "Clearly state the language you would like your code snippet converted into. Provide context if necessary to understand how the code operates.",
-		"dont": "Refrain from submitting overly lengthy code snippets. Run the code through the 'Debug' option before submitting to ensure that the snippet doesn't convert with any pre-existing bugs."
+		"dont": "Refrain from submitting overly lengthy code snippets. Run the code through the 'Debug' option before submitting to ensure that the snippet doesn't convert with any pre-existing bugs.",
+		"placeholder": "Paste code and name the target language…"
 	}
 }

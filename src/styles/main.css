@@ -4,43 +4,114 @@
 
 /* GENERAL */
 body {
-  @apply bg-violet-100 text-slate-950 dark:bg-zinc-900 dark:text-zinc-100;
+  @apply bg-stone-100 text-zinc-800 dark:bg-neutral-900 dark:text-zinc-200;
 }
 
 a {
-  @apply underline underline-offset-2 transition-all duration-150 ease-in hover:text-violet-600 hover:no-underline dark:text-violet-200 dark:hover:text-violet-400;
+  @apply text-indigo-700 underline underline-offset-2 transition-colors duration-150 ease-in hover:text-violet-600 hover:no-underline dark:text-indigo-300 dark:hover:text-indigo-200;
 }
 
 /* TEXT GRADIENT */
 .text-gradient {
-  @apply bg-gradient-to-r  from-blue-800 via-violet-700 to-indigo-700 bg-clip-text text-transparent dark:from-blue-500 dark:via-violet-400 dark:to-indigo-400;
+  @apply bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent dark:from-indigo-400 dark:to-violet-400;
 }
 
-/* RADIO BUTTONS */
+/* MODE TILES */
 .option-label {
-  @apply relative flex h-[85px] w-[85px] cursor-pointer flex-col items-center justify-center gap-1 rounded-md border-2 border-solid border-violet-400 bg-neutral-50 p-2 text-slate-700 shadow-lg transition-all duration-200 ease-out hover:border-violet-800 peer-checked:border-violet-800 peer-checked:bg-violet-50 peer-checked:text-violet-600 peer-checked:ring peer-checked:ring-violet-700/50 dark:border  dark:border-violet-800 dark:bg-neutral-900 dark:text-zinc-300 dark:hover:border-violet-400 dark:peer-checked:bg-indigo-950 dark:peer-checked:text-violet-300 xs:h-[100px] xs:w-[100px] sm:h-28 sm:w-28;
+  @apply flex h-full cursor-pointer flex-col gap-1.5 rounded-xl border-[1.5px] border-stone-300 bg-white px-3.5 pb-3.5 pt-3 text-left text-zinc-800 transition-colors duration-150 ease-out hover:border-indigo-300 sm:px-4 sm:pb-4 sm:pt-3.5 dark:border-zinc-700 dark:bg-[#1C1C1F] dark:text-zinc-200 dark:hover:border-indigo-500/60;
+}
+
+.option-input:checked + .option-label {
+  @apply border-indigo-500 bg-indigo-50 dark:border-indigo-400 dark:bg-[#1E1F3A];
+}
+
+.option-input:focus-visible + .option-label {
+  @apply ring-2 ring-indigo-500 ring-offset-2 ring-offset-stone-100 dark:ring-offset-neutral-900;
+}
+
+.option-icon {
+  @apply mb-1 flex h-9 w-9 items-center justify-center rounded-[10px] bg-stone-100 text-base text-indigo-700 transition-colors duration-150 sm:h-[38px] sm:w-[38px] dark:bg-zinc-800 dark:text-indigo-200;
+}
+
+.option-input:checked + .option-label .option-icon {
+  @apply bg-indigo-600 text-white;
 }
 
 .option-radio {
-  @apply absolute right-2 top-2 flex h-4 w-4 items-center justify-center rounded-full border-2 border-solid border-gray-400 text-[10px] text-gray-400 transition-all duration-300 ease-out xs:h-5 xs:w-5 xs:text-xs sm:right-1 sm:top-1;
+  @apply flex h-[22px] w-[22px] items-center justify-center rounded-full border-[1.5px] border-stone-300 text-[11px] text-transparent transition-colors duration-150 dark:border-zinc-600;
 }
 
-.option-input:checked ~ .option-label .option-radio {
-  @apply scale-100 bg-violet-400 text-white dark:bg-violet-300 dark:text-indigo-900;
+.option-input:checked + .option-label .option-radio {
+  @apply border-transparent bg-indigo-500 text-white dark:bg-indigo-400 dark:text-neutral-900;
+}
+
+.option-name {
+  @apply text-[15px] font-semibold sm:text-base;
+}
+
+.option-blurb {
+  @apply text-[13px] leading-snug text-stone-500 dark:text-zinc-400;
 }
 
 /* WORKSPACE BUTTONS */
 .workspace-button {
-  @apply rounded-sm border border-solid border-indigo-300 px-3 py-1 shadow transition-all duration-300 ease-out hover:border-violet-800 hover:text-violet-600 hover:ring hover:ring-indigo-700/50 active:scale-95 active:bg-indigo-700 active:text-violet-50 active:duration-200 dark:border-gray-600 dark:bg-zinc-800 dark:hover:border-violet-400  dark:hover:text-violet-300 dark:active:bg-indigo-700 dark:active:text-indigo-50 xs:px-2;
+  @apply flex h-11 min-w-[44px] items-center justify-center gap-2 rounded-lg border border-transparent px-3 text-sm text-stone-700 transition-colors duration-150 ease-out hover:border-indigo-200 hover:bg-indigo-50 hover:text-indigo-700 active:scale-95 dark:text-zinc-300 dark:hover:border-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-indigo-200;
 }
 
-/* DYNAMIC ELEMENTS -- applies to elements pulled from JSON file */
+/* DO / AVOID TIPS */
+.tip {
+  @apply flex items-start gap-2.5 rounded-[10px] border px-3.5 py-3 text-sm leading-normal text-zinc-700 dark:text-zinc-300;
+}
+
+.tip-icon {
+  @apply flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-full text-[11px] text-white;
+}
+
+.tip--do {
+  @apply border-indigo-200 bg-indigo-50 dark:border-[#33366B] dark:bg-[#1E1F3A];
+}
+
+.tip--do .tip-icon {
+  @apply bg-indigo-600;
+}
+
+.tip--dont {
+  @apply border-amber-200 bg-amber-50 dark:border-[#4A3820] dark:bg-[#2A2016];
+}
+
+.tip--dont .tip-icon {
+  @apply bg-amber-700;
+}
+
+/* CHAT MESSAGES -- added dynamically */
+.js-message--user {
+  @apply ml-auto w-fit max-w-[85%] whitespace-pre-wrap rounded-xl rounded-br-[4px] bg-indigo-600 px-3.5 py-2.5 text-[15px] leading-normal text-white sm:max-w-[min(75%,600px)] dark:bg-[#2E2A5C] dark:text-indigo-50;
+}
+
+.js-message--ai {
+  @apply text-[15px] leading-relaxed;
+}
+
+/* Code blocks: header bar (language + copy) sits right above each <pre> */
+.code-head {
+  @apply -mb-3 flex items-center justify-between rounded-t-[10px] border border-b-0 border-stone-200 bg-stone-100 py-1 pl-3.5 pr-1.5 font-mono text-xs text-stone-500 dark:border-[#2F2A3D] dark:bg-[#221D2E] dark:text-zinc-400;
+}
+
+.code-copy-btn {
+  @apply flex h-8 items-center gap-1.5 rounded-md px-2.5 font-sans text-xs text-stone-600 transition-colors duration-150 hover:bg-stone-200 hover:text-indigo-700 dark:text-zinc-300 dark:hover:bg-white/10 dark:hover:text-indigo-200;
+}
+
+#js-chat pre.js-message--ai {
+  @apply rounded-b-[10px] border border-stone-200 !px-4 !py-3.5 !text-[13.5px] !leading-relaxed sm:!text-sm dark:border-[#2F2A3D];
+}
+
+/* COMMAND MESSAGES -- applies to elements pulled from JSON file */
 .js-message--command {
-  @apply border bg-gray-100 px-3 py-2 text-[14px] text-indigo-900 dark:border-gray-600 dark:bg-gray-950/20 dark:text-gray-100;
+  @apply rounded-xl border border-indigo-200 bg-white p-3.5 text-sm text-zinc-700 sm:p-5 dark:border-[#33366B] dark:bg-[#1C1C1F] dark:text-zinc-300;
 }
 
 .js-message--command p {
-  @apply my-1 font-medium dark:text-indigo-100;
+  @apply my-1 font-medium text-zinc-900 dark:text-zinc-100;
 }
 
 .js-message--command ul {
@@ -48,7 +119,7 @@ a {
 }
 
 .js-message--command li {
-  @apply pl-4 text-xs;
+  @apply pl-4 text-[13px];
 }
 
 .js-message--command a {
@@ -56,13 +127,54 @@ a {
 }
 
 .js-message--command span {
-  @apply my-1 block font-medium text-rose-700 dark:text-red-300;
+  @apply my-1 block font-medium text-indigo-700 dark:text-indigo-300;
 }
 
 .js-message--command li span {
-  @apply inline text-violet-600 dark:text-violet-300;
+  @apply inline text-violet-700 dark:text-violet-300;
 }
 
 .js-message--command pre span {
   @apply inline p-0;
+}
+
+/* Command list (help) */
+.cmd-list {
+  @apply flex flex-col gap-[18px];
+}
+
+.cmd-list header {
+  @apply flex items-start gap-3;
+}
+
+.cmd-list .cmd-list-icon {
+  @apply flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] bg-indigo-100 text-indigo-700 dark:bg-[#2E2A5C] dark:text-indigo-300;
+}
+
+.cmd-list h3 {
+  @apply text-[17px] font-semibold text-zinc-900 dark:text-zinc-50;
+}
+
+.cmd-list header p {
+  @apply my-0 mt-1 font-normal leading-normal text-stone-500 dark:text-zinc-400;
+}
+
+.cmd-list h4 {
+  @apply mb-2.5 flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.08em] text-indigo-700 after:h-px after:flex-1 after:bg-stone-200 after:content-[''] dark:text-indigo-300 dark:after:bg-zinc-800;
+}
+
+.cmd-grid {
+  @apply grid gap-2 md:grid-cols-2;
+}
+
+.cmd-btn {
+  @apply flex min-h-[52px] w-full items-center gap-3 rounded-[10px] border border-stone-200 bg-stone-50 px-3 py-2 text-left transition-colors duration-150 hover:border-indigo-300 hover:bg-indigo-50 dark:border-[#34343B] dark:bg-[#232327] dark:hover:border-zinc-600 dark:hover:bg-[#2A2A30];
+}
+
+#js-chat .cmd-btn code {
+  @apply min-w-[88px] shrink-0 bg-transparent p-0 font-mono text-sm font-semibold text-indigo-700 dark:bg-transparent dark:text-indigo-200;
+}
+
+.cmd-btn small {
+  @apply text-sm leading-snug text-zinc-700 dark:text-zinc-300;
 }

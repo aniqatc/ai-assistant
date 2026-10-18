@@ -227,3 +227,56 @@ pre {
     print-color-adjust: exact;
   }
 }
+
+/* Code block header + command list (added in the design refresh) */
+.code-head {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.75rem 0.75rem -0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: #221d2e;
+  color: #c4bfcc;
+  font-family: "Source Code Pro", "ui-monospace", monospace;
+  font-size: 11px;
+}
+
+.code-copy-btn {
+  display: none;
+}
+
+.cmd-list h3 {
+  margin: 0 0 0.25rem;
+  font-size: 14px;
+}
+
+.cmd-list h4 {
+  margin: 0.75rem 0 0.25rem;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #451b85;
+}
+
+.cmd-list-icon {
+  display: none;
+}
+
+.cmd-btn {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  margin: 0.15rem 0;
+  padding: 0.25rem 0;
+  border: none;
+  background: none;
+  font: inherit;
+  text-align: left;
+}
+
+.cmd-btn code {
+  min-width: 80px;
+  padding: 0;
+  background: none;
+  color: #451b85;
+  font-weight: 600;
+}
