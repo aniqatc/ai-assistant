@@ -40,7 +40,7 @@ A coding chat that explains, refactors, debugs or converts a snippet in one clic
 
 - Modes are labeled radio buttons with a visible focus ring
 - Toolbar buttons have screen reader labels for when they're icon-only
-- Buttons are at least 44px tall, and pinch-zoom is allowed
+- Buttons are at least 44px tall for touch
 
 ## Project structure
 
