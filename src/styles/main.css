@@ -92,6 +92,12 @@ a {
   @apply text-[15px] leading-relaxed;
 }
 
+/* The chat is a fixed-height flex column: messages must keep their full height
+   (no shrinking) so the chat scrolls instead of squashing them */
+#js-chat > * {
+  @apply shrink-0;
+}
+
 /* Code blocks: header bar (language + copy) sits right above each <pre> */
 .code-head {
   @apply -mb-3 flex items-center justify-between rounded-t-[10px] border border-b-0 border-stone-200 bg-stone-100 py-1 pl-3.5 pr-1.5 font-mono text-xs text-stone-500 dark:border-[#2F2A3D] dark:bg-[#221D2E] dark:text-zinc-400;
@@ -102,7 +108,7 @@ a {
 }
 
 #js-chat pre.js-message--ai {
-  @apply rounded-b-[10px] border border-stone-200 !px-4 !py-3.5 !text-[13.5px] !leading-relaxed sm:!text-sm dark:border-[#2F2A3D];
+  @apply !overflow-x-auto rounded-b-[10px] border border-stone-200 !px-4 !py-3.5 !text-[13.5px] !leading-relaxed sm:!text-sm dark:border-[#2F2A3D];
 }
 
 /* COMMAND MESSAGES -- applies to elements pulled from JSON file */
